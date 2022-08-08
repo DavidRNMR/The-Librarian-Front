@@ -1,10 +1,10 @@
 /* Main Footer */
 footer .main-footer {
   padding: 20px 0;
-  background: #bcd8c1;
+  background: #00d1f9;
   position: absolute;
   bottom: 10px;
-  height: 200px;
+  height: 250px;
   width: 100%;
 }
 footer ul {
@@ -168,7 +168,7 @@ ul.social-footer2 {
 ul.social-footer2 li {
   display: inline-block;
   padding: 0;
-  background-color: #bcd8c1;
+  background-color: #00d1f9;
 }
 ul.social-footer2 li a:hover {
    color: #fff;
