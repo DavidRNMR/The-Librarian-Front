@@ -18,13 +18,13 @@ const APP_ROUTES: Route[] = [
 @NgModule({
   declarations: [
     AppComponent
-
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HomeModule,
     FormsModule,
+    SharedModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [],
