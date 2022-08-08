@@ -11,9 +11,11 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 
 const APP_ROUTES: Route[] = [
-  { path: '', component: AppComponent },
-  { path: "login", component: LoginComponent, pathMatch: "full" },
-  {path: "register", component: RegisterComponent, pathMatch: "full"}
+
+  {path: '', component:RegisterComponent, pathMatch: 'full'},
+  {path: "login", component: LoginComponent}
+
+
 ];
 
 @NgModule({
