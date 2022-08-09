@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { MainBooksComponent } from './main-books/main-books.component';
 import { AnimatedMainComponent } from './animated-main/animated-main.component';
-
+import { ViewBookComponent } from './view-book/view-book.component';
 
 
 
@@ -14,13 +14,15 @@ import { AnimatedMainComponent } from './animated-main/animated-main.component';
     LoginComponent,
     RegisterComponent,
     MainBooksComponent,
-    AnimatedMainComponent
+    AnimatedMainComponent,
+ViewBookComponent
   ],
   exports: [
     LoginComponent,
     RegisterComponent,
     MainBooksComponent,
-    AnimatedMainComponent
+    AnimatedMainComponent,
+    ViewBookComponent
   ],
   imports: [
     CommonModule,
