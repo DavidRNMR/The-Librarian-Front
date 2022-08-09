@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
+import { VolumeInfo } from '../interfaces/books';
 
 @Component({
   selector: 'app-main-books',
@@ -7,8 +8,10 @@ import { BookService } from '../services/book.service';
   styleUrls: ['./main-books.component.css'],
 })
 export class MainBooksComponent implements OnInit {
-  
-  books: any[] = [];
+
+  books: VolumeInfo[] = [];
+
+
 
   constructor(private bookService: BookService) {}
 

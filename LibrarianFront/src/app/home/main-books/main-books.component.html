@@ -1,12 +1,21 @@
-<div align='center'><h1>RANDOM BOOKS</h1></div>
+
+
+
+<div><h1>RANDOM BOOKS</h1></div>
 
 <div>
   <table class="table" style="width: 60%">
+
+
     <tr>
-      <th>Título</th>
-      <th>Autor</th>
-      <th>Descripción</th>
-    </tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Imagen</th>
+      </tr>
+    <tr *ngFor=" let book of books">
+      <td>{{ book.title }}</td>
+      <td>{{ book.authors }}</td>
+ </tr>
     <tr >
       <td>
 
@@ -22,3 +31,4 @@
     <button> Leer</button>
   </p>
 </div>
+
