@@ -1,20 +1,22 @@
-<div class="login">
-  <form class="custom-form" method="post">
-    <h1>Login</h1>
+<form class="custom-form" (ngSubmit)="login()" >
+    <legend>Bienvenido/a!</legend>
+    <label for="email">Login</label>
     <input
-      type="email"
-      [(ngModel)]="email"
-      name="email"
-      placeholder="Email"
-      required="required"
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="Email"
+        required="required"
+        class="form-control"
+        id="email"
     />
     <input
-      type="password"
-      [(ngModel)]="password"
-      name="password"
-      placeholder="Contraseña"
-      required="required"
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Contraseña"
+        required="required"
+        id="password"
     />
-    <button type="submit" (click)="login()">Acceder</button>
-  </form>
-</div>
+    <button type="submit">Acceder</button>
+</form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from "../users/users.service";
+import { Router } from '@angular/router';
+import { UsersService } from "../services/users.service";
 
 @Component({
   selector: 'app-login',
@@ -8,17 +9,34 @@ import { UsersService } from "../users/users.service";
 })
 export class LoginComponent {
 
-  email?: string;
-  password?: string;
+  email!: string;
+  password!: string;
 
-  constructor(public userService: UsersService) {}
+  constructor(public userService: UsersService, private router: Router) {}
 
-  login() {
-    const user = {email: this.email, password: this.password};
-    this.userService.login(user).subscribe( data => {
-      console.log(data);
-    });
+
+  login(){
+    this.userService
+      .postLogin({
+        "correo": this.email,
+        "password": this.password
+      })
+      .subscribe((datos: any) => {
+        localStorage.setItem('token', datos.accessToken);
+        this.router.navigate(["/"]);
+      });
   }
+
+
+
+
+
+  // login() {
+  //   const user = {email: this.email, password: this.password};
+  //   this.userService.login(user).subscribe( data => {
+  //     console.log(data);
+  //   });
+  // }
 
 }
 
