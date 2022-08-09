@@ -7,6 +7,7 @@ import { BookService } from '../services/book.service';
   styleUrls: ['./main-books.component.css'],
 })
 export class MainBooksComponent implements OnInit {
+  
   books: any[] = [];
 
   constructor(private bookService: BookService) {}
