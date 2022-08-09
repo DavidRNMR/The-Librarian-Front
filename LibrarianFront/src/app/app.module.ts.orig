@@ -1,40 +1,32 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule} from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routin.module';
 import { AppComponent } from './app.component';
-import { Route, RouterModule } from '@angular/router';
-<<<<<<< HEAD
-import { LoginComponent } from './home/login/login.component';
-import { RegisterComponent } from './home/register/register.component';
 import { HomeModule } from './home/home.module';
-=======
 import { SharedModule } from './shared/shared.module';
->>>>>>> 2f68609 ([#27282] Diseño de header y footer a falta de cambiar colores en algunos componentes)
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-const APP_ROUTES: Route[] = [
-  { path: '', component: AppComponent },
-  { path: "login", component: LoginComponent, pathMatch: "full" },
-  {path: "register", component: RegisterComponent, pathMatch: "full"}
-];
 
 @NgModule({
   declarations: [
-<<<<<<< HEAD
     AppComponent
-
   ],
-=======
-    AppComponent],
->>>>>>> 2f68609 ([#27282] Diseño de header y footer a falta de cambiar colores en algunos componentes)
   imports: [
     BrowserModule,
     HttpClientModule,
     HomeModule,
     FormsModule,
     SharedModule,
-    RouterModule.forRoot(APP_ROUTES)
+<<<<<<< HEAD
+    RouterModule.forRoot(APP_ROUTES),
+    HttpClientModule
+=======
+    AppRoutingModule,
+    NgbModule
+>>>>>>> 99e7243 ([#27301] Creacion de Login y Registro con funcionalidades)
   ],
   providers: [],
   bootstrap: [AppComponent]

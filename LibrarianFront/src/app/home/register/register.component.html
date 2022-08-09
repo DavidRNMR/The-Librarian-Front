@@ -1,29 +1,35 @@
-<div class="register">
-  <form class="custom-form" method="post">
-    <h1>Registro</h1>
+<h1 class="text-center my-3">Registro de Usuario</h1>
+<div class="mb-3">
+  <form class="row g-3 text-center" (ngSubmit)="crearRegistro()" #formularioEvento="ngForm">
+    <div class="col-12">
 
-    <input
-      type="email"
-      [(ngModel)]="email"
-      name="email"
-      placeholder="Email"
-      required="required"
-    />
-    <input
-      type="password"
-      [(ngModel)]="password"
-      name="password"
-      placeholder="Contraseña"
-      required="required"
-    />
-    <input
-      type="password"
-      [(ngModel)]="confirmPassword"
-      name="password"
-      placeholder="Repetir contraseña"
-      required="required"
-    />
+      <label for="nombre" class="form-label h4 mt-2">Usuario</label>
+      <input type="text" class="form-control text-center mb-2" id="nombre" name="nombre" [(ngModel)]="nuevoRegistro.nombre"
+        placeholder="Ingresa el nombre" required #nombre="ngModel" minlength="1" maxlength="100"
+        [ngClass]="validClasses(nombre, 'is-valid', 'is-invalid')">
+      <div *ngIf="nombre.touched && nombre.invalid" class="alert alert-danger">
+        Usuario requerido (entre 1 y 60 caracteres)
+      </div>
 
-    <button type="submit" (click)="register()">Registrar</button>
+      <label for="email" class="form-label h4 mt-2">Correo Electronico</label>
+      <input type="email" class="form-control text-center mb-2" id="email" name="email" [(ngModel)]="nuevoRegistro.correo"
+        placeholder="ejemplo@gmail.com" pattern=".+@gmail\.com" required #email="ngModel" minlength="1" maxlength="100"
+        [ngClass]="validClasses(email, 'is-valid', 'is-invalid')">
+      <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+        Algo ha salido mal con el Correo
+      </div>
+
+      <label for="password" class="form-label h4 mt-2">Contraseña</label>
+      <input type="password" class="form-control text-center" id="password" name="password" [(ngModel)]="nuevoRegistro.password"
+        required #password="ngModel" minlength="1" maxlength="100"
+        [ngClass]="validClasses(password, 'is-valid', 'is-invalid')">
+      <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+        Contraseña obligatoria
+      </div>
+    </div>
+    <div class="col-12">
+      <!-- el disable sirve para desabilitar el boton hasta que todos los campos esten llenos -->
+      <button type="submit" class="btn btn-success mb-3 w-100" [disabled]="!formularioEvento.form.valid">Añadir</button>
+    </div>
   </form>
 </div>
