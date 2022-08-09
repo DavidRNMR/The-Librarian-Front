@@ -9,7 +9,7 @@ import { MainBooksComponent } from './home/main-books/main-books.component';
 
 const APP_ROUTES: Routes = [
 
-  {path: '', component: MainBooksComponent, pathMatch: 'full'},
+  {path: '', component: RegisterComponent, pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegisterComponent},
   {path: '**', redirectTo: ''}
