@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { MainBooksComponent } from './main-books/main-books.component';
+import { AnimatedMainComponent } from './animated-main/animated-main.component';
 
 
 
@@ -12,12 +13,14 @@ import { MainBooksComponent } from './main-books/main-books.component';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    MainBooksComponent
+    MainBooksComponent,
+    AnimatedMainComponent
   ],
   exports: [
     LoginComponent,
     RegisterComponent,
-    MainBooksComponent
+    MainBooksComponent,
+    AnimatedMainComponent
   ],
   imports: [
     CommonModule,
