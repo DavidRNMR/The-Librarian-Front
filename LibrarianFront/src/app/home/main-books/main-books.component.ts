@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
-import { VolumeInfo } from '../interfaces/books';
+import { Books, VolumeInfo, Item } from '../interfaces/books';
 
 @Component({
   selector: 'app-main-books',
@@ -9,16 +9,20 @@ import { VolumeInfo } from '../interfaces/books';
 })
 export class MainBooksComponent implements OnInit {
 
-  books: VolumeInfo[] = [];
+  books : any
 
 
 
   constructor(private bookService: BookService) {}
 
   getBooks() {
-    this.bookService.getRandomBooks().subscribe((data : any) => {
-      this.books = data;
-      console.log(data);
+    this.bookService.getRandomBooks().subscribe((data : Books) => {
+
+      console.log(data.items[0].volumeInfo.title);
+
+      this.books = data.items;
+
+      console.log(this.books[0])
     });
   }
 
