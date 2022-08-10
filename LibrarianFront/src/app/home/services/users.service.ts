@@ -24,8 +24,6 @@ export class UsersService {
     return this.http.get(`${HOST}/getCurrentUser`);
   }
 
-
-
   // login(user: any): Observable<any> {
   //   return this.http.post('https://reqres.in/api/login', user);
   // }
