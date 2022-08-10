@@ -23,7 +23,8 @@
 				</div>
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt"></div>
-                 <span>{{book.volumeInfo.description | slice:0:400}} <a href="#" class="btn btn-primary ms-2">Ver más.....</a></span>
+                 <span>{{book.volumeInfo.description | slice:0:400}}
+                    <a  href="#" class="btn btn-primary ms-2" [routerLink]="['/vista']" [state]="{book}"> Ver más... </a></span>
 
 			</div>
 		</article>

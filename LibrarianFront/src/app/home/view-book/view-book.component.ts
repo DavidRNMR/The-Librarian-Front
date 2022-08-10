@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
 import { Books, Item } from '../interfaces/books';
 
@@ -11,24 +11,35 @@ import { Books, Item } from '../interfaces/books';
 })
 export class ViewBookComponent implements OnInit {
 
-  constructor(private BookService: BookService ) { }
-
-
   book: Item[] = [];
 
+  books:any;
 
-  getBook() {
-
-    this.BookService.getBook().subscribe((data: Books) => {
-
-      this.book = data.items;
-
-    });
-  }
+  constructor(private BookService: BookService ) { }
 
   ngOnInit(): void {
-    this.getBook();
+
+  // this.getBook();
+
+  this.books = history.state;
+
   }
+
+
+
+
+
+
+
+  // getBook() {
+
+  //   this.BookService.getBook().subscribe((data: Books) => {
+
+  //     this.books = data.items;
+
+  //   });
+  // }
+
 
 
 }
