@@ -7,13 +7,16 @@ import { UsersService } from "../services/users.service";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   email!: string;
   password!: string;
 
   constructor(public userService: UsersService, private router: Router) {}
 
+  ngOnInit(): void {
+
+  }
 
   login(){
     this.userService

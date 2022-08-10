@@ -12,14 +12,15 @@ export class TokenInterceptor implements HttpInterceptor {
 
   constructor() {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if (!request.url.includes("login")) {
+
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if (!request.url.includes("login") && !request.url.includes("registro")) {
 
       let token = localStorage.getItem("token");
 
       request = request.clone({
         setHeaders: {
-          'Authorization': `Bearer ${token}`
+          authorization: `Bearer ${token}`
         }
       });
     }

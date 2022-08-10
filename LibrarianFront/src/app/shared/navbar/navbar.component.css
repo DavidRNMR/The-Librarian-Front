@@ -1,10 +1,5 @@
-.btn-outline-success
-{
-  color: black;
-}
 
-.btn-outline-success:hover
-{
-  color:white;
-  background-color: black;
+
+.navbar{
+    background-color: #00d1f9 !important;
 }
