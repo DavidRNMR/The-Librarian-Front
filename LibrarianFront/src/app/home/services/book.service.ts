@@ -9,7 +9,10 @@ import { environment } from 'src/environments/environment';
 })
 export class BookService {
 
-   API_URL = environment.urlBooksRandom;
+  API_URL = environment.urlBooksRandom;
+
+  API_URL_VIEW_BOOK_TEMPORAL = environment.urlBooksRandom;
+
 
   constructor(private http: HttpClient) {
 
@@ -17,9 +20,16 @@ export class BookService {
 
 
   getRandomBooks(): any {
-    
+
     return this.http.get(`${this.API_URL}`);
   }
+
+  getBook(): any {
+
+    return this.http.get(`${this.API_URL_VIEW_BOOK_TEMPORAL}`)
+
+  }
+
 
 
 

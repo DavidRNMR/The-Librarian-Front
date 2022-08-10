@@ -39,25 +39,43 @@
             <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
 
             <div class="form-floating">
-                <input
+                <!-- <input
                 type="email"
                 [(ngModel)]="email"
                 name="email"
                 class="form-control"
                 id="floatingInput"
                 placeholder="name@example.com"
-                />
+                /> -->
+
+                <input
+                type="email"
+                [(ngModel)]="email"
+                name="email"
+                placeholder="Email"
+                required="required"
+                class="form-control"
+                id="email"
+            />
                 <label for="floatingInput">Email</label>
             </div>
             <div class="form-floating">
-                <input
+                <!-- <input
                 type="password"
                 [(ngModel)]="password"
                 name="password"
                 class="form-control"
                 id="floatingPassword"
                 placeholder="Password"
-                />
+                /> -->
+                <input
+                type="password"
+                [(ngModel)]="password"
+                name="password"
+                placeholder="Contraseña"
+                required="required"
+                id="password"
+            />
                 <label for="floatingPassword">Contraseña</label>
             </div>
 

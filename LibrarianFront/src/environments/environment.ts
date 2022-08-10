@@ -5,7 +5,10 @@
 export const environment = {
   production: false,
   urlBooksRandom:  "http://localhost:8080/get",
+  urlTEMPORALviewBooks: "https://www.googleapis.com/books/v1/volumes?q=harry%20potter&maxResults=1"
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file
