@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Registro } from '../interfaces/registro';
 import { RegistroService } from '../services/registro.service';
@@ -19,20 +20,21 @@ export class RegisterComponent implements OnInit{
     password: ''
   }
 
-  constructor(public registroSer: RegistroService) { }
+  constructor(public registroSer: RegistroService, private router: Router) { }
 
   ngOnInit(): void {
 
   }
 
   crearRegistro(){
-    console.log(this.nuevoRegistro);
     this.registroSer.postUsuario(this.nuevoRegistro).subscribe((datos:any)=>{
       Swal.fire({
         icon: 'success',
         title: 'Usuario Creado',
         text: 'Añadido correctamente!',
-      })
+      }).then( result => {
+        this.router.navigate(["/login"]);
+      });
     });
   }
 

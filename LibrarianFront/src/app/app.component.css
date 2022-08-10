@@ -1,5 +1,10 @@
 * {
-  font-family: 'Mouse Memoirs', sans-serif;
-  font-size: 25px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 25px;
+
+  }
+
+.container{
+    margin-top: 5%;
 
 }
