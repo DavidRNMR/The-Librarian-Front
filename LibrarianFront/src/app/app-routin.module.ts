@@ -11,7 +11,7 @@ const APP_ROUTES: Routes = [
 
   {path: '', component: MainBooksComponent, pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'registro', component: RegisterComponent},
   {path: '**', redirectTo: ''}
 
 
