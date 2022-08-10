@@ -1,24 +1,26 @@
-<div align='center'><h1>RANDOM BOOKS</h1></div>
+<div><h1>RANDOM BOOKS</h1></div>
 
 <div>
-  <table class="table" style="width: 60%">
-    <tr>
-      <th>Título</th>
-      <th>Autor</th>
-      <th>Descripción</th>
-    </tr>
-    <tr >
-      <td>
+    <table class="table" style="width: 90%">
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
 
-      </td>
-      <td>
+        </tr>
+        <tr *ngFor="let book of books ">
+            <td>{{ book.volumeInfo.title}}</td>
+            <td> {{ book.volumeInfo.authors[0]}}</td>
+            <td><img src="{{ book.volumeInfo.imageLinks.smallThumbnail}}" alt="" height=200 width=180 /></td>
 
-      </td>
-    </tr>
-  </table>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
 </div>
 <div>
-  <p>
-    <button> Leer</button>
-  </p>
+    <p>
+
+    </p>
 </div>

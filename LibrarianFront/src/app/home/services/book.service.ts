@@ -17,6 +17,7 @@ export class BookService {
 
 
   getRandomBooks(): any {
+    
     return this.http.get(`${this.API_URL}`);
   }
 
