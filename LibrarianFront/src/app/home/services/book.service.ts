@@ -11,7 +11,7 @@ export class BookService {
 
   API_URL = environment.urlBooksRandom;
 
-  API_URL_VIEW_BOOK_TEMPORAL = environment.urlBooksRandom;
+  API_URL_VIEW_BOOK_TEMPORAL = environment.urlTEMPORALviewBooks;
 
 
   constructor(private http: HttpClient) {

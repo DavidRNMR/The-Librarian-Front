@@ -9,25 +9,30 @@ import { Books, VolumeInfo, Item } from '../interfaces/books';
 })
 export class MainBooksComponent implements OnInit {
 
-  books : Item[]= [];
+  books : any
 
 
 
   constructor(private bookService: BookService) {}
 
-  ngOnInit(): void {
-    this.getBooks();
-  }
-
-  
   getBooks() {
     this.bookService.getRandomBooks().subscribe((data : Books) => {
 
+      console.log(data.items[0].volumeInfo.title);
 
       this.books = data.items;
 
-
+      console.log(this.books[0])
     });
+
+
+
+
   }
 
+
+
+  ngOnInit(): void {
+    this.getBooks();
+  }
 }
