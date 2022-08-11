@@ -5,20 +5,15 @@ import { RegisterComponent } from './home/register/register.component';
 import { MainBooksComponent } from './home/main-books/main-books.component';
 import { ViewBookComponent } from './home/view-book/view-book.component';
 
-
-
-
 const APP_ROUTES: Routes = [
 
   {path: '', component: MainBooksComponent, pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegisterComponent},
-  {path: 'vista', component: ViewBookComponent},
+  {path: 'vista/:id', component: ViewBookComponent},
   {path: '**', redirectTo: ''}
 
-
 ]
-
 
 @NgModule({
   imports:[
@@ -28,6 +23,5 @@ const APP_ROUTES: Routes = [
     RouterModule
   ]
 })
-
 
 export class AppRoutingModule{}

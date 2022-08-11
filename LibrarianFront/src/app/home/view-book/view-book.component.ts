@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
 import { Books, Item } from '../interfaces/books';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 
 
@@ -11,35 +13,19 @@ import { Books, Item } from '../interfaces/books';
 })
 export class ViewBookComponent implements OnInit {
 
-  book: Item[] = [];
 
-  books:any;
+  book!: Item;
 
-  constructor(private BookService: BookService ) { }
+  constructor(private activatedRoute: ActivatedRoute, private BookService: BookService) { }
 
   ngOnInit(): void {
 
-  // this.getBook();
+    this.activatedRoute.params.pipe(switchMap(({ id }) => this.BookService.buscarLibroPorId(id))).subscribe(book => {
 
-  this.books = history.state;
+      this.book = book;
+
+    });
 
   }
-
-
-
-
-
-
-
-  // getBook() {
-
-  //   this.BookService.getBook().subscribe((data: Books) => {
-
-  //     this.books = data.items;
-
-  //   });
-  // }
-
-
 
 }

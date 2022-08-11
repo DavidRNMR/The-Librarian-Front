@@ -28,7 +28,7 @@ ViewBookComponent
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
 
   ]
 })

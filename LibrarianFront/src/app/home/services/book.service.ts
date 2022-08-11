@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Books, Item } from '../interfaces/books';
 
 
 @Injectable({
@@ -11,28 +12,21 @@ export class BookService {
 
   API_URL = environment.urlBooksRandom;
 
-  API_URL_VIEW_BOOK_TEMPORAL = environment.urlTEMPORALviewBooks;
-
+  private apiURLById = environment.urlById;
 
   constructor(private http: HttpClient) {
 
   }
 
+  getRandomBooks():Observable<Books> {
 
-  getRandomBooks(): any {
-
-    return this.http.get(`${this.API_URL}`);
+    return this.http.get<Books>(`${this.API_URL}`);
   }
 
-  getBook(): any {
+  buscarLibroPorId(id: string): Observable<Item>{
 
-    return this.http.get(`${this.API_URL_VIEW_BOOK_TEMPORAL}`)
+    return this.http.get<Item>(`${this.apiURLById}/${ id }`)
 
   }
-
-
-
-
-
 
 }

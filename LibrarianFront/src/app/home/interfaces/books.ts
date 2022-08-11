@@ -3,7 +3,9 @@ export interface Books {
 }
 
 export interface Item {
+  id: string;
   volumeInfo: VolumeInfo;
+
 }
 
 export interface VolumeInfo {

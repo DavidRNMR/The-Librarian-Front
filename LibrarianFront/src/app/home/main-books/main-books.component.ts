@@ -9,7 +9,7 @@ import { Books, VolumeInfo, Item } from '../interfaces/books';
 })
 export class MainBooksComponent implements OnInit {
 
-  books: any
+  books: Item[]=[];
 
 
 
@@ -17,13 +17,12 @@ export class MainBooksComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   getBooks() {
-    this.bookService.getRandomBooks().subscribe((data: Books) => {
+    this.bookService.getRandomBooks().subscribe((data) => {
 
-      console.log(data.items[0].volumeInfo.title);
 
       this.books = data.items;
 
-      console.log(this.books[0])
+
     });
 
   }
