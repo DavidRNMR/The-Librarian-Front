@@ -5,7 +5,10 @@
 export const environment = {
   production: false,
   urlBooksRandom:  "http://localhost:8080/get",
+  urlById: "https://www.googleapis.com/books/v1/volumes"
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file
