@@ -1,88 +1,31 @@
-<!-- <form class="custom-form" (ngSubmit)="login()" >
-    <legend>Bienvenido/a!</legend>
-    <label for="email">Login</label>
-    <input
-        type="email"
-        [(ngModel)]="email"
-        name="email"
-        placeholder="Email"
-        required="required"
-        class="form-control"
-        id="email"
-    />
-    <input
-        type="password"
-        [(ngModel)]="password"
-        name="password"
-        placeholder="Contraseña"
-        required="required"
-        id="password"
-    />
-    <button type="submit">Acceder</button>
-</form> -->
 
+<div class="containerMio mx-auto" id="container">
 
+    <div class="form-container sign-in-container">
+        <form (ngSubmit)="login()">
+            <h1>Sign in</h1>
+            <span>Usa tu cuenta</span>
+            <input type="email" [(ngModel)]="email" placeholder="Email"   name="email" required="required" class="form-control" id="email"/>
+            <input type="password"  [(ngModel)]="password"placeholder="Contraseña" name="password"  required="required" id="password"/>
+            <a href="#">Olvidaste tu contraseña?</a>
+            <button class="w-100 btn btn-success btn-lg" type="submit">Acceder</button>
 
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <h1>Hola, amigo!</h1>
+                <p>Un mundo de lectura te espera</p>
 
-
-
-<div class="w-25 mx-auto">
-
-    <form class="custom-form mt-5" (ngSubmit)="login()">
-        <img
-            class="mx-auto d-block rounded-5"
-            src="./assets/booklogo.jpg"
-            alt="200"
-            width="200"
-            height="200"
-            />
-            <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
-
-            <div class="form-floating">
-                <!-- <input
-                type="email"
-                [(ngModel)]="email"
-                name="email"
-                class="form-control"
-                id="floatingInput"
-                placeholder="name@example.com"
-                /> -->
-
-                <input
-                type="email"
-                [(ngModel)]="email"
-                name="email"
-                placeholder="Email"
-                required="required"
-                class="form-control"
-                id="email"
-            />
-                <label for="floatingInput">Email</label>
+                <a routerLink="/registro"
+                    ><button class="btn btn-primary pull-right">
+                        Registrate
+                    </button></a
+                >
             </div>
-            <div class="form-floating">
-                <!-- <input
-                type="password"
-                [(ngModel)]="password"
-                name="password"
-                class="form-control"
-                id="floatingPassword"
-                placeholder="Password"
-                /> -->
-                <input
-                type="password"
-                [(ngModel)]="password"
-                name="password"
-                placeholder="Contraseña"
-                required="required"
-                id="password"
-            />
-                <label for="floatingPassword">Contraseña</label>
-            </div>
-
-            <div class="checkbox mb-3">
 
     </div>
-    <button class="w-100 btn btn-success btn-lg " type="submit">Acceder</button>
-    <p class="mt-5 mb-3 text-muted">©The Librarian 2022</p>
-</form>
 </div>
+
+
