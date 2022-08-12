@@ -35,7 +35,8 @@
                     <p class="h5"> Descripción: </p>
                 </div>
                 <div class="text-left">
-                    <p class="text-card-text">{{ bookVer.volumeInfo.description }} </p>
+                    <p class="text-card-text ">{{ bookVer.volumeInfo.description | striphtml }} </p>
+
                 </div>
             </div>
         </div>
