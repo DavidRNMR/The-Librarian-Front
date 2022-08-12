@@ -1,31 +1,27 @@
-<div class="row">
+<div class="row animate__bounceIn">
     <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
         <div class="card card-book">
             <div class="card-body">
                 <div class="text-center">
-                    <p class="text-title"></p>
-                    <img src="{{book.volumeInfo.imageLinks.smallThumbnail}}"  />
+                    <img [src]=bookVer.volumeInfo.imageLinks.smallThumbnail alt="img">
+
                 </div>
 
                 <div class="text-left mt-5">
                     <p class="text-card-text">
-                        <span class="text-card-title"
-                            >Título: {{ book.volumeInfo.title }}
+                        <span class="text-card-title">Título: {{ bookVer.volumeInfo.title }}>
                         </span>
                     </p>
                     <p class="text-card-text">
-                        <span class="text-card-title"
-                            >Autor: {{ book.volumeInfo.authors }}
+                        <span class="text-card-title">Autor: {{ bookVer.volumeInfo.authors }}
                         </span>
                     </p>
                     <p class="text-card-text">
-                        <span class="text-card-title"
-                            >Género: {{ book.volumeInfo.categories }}</span
-                        >
+                        <span class="text-card-title">Género: {{ bookVer.volumeInfo.categories }}</span>
                     </p>
 
                     <p class="text-card-text">
-                        <span class="text-card-title">Número de páginas: {{ book.volumeInfo.pageCount }} </span>
+                        <span class="text-card-title">Número de páginas: {{ bookVer.volumeInfo.pageCount }} </span>
                     </p>
                 </div>
             </div>
@@ -36,10 +32,10 @@
         <div class="card card-book">
             <div class="card-body">
                 <div class="text-left mb-5">
-                    <p class="h5">Descripción:</p>
+                    <p class="h5"> Descripción: </p>
                 </div>
                 <div class="text-left">
-                    <p class="text-card-text">{{ book.volumeInfo.description }}</p>
+                    <p class="text-card-text">{{ bookVer.volumeInfo.description }} </p>
                 </div>
             </div>
         </div>
@@ -48,15 +44,11 @@
                 <a
                     href=""
                     class="btn btn-primary mx-3 card-button-text"
-                    target="_blank"
-                    >Read a sample</a
-                >
+                    target="_blank"> Read a sample </a>
                 <a
                     href=""
                     class="btn btn-primary card-button-text"
-                    target="_blank"
-                    >Añadir</a
-                >
+                    target="_blank"> Añadir </a>
             </div>
         </div>
     </div>

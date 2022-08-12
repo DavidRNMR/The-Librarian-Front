@@ -4,7 +4,7 @@
 
 
 
-		 <article class="postcard light blue" *ngFor="let book of books">
+		 <article class="postcard light blue animate__bounceIn" *ngFor="let book of books">
 			<a class="postcard__img_link" href="#">
                     <img *ngIf="book.volumeInfo.imageLinks.smallThumbnail == 'No image available.'; else elseTemplate" class="postcard__img" src="./assets/noDisponible.png" alt="no se mostro" />
                 <ng-template #elseTemplate>
