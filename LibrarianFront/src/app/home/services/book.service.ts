@@ -10,7 +10,7 @@ import { Books, Item } from '../interfaces/books';
 })
 export class BookService {
 
-  API_URL = environment.urlBooksRandom;
+  private API_URL = environment.urlBooksRandom;
 
   private apiURLById = environment.urlById;
 
@@ -23,9 +23,10 @@ export class BookService {
     return this.http.get<Books>(`${this.API_URL}`);
   }
 
+
   buscarLibroPorId(id: string): Observable<Item>{
 
-    return this.http.get<Item>(`${this.apiURLById}/${ id }`)
+    return this.http.get<Item>(`${this.apiURLById}/${ id }`);
 
   }
 

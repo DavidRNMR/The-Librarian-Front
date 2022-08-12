@@ -14,17 +14,19 @@ import { switchMap } from 'rxjs';
 export class ViewBookComponent implements OnInit {
 
 
-  book!: Item;
+  bookVer!: Item;
 
-  constructor(private activatedRoute: ActivatedRoute, private BookService: BookService) { }
+  constructor(private activatedRoute: ActivatedRoute,
+               private BookService: BookService) { }
 
   ngOnInit(): void {
-
-    this.activatedRoute.params.pipe(switchMap(({ id }) => this.BookService.buscarLibroPorId(id))).subscribe(book => {
-
-      this.book = book;
-
-    });
+      this.activatedRoute.params
+        .pipe(
+          switchMap( ({ id }) => this.BookService.buscarLibroPorId(id))
+        )
+        .subscribe(book => {
+            this.bookVer = book;
+        });
 
   }
 
