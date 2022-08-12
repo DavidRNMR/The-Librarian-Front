@@ -7,6 +7,7 @@ import { MainBooksComponent } from './main-books/main-books.component';
 import { AnimatedMainComponent } from './animated-main/animated-main.component';
 import { ViewBookComponent } from './view-book/view-book.component';
 import { RouterModule } from '@angular/router';
+import { StripHtmlPipe } from './components/pipeclean.component';
 
 
 
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     RegisterComponent,
     MainBooksComponent,
     AnimatedMainComponent,
-ViewBookComponent
+    StripHtmlPipe,
+    ViewBookComponent
   ],
   exports: [
     LoginComponent,
@@ -29,6 +31,8 @@ ViewBookComponent
     CommonModule,
     FormsModule,
     RouterModule,
+
+
 
   ]
 })

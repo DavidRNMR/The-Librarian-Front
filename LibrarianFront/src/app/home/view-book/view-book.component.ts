@@ -28,6 +28,10 @@ export class ViewBookComponent implements OnInit {
             this.bookVer = book;
         });
 
+
+
   }
+
+  
 
 }
