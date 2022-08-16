@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Registro } from '../interfaces/registro';
 import { RegistroService } from '../services/registro.service';
-import { UsersService } from "../services/users.service"
 
 @Component({
   selector: 'app-register',
@@ -19,6 +18,8 @@ export class RegisterComponent implements OnInit{
     correo: '',
     password: ''
   }
+
+  confirmPassword!: string;
 
   constructor(public registroSer: RegistroService, private router: Router) { }
 
@@ -45,13 +46,4 @@ export class RegisterComponent implements OnInit{
       [errorClass]: ngModel.touched && ngModel.invalid,
     };
   }
-
-
-
-  // register() {
-  //   const user = { email: this.email, password: this.password };
-  //   this.userService.register(user).subscribe(data => {
-  //     console.log(data);
-  //   });
-  // }
 }
