@@ -1,56 +1,67 @@
-<div class="row animate__bounceIn">
-    <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
-        <div class="card card-book">
-            <div class="card-body">
-                <div class="text-center">
-                    <img [src]=bookVer.volumeInfo.imageLinks.smallThumbnail alt="img">
+<ng-container  *ngIf="!bookVer; else elseTemplate"
+                class="alert alert-info">
+    Espere por favor....
+</ng-container>
 
+<ng-template #elseTemplate>
+    <div class="row animate__bounceIn">
+        <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+            <div class="card card-book">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img [src]=bookVer.volumeInfo.imageLinks.smallThumbnail alt="img">
+
+                    </div>
+
+                    <div class="text-left mt-5">
+                        <p class="text-card-text">
+                            <span class="text-card-title">Título: {{ bookVer.volumeInfo.title }}>
+                            </span>
+                        </p>
+                        <p class="text-card-text">
+                            <span class="text-card-title">Autor: {{ bookVer.volumeInfo.authors }}
+                            </span>
+                        </p>
+                        <p class="text-card-text">
+                            <span class="text-card-title">Género: {{ bookVer.volumeInfo.categories }}</span>
+                        </p>
+
+                        <p class="text-card-text">
+                            <span class="text-card-title">Número de páginas: {{ bookVer.volumeInfo.pageCount }} </span>
+                        </p>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="text-left mt-5">
-                    <p class="text-card-text">
-                        <span class="text-card-title">Título: {{ bookVer.volumeInfo.title }}>
-                        </span>
-                    </p>
-                    <p class="text-card-text">
-                        <span class="text-card-title">Autor: {{ bookVer.volumeInfo.authors }}
-                        </span>
-                    </p>
-                    <p class="text-card-text">
-                        <span class="text-card-title">Género: {{ bookVer.volumeInfo.categories }}</span>
-                    </p>
+        <div class="col-12 col-md-12 col-lg-8 mt-5">
+            <div class="card card-book">
+                <div class="card-body">
+                    <div class="text-left mb-5">
+                        <p class="h5"> Descripción: </p>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-card-text ">{{ bookVer.volumeInfo.description | striphtml }} </p>
 
-                    <p class="text-card-text">
-                        <span class="text-card-title">Número de páginas: {{ bookVer.volumeInfo.pageCount }} </span>
-                    </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-right mt-4">
+                    <a
+                        href=""
+                        class="btn btn-primary mx-3 card-button-text"
+                        target="_blank"> Read a sample </a>
+                    <a
+                        href=""
+                        class="btn btn-primary card-button-text"
+                        target="_blank"> Añadir </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-12 col-md-12 col-lg-8 mt-5">
-        <div class="card card-book">
-            <div class="card-body">
-                <div class="text-left mb-5">
-                    <p class="h5"> Descripción: </p>
-                </div>
-                <div class="text-left">
-                    <p class="text-card-text ">{{ bookVer.volumeInfo.description | striphtml }} </p>
+</ng-template>
 
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-right mt-4">
-                <a
-                    href=""
-                    class="btn btn-primary mx-3 card-button-text"
-                    target="_blank"> Read a sample </a>
-                <a
-                    href=""
-                    class="btn btn-primary card-button-text"
-                    target="_blank"> Añadir </a>
-            </div>
-        </div>
-    </div>
-</div>
+
+
