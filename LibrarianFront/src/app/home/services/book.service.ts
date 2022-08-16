@@ -30,4 +30,11 @@ export class BookService {
 
   }
 
+
+  buscarLibroPorIsbn(isbn: string): Observable<Books>{
+
+    return this.http.get<Books>(`${this.apiURLById}/${ isbn }`);
+
+  }
+
 }

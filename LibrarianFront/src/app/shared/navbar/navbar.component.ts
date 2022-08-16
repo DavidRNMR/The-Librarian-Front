@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { UsersService } from '../../home/services/users.service';
+import { BookService } from '../../home/services/book.service';
+import { Item } from 'src/app/home/interfaces/books';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +13,9 @@ import { UsersService } from '../../home/services/users.service';
 export class NavbarComponent implements OnInit {
   showHiddenOptions: boolean = false;
 
-  constructor(private usuarios: UsersService, private router: Router) {}
+  books: Item[] = [];
+
+  constructor(private usuarios: UsersService, private router: Router, private bookService: BookService) {}
 
   ngOnInit(): void {}
 
@@ -46,4 +50,21 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(['/']);
     }
   }
+
+
+  buscarLibroPorIsbn(isbn: string){
+
+    return this.bookService.buscarLibroPorIsbn(isbn).subscribe((data) => {
+
+
+      this.books = data.items;
+
+
+    });
+
+
+  }
+
+
+
 }

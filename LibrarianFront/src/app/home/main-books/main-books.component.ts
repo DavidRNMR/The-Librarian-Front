@@ -15,6 +15,7 @@ export class MainBooksComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   getBooks() {
+    
     this.bookService.getRandomBooks().subscribe((data) => {
 
 
