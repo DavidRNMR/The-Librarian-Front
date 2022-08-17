@@ -1,3 +1,10 @@
+.card{
+    background-color: rgba(255, 255, 255, 0.5)
+}
+.btn{
+    justify-content: center;
+}
+
 /* .text-card-title {
   font-size: 0.9rem;
   font-family: "Comfoorta-Bold";

@@ -1,3 +1,8 @@
+
+<div class="row itemsBlock">
+
+
+
 <ng-container  *ngIf="!bookVer; else elseTemplate"
                 class="alert alert-info">
     Espere por favor....
@@ -29,6 +34,10 @@
                         <p class="text-card-text">
                             <span class="text-card-title">Número de páginas: {{ bookVer.volumeInfo.pageCount }} </span>
                         </p>
+                        <a
+                        href=""
+                        class="btn btn-primary card-button-text"
+                        target="_blank"> Añadir </a>
                     </div>
                 </div>
             </div>
@@ -52,10 +61,6 @@
                         href="{{bookVer.volumeInfo.previewLink}} "
                         class="btn btn-primary mx-3 card-button-text"
                         target="_blank"> Lectura </a>
-                    <a
-                        href=""
-                        class="btn btn-primary card-button-text"
-                        target="_blank"> Añadir </a>
                 </div>
             </div>
         </div>
@@ -63,5 +68,5 @@
 
 </ng-template>
 
-
+</div>
 
