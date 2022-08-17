@@ -4,3 +4,31 @@
     background-color: rgba(255, 255, 255, 0.5) !important;
     /* background-color: #00d1f9 !important; */
 }
+
+
+.btn-outline-success{
+
+    background-color: white;
+    border: 2px solid blue;
+
+}
+
+
+.btn-outline-success:hover .bi-search{
+
+    color: blue;
+    border: 2px solid white;
+
+
+}
+
+
+.bi-search{
+
+    color: blue
+}
+
+.bi-search:hover{
+
+    color: white
+}
