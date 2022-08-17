@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import {environment } from 'src/environments/environment';
 import { Books, Item } from '../interfaces/books';
 
 
@@ -13,6 +13,10 @@ export class BookService {
   private API_URL = environment.urlBooksRandom;
 
   private apiURLById = environment.urlById;
+
+  private apiURLByIsbn = environment.usrlByIsbn;
+
+
 
   constructor(private http: HttpClient) {
 
@@ -33,8 +37,13 @@ export class BookService {
 
   buscarLibroPorIsbn(isbn: string): Observable<Books>{
 
-    return this.http.get<Books>(`${this.apiURLById}/${ isbn }`);
+    return this.http.get<Books>(`${this.apiURLByIsbn}/${ isbn }`);
 
   }
+
+
+
+
+
 
 }

@@ -4,6 +4,8 @@ import Swal from 'sweetalert2';
 import { UsersService } from '../../home/services/users.service';
 import { BookService } from '../../home/services/book.service';
 import { Item } from 'src/app/home/interfaces/books';
+import { SharedDataService } from '../../home/services/shared-data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -15,9 +17,30 @@ export class NavbarComponent implements OnInit {
 
   books: Item[] = [];
 
-  constructor(private usuarios: UsersService, private router: Router, private bookService: BookService) {}
+  isbn!:string;
+  message!: string;
+  subscription!: Subscription;
 
-  ngOnInit(): void {}
+  constructor(
+    private usuarios: UsersService,
+    private router: Router,
+    private sharedIsbn: SharedDataService
+  ) {}
+
+  ngOnInit(): void {
+    this.subscription = this.sharedIsbn.currentMessage.subscribe(
+      (message) => (this.message = message)
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  newMessage() {
+
+    this.sharedIsbn.changeMessage(this.isbn);
+  }
 
   logout() {
     Swal.fire({
@@ -27,7 +50,7 @@ export class NavbarComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'SI!',
-      cancelButtonText: 'NO'
+      cancelButtonText: 'NO',
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire('Sesión Cerrada', 'Cerrada', 'success');
@@ -50,21 +73,4 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(['/']);
     }
   }
-
-
-  buscarLibroPorIsbn(isbn: string){
-
-    return this.bookService.buscarLibroPorIsbn(isbn).subscribe((data) => {
-
-
-      this.books = data.items;
-
-
-    });
-
-
-  }
-
-
-
 }

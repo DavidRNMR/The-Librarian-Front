@@ -8,6 +8,7 @@ import { AnimatedMainComponent } from './animated-main/animated-main.component';
 import { ViewBookComponent } from './view-book/view-book.component';
 import { RouterModule } from '@angular/router';
 import { StripHtmlPipe } from './components/pipeclean.component';
+import { SearchIsbnComponent } from './components/search-isbn/search-isbn.component';
 
 
 
@@ -19,16 +20,16 @@ import { StripHtmlPipe } from './components/pipeclean.component';
     MainBooksComponent,
     AnimatedMainComponent,
     StripHtmlPipe,
-    ViewBookComponent
-
+    ViewBookComponent,
+    SearchIsbnComponent
   ],
   exports: [
     LoginComponent,
     RegisterComponent,
     MainBooksComponent,
     AnimatedMainComponent,
-    ViewBookComponent
-
+    ViewBookComponent,
+    SearchIsbnComponent
   ],
   imports: [
     CommonModule,

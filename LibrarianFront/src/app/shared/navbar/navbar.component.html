@@ -46,17 +46,23 @@
             </ul>
 
             <div class="d-flex me-5" *ngIf="isLogged()">
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" (ngSubmit)="newMessage()">
                     <input
                         class="form-control mx-1"
                         type="search"
                         placeholder="Buscar por Isbn"
                         aria-label="Search"
+                        name="isbn"
+                       [(ngModel)]="isbn"
                     />
-                    <button class="btn btn-outline-success" type="submit">
+                    <button class="btn btn-outline-success"  type="submit" [routerLink]="['isbn', isbn]">
                         <i class="bi bi-search"></i>
+
                     </button>
+
+
                 </form>
+
                 &nbsp;
                 <form role="search" class="d-flex">
                     <input
@@ -123,4 +129,6 @@
             </div>
         </div>
     </div>
+
+
 </nav>
