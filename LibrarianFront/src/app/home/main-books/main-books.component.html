@@ -1,10 +1,9 @@
-<section class="light">
-	<div class="container py-2">
-		<div class="h1 text-center text-light" id="pageHeaderTitle">Libros</div>
 
 
+                <div class="row itemsBlock">
 
-		 <article class="postcard light blue animate__bounceIn" *ngFor="let book of books">
+
+                <article *ngFor="let book of books" class="col-md-3 col-sm-6 col-12">
 			<a class="postcard__img_link" href="#">
                     <img *ngIf="book.volumeInfo.imageLinks.smallThumbnail == 'No image available.'; else elseTemplate" class="postcard__img" src="./assets/noDisponible.png" alt="no se mostro" />
                 <ng-template #elseTemplate>
@@ -13,9 +12,9 @@
 			</a>
 
 
-			<div class="postcard__text t-dark">
-				<h1 class="postcard__title blue"><a href="#">{{ book.volumeInfo.title}}</a></h1>
-                <h1 class="postcard__title blue"><a href="#">Autor: {{ book.volumeInfo.authors[0]}}</a></h1>
+
+				<h4 class="postcard__title bue"><a href="#">{{ book.volumeInfo.title}}</a></h4>
+                <h4><a href="#">Autor: {{ book.volumeInfo.authors[0]}}</a></h4>
 				<div class="postcard__subtitle small">
 					<time datetime="2020-05-25 12:00:00">
 						<i class="fas fa-calendar-alt mr-2"></i>Fecha de publicación: {{book.volumeInfo.publishedDate}}
@@ -23,13 +22,17 @@
 				</div>
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt"></div>
-                 <span>{{book.volumeInfo.description | slice:0:200}}
-                    <a class="btn btn-primary ms-2" [routerLink]="['vista', book.id]" routerLinkActive="router-link-active"> Ver más... </a></span>
-
-			</div>
-		</article>
+                 <span>
+                    <a class="btn btn-success ms-2" [routerLink]="['vista', book.id]" routerLinkActive="router-link-active"> Ver más... </a></span>
 
 
+            </article>
+        </div>
 
-	</div>
-</section>
+
+
+
+
+
+
+
