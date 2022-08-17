@@ -12,6 +12,14 @@ export class BookService {
 
   private API_URL = environment.urlBooksRandom;
 
+  private apiURLById = environment.urlById;
+
+  private apiURLByIsbn = environment.usrlByIsbn;
+
+  private apiURLByTitle = environment.urlByTitle;
+
+private URLaddBook = environment.urlAddBook;
+
 
   constructor(private http: HttpClient) {
 
