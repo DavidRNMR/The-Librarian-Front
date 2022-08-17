@@ -9,6 +9,7 @@ import { ViewBookComponent } from './view-book/view-book.component';
 import { RouterModule } from '@angular/router';
 import { StripHtmlPipe } from './components/pipeclean.component';
 import { SearchIsbnComponent } from './components/search-isbn/search-isbn.component';
+import { SearchTitleComponent } from './components/search-title/search-title.component';
 
 
 
@@ -21,7 +22,8 @@ import { SearchIsbnComponent } from './components/search-isbn/search-isbn.compon
     AnimatedMainComponent,
     StripHtmlPipe,
     ViewBookComponent,
-    SearchIsbnComponent
+    SearchIsbnComponent,
+    SearchTitleComponent
   ],
   exports: [
     LoginComponent,
@@ -29,7 +31,8 @@ import { SearchIsbnComponent } from './components/search-isbn/search-isbn.compon
     MainBooksComponent,
     AnimatedMainComponent,
     ViewBookComponent,
-    SearchIsbnComponent
+    SearchIsbnComponent,
+    SearchTitleComponent
   ],
   imports: [
     CommonModule,

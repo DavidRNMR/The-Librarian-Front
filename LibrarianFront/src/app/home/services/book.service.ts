@@ -16,6 +16,7 @@ export class BookService {
 
   private apiURLByIsbn = environment.usrlByIsbn;
 
+  private apiURLByTitle = environment.urlByTitle;
 
 
   constructor(private http: HttpClient) {
@@ -41,9 +42,10 @@ export class BookService {
 
   }
 
+  searchBookByTitle(title: string): Observable<Books>{
 
+    return this.http.get<Books>(`${this.apiURLByTitle}/${ title }`);
 
-
-
+  }
 
 }
