@@ -1,5 +1,27 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 
+.card{
+
+    background-color: rgba(255, 255, 255, 0.5);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+    width: 18rem;
+    margin: 20px;
+    border-radius: 10px;
+}
+.postcard__img{
+    min-width: 8rem;
+    max-width: 8rem;
+}
+.btn{
+    margin-bottom: 5px;
+}
+.btn:hover{
+   background-color: rgb(2, 49, 2);
+}
+
+
+/* @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+   background-color: rgba(255, 255, 255, 0.5) !important;
 body {
   font-family: "Baloo 2", cursive;
   font-size: 16px;
