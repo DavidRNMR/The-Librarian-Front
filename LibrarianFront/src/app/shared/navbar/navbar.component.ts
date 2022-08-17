@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { UsersService } from '../../home/services/users.service';
+import { BookService } from '../../home/services/book.service';
+import { Item } from 'src/app/home/interfaces/books';
+import { SharedDataService } from '../../home/services/shared-data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -11,9 +15,32 @@ import { UsersService } from '../../home/services/users.service';
 export class NavbarComponent implements OnInit {
   showHiddenOptions: boolean = false;
 
-  constructor(private usuarios: UsersService, private router: Router) {}
+  books: Item[] = [];
 
-  ngOnInit(): void {}
+  isbn!:string;
+  message!: string;
+  subscription!: Subscription;
+
+  constructor(
+    private usuarios: UsersService,
+    private router: Router,
+    private sharedIsbn: SharedDataService
+  ) {}
+
+  ngOnInit(): void {
+    this.subscription = this.sharedIsbn.currentMessage.subscribe(
+      (message) => (this.message = message)
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  newMessage() {
+
+    this.sharedIsbn.changeMessage(this.isbn);
+  }
 
   logout() {
     Swal.fire({
@@ -23,7 +50,7 @@ export class NavbarComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'SI!',
-      cancelButtonText: 'NO'
+      cancelButtonText: 'NO',
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire('Sesión Cerrada', 'Cerrada', 'success');

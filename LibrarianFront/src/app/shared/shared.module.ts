@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from '../app-routin.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { AppRoutingModule } from '../app-routin.module';
   imports: [
     CommonModule,
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
 
   ], exports: [
     NavbarComponent,
