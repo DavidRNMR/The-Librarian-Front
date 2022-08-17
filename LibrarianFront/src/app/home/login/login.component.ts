@@ -9,8 +9,8 @@ import { UsersService } from "../services/users.service";
 })
 export class LoginComponent implements OnInit {
 
-  email!: string;
-  password!: string;
+  email: string = "";
+  password: string = "";
 
   constructor(public userService: UsersService, private router: Router) {}
 
@@ -29,17 +29,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["/"]);
       });
   }
-
-
-
-
-
-  // login() {
-  //   const user = {email: this.email, password: this.password};
-  //   this.userService.login(user).subscribe( data => {
-  //     console.log(data);
-  //   });
-  // }
 
 }
 

@@ -48,4 +48,10 @@ export class BookService {
 
   }
 
+buscarLibroPorAuthor(author: string): Observable<Books>{
+
+    // Ernest Hemingway
+    return this.http.get<Books>(`${this.API_URL}/author/${ author }`);
+  }
+
 }
