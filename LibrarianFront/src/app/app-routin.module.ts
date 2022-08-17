@@ -7,6 +7,7 @@ import { ViewBookComponent } from './home/view-book/view-book.component';
 import { SearchIsbnComponent } from './home/components/search-isbn/search-isbn.component';
 import { SearchTitleComponent } from './home/components/search-title/search-title.component';
 import { SearchAuthorComponent } from './home/components/search-author/search-author.component';
+import { MyBooksComponent } from './home/my-books/my-books.component';
 
 const APP_ROUTES: Routes = [
 
@@ -16,6 +17,7 @@ const APP_ROUTES: Routes = [
   {path: 'vista/:id', component: ViewBookComponent},
   {path: 'isbn/:isbn', component: SearchIsbnComponent},
   {path: 'title/:title', component: SearchTitleComponent},
+  {path: 'mybooks/:id', component: MyBooksComponent}
   {path: 'author/:author', component: SearchAuthorComponent},
   {path: '**', redirectTo: ''}
 

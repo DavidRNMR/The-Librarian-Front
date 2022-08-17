@@ -25,20 +25,20 @@ private URLaddBook = environment.urlAddBook;
 
   }
 
-  getRandomBooks():Observable<Books> {
+  getRandomBooks(): Observable<Books> {
 
     return this.http.get<Books>(`${this.API_URL}/random`);
   }
 
 
-  buscarLibroPorId(id: string): Observable<Item>{
+  buscarLibroPorId(id: string): Observable<Item> {
 
     return this.http.get<Item>(`${this.API_URL}/getById/${ id }`);
 
   }
 
 
-  buscarLibroPorIsbn(isbn: string): Observable<Books>{
+  buscarLibroPorIsbn(isbn: string): Observable<Books> {
 
     return this.http.get<Books>(`${this.API_URL}/searchByIsbn/${ isbn }`);
 
@@ -54,6 +54,12 @@ private URLaddBook = environment.urlAddBook;
 
     // Ernest Hemingway
     return this.http.get<Books>(`${this.API_URL}/author/${ author }`);
+
+  }
+
+addBook(book: Item): Observable<Item> {
+
+    return this.http.get<Item>(`${this.URLaddBook}, ${book} `);
   }
 
 }
