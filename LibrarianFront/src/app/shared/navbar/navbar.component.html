@@ -64,14 +64,16 @@
                 </form>
 
                 &nbsp;
-                <form role="search" class="d-flex">
+                <form role="search" class="d-flex" (ngSubmit)="newTitleMessage()">
                     <input
                         class="form-control mx-1"
                         type="search"
                         placeholder="Buscar por título"
                         aria-label="Search"
+                        name="title"
+                        [(ngModel)]="title"
                     />
-                    <button class="btn btn-outline-success" type="submit">
+                    <button class="btn btn-outline-success" type="submit" [routerLink]="['title', title]">
                         <i class="bi bi-search"></i>
                     </button>
                 </form>

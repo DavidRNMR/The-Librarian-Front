@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   urlBooksRandom:  "http://localhost:8080/get",
   urlById: "https://www.googleapis.com/books/v1/volumes",
-  usrlByIsbn: "http://localhost:8080/get/searchByIsbn"
+  usrlByIsbn: "http://localhost:8080/get/searchByIsbn",
+  urlByTitle: "http://localhost:8080/get/searchByTitle"
 };
 
 
