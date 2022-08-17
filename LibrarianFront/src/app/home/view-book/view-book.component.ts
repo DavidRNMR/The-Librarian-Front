@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
-import { Books, Item } from '../interfaces/books';
+import { Books, Item, VolumeInfo } from '../interfaces/books';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { VolumeInfoBD } from '../interfaces/addbookbd';
 
 @Component({
   selector: 'app-view-book',

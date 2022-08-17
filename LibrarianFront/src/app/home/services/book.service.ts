@@ -1,9 +1,9 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { Books, Item } from '../interfaces/books';
-
+import { Books, Item, VolumeInfo } from '../interfaces/books';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +44,11 @@ private URLaddBook = environment.urlAddBook;
 
   }
 
+  addBook(book: Item): Observable<Item> {
+
+    return this.http.get<Item>(`${this.URLaddBook}, ${book} `);
+  }
+
   searchBookByTitle(title: string): Observable<Books>{
 
     return this.http.get<Books>(`${this.API_URL}/searchByTitle/${ title }`);
@@ -61,5 +66,10 @@ addBook(book: Item): Observable<Item> {
 
     return this.http.get<Item>(`${this.URLaddBook}, ${book} `);
   }
+
+}
+
+
+
 
 }

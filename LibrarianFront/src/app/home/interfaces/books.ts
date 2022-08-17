@@ -21,6 +21,7 @@ export interface VolumeInfo {
   previewLink:         string;
 }
 
+
 export interface ImageLinks {
   smallThumbnail: string;
   thumbnail:      string;
