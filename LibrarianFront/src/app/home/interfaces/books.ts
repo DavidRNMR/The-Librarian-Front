@@ -18,6 +18,7 @@ export interface VolumeInfo {
   categories:          string[];
   language:            Language;
   industryIdentifiers: IndustryIdentifier[];
+  previewLink:         string;
 }
 
 export interface ImageLinks {

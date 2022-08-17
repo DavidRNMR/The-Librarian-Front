@@ -11,6 +11,7 @@ import { StripHtmlPipe } from './components/pipeclean.component';
 
 
 
+
 @NgModule({
   declarations: [
     LoginComponent,
@@ -19,6 +20,7 @@ import { StripHtmlPipe } from './components/pipeclean.component';
     AnimatedMainComponent,
     StripHtmlPipe,
     ViewBookComponent
+
   ],
   exports: [
     LoginComponent,
@@ -26,6 +28,7 @@ import { StripHtmlPipe } from './components/pipeclean.component';
     MainBooksComponent,
     AnimatedMainComponent,
     ViewBookComponent
+
   ],
   imports: [
     CommonModule,
