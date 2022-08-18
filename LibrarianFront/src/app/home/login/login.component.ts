@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from "../services/users.service";
 
@@ -9,10 +10,15 @@ import { UsersService } from "../services/users.service";
 })
 export class LoginComponent implements OnInit {
 
-  email: string = "";
-  password: string = "";
+  email!: string;
+  password!: string;
+  formGrp!: FormGroup;
 
-  constructor(public userService: UsersService, private router: Router) {}
+  constructor(public userService: UsersService, private router: Router, formBuilder: FormBuilder) {
+    this.formGrp = formBuilder.group({
+      emailctrl: ['', [Validators.required, Validators.email]]
+    })
+  }
 
   ngOnInit(): void {
 
@@ -29,6 +35,23 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["/"]);
       });
   }
+
+  get emailid(){
+    return this.formGrp.controls;
+  }
+
+  doSubmit() {
+    console.log(this.formGrp.value);
+  }
+
+
+
+  // login() {
+  //   const user = {email: this.email, password: this.password};
+  //   this.userService.login(user).subscribe( data => {
+  //     console.log(data);
+  //   });
+  // }
 
 }
 

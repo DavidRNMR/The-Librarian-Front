@@ -5,6 +5,17 @@
 	box-sizing: border-box;
 }
 
+.show-error{
+    color: red;
+}
+.btn-success:hover{
+
+    color: white;
+    background-color: blue;
+
+}
+
+
 body {
 	background: #f6f5f7;
 	display: flex;
@@ -59,6 +70,7 @@ button {
 
 button:active {
 	transform: scale(0.95);
+
 }
 
 button:focus {
