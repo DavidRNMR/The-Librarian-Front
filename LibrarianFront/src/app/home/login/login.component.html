@@ -1,16 +1,53 @@
-
 <div class="containerMio mx-auto" id="container">
-
     <div class="form-container sign-in-container">
-        <form (ngSubmit)="login()">
-            <h1>Sign in</h1>
-            <span>Usa tu cuenta</span>
-            <input type="email" [(ngModel)]="email" placeholder="Email"   name="email" required="required" class="form-control" id="email"/>
-            <input type="password"  [(ngModel)]="password"placeholder="Contraseña" name="password"  required="required" id="password"/>
-            <a href="#">Olvidaste tu contraseña?</a>
-            <button class="w-100 btn btn-success btn-lg" type="submit">Acceder</button>
 
+        <form (ngSubmit)="login()" #formGrp = "ngForm">
+            <h1>Login</h1>
+            <span>Usa tu cuenta</span>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                [(ngModel)]="loginValidator.email"
+                placeholder="Email"
+                class="form-control"
+                pattern=".+@gmail\.com"
+                required
+                #email="ngModel"
+                [ngClass]="validClasses(email, 'is-valid', 'is-invalid')"
+
+            />
+
+            <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+                Algo ha salido mal con el Correo
+            </div>
+
+
+
+
+            <input
+                type="password"
+                class="form-control"
+                [(ngModel)]="loginValidator.password"
+                placeholder="Contraseña"
+                required
+                minlength="1" maxlength="100"
+                name="password"
+                required="required"
+                id="password"
+                #password="ngModel"
+                [ngClass]="validClasses(password, 'is-valid', 'is-invalid')"
+            />
+            <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+                Contraseña obligatoria
+            </div>
+            <a href="#">Olvidaste tu contraseña?</a>
+            <button class="w-100 btn btn-success btn-lg" type="submit">
+                Acceder
+            </button>
         </form>
+
+
     </div>
     <div class="overlay-container">
         <div class="overlay">
@@ -24,8 +61,6 @@
                     </button></a
                 >
             </div>
-
+        </div>
     </div>
 </div>
-
-

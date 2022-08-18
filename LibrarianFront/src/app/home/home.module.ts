@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { MainBooksComponent } from './main-books/main-books.component';
 import { AnimatedMainComponent } from './animated-main/animated-main.component';
@@ -38,6 +38,7 @@ import { SearchTitleComponent } from './components/search-title/search-title.com
     CommonModule,
     FormsModule,
     RouterModule,
+    ReactiveFormsModule
 
 
 

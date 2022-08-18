@@ -7,17 +7,32 @@
     width: 18rem;
     margin: 20px;
     border-radius: 10px;
+    padding: 2%;
+    border: 3px solid white;
 }
 .postcard__img{
     min-width: 8rem;
     max-width: 8rem;
 }
 .btn{
+    background-color: blue;
+    color: white;
     margin-bottom: 5px;
 }
 .btn:hover{
-   background-color: rgb(2, 49, 2);
+   background-color: white;
+   color: blue;
 }
+
+p {
+    color: white;
+}
+
+.postcard__img:hover{
+    min-width: 12rem;
+    max-width: 12rem;
+}
+
 
 
 /* @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
