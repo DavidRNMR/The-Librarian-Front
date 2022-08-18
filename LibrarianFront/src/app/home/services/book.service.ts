@@ -13,13 +13,7 @@ export class BookService {
 
   private API_URL = environment.urlBooksRandom;
 
-  private apiURLById = environment.urlById;
-
-  private apiURLByIsbn = environment.usrlByIsbn;
-
-  private apiURLByTitle = environment.urlByTitle;
-
-private URLaddBook = environment.urlAddBook;
+  private URLaddBook = environment.urlAddBook;
 
 
   constructor(private http: HttpClient) {
@@ -34,32 +28,32 @@ private URLaddBook = environment.urlAddBook;
 
   buscarLibroPorId(id: string): Observable<Item> {
 
-    return this.http.get<Item>(`${this.API_URL}/getById/${ id }`);
+    return this.http.get<Item>(`${this.API_URL}/getById/${id}`);
 
   }
 
 
   buscarLibroPorIsbn(isbn: string): Observable<Books> {
 
-    return this.http.get<Books>(`${this.API_URL}/searchByIsbn/${ isbn }`);
+    return this.http.get<Books>(`${this.API_URL}/searchByIsbn/${isbn}`);
 
   }
 
   searchBookByTitle(title: string): Observable<Books> {
 
-    return this.http.get<Books>(`${this.API_URL}/searchByTitle/${ title }`);
+    return this.http.get<Books>(`${this.API_URL}/searchByTitle/${title}`);
 
   }
 
-buscarLibroPorAuthor(author: string): Observable<Books>{
+  buscarLibroPorAuthor(author: string): Observable<Books> {
 
     // Ernest Hemingway
     return this.http.get<Books>(`${this.API_URL}/author/${author}`);
   }
 
-  addBookBD(book: VolumeInfoBD): any {
+  addBookBD(book: VolumeInfoBD): Observable<any> {
 
-    return this.http.post('`${this.URLaddBookDB}', book);
+    return this.http.post(`${this.URLaddBook}`, book);
 
   }
 

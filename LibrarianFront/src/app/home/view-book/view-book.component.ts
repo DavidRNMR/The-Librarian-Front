@@ -1,11 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
-import { Books, Item, VolumeInfo } from '../interfaces/books';
+import { Books, Item, VolumeInfo, Language } from '../interfaces/books';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VolumeInfoBD } from '../interfaces/addbookbd';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-view-book',
@@ -17,7 +16,17 @@ export class ViewBookComponent implements OnInit {
   public load: boolean;
 
   bookVer!: Item;
-  bookAdd!: VolumeInfoBD;
+  bookAdd: VolumeInfoBD = {
+
+    id_book: 0,
+    title: '',
+    publishedDate: '',
+    isbn: '',
+    description: '',
+    imageLinks: '',
+    pageCount: 0,
+    language: '',
+  };
 
   constructor(private activatedRoute: ActivatedRoute,
                private BookService: BookService) {
@@ -33,7 +42,12 @@ export class ViewBookComponent implements OnInit {
         this.bookVer = book;
       });
 
-     
+
+  }
+
+  addBookDB() {
+
+    this.BookService.addBookBD(this.bookAdd);
   }
 
 
