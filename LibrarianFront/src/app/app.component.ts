@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'LibrarianFront';
+
+  public load:boolean;
+
+  constructor(){
+
+    this.load=false;
+  }
+
+  ngOnInit(){
+    
+  }
 }

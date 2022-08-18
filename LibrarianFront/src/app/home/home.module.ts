@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { StripHtmlPipe } from './components/pipeclean.component';
 import { SearchIsbnComponent } from './components/search-isbn/search-isbn.component';
 import { SearchTitleComponent } from './components/search-title/search-title.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -23,7 +24,8 @@ import { SearchTitleComponent } from './components/search-title/search-title.com
     StripHtmlPipe,
     ViewBookComponent,
     SearchIsbnComponent,
-    SearchTitleComponent
+    SearchTitleComponent,
+    LoaderComponent
   ],
   exports: [
     LoginComponent,
@@ -32,7 +34,8 @@ import { SearchTitleComponent } from './components/search-title/search-title.com
     AnimatedMainComponent,
     ViewBookComponent,
     SearchIsbnComponent,
-    SearchTitleComponent
+    SearchTitleComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
