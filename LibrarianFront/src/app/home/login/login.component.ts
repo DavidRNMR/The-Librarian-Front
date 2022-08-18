@@ -1,57 +1,67 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsersService } from "../services/users.service";
+import { UsersService } from '../services/users.service';
 import { Login } from '../interfaces/registro';
+import Swal from 'sweetalert2';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-
- /* email!: string;
+  /* email!: string;
   password!: string;*/
   formGrp!: FormGroup;
 
-  loginValidator: Login ={
+  loginValidator: Login = {
     email: '',
-    password: ''
-  }
+    password: '',
+  };
 
+  constructor(public userService: UsersService, private router: Router) {}
 
+  ngOnInit(): void {}
 
-  constructor(public userService: UsersService, private router: Router) {
-
-  }
-
-  ngOnInit(): void {
-
-  }
-
-  login(){
+  login() {
     this.userService
       .postLogin({
-        "correo": this.loginValidator.email,
-        "password": this.loginValidator.password
+        correo: this.loginValidator.email,
+        password: this.loginValidator.password,
       })
       .subscribe((datos: any) => {
         localStorage.setItem('token', datos.accessToken);
-        this.router.navigate(["/"]);
+        this.router.navigate(['/']);
       });
   }
 
- validClasses(ngModel: NgModel, validClass: string, errorClass: string) {
+  error() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Email o contraseña no validos',
+      footer: '<a href="">Why do I have this issue?</a>',
+    });
+  }
+
+  loginOrError() {
+    try {
+
+      this.login();
+
+    } catch (HttpErrorResponse ) {
+      throw this.error();
+    }
+  }
+
+  validClasses(ngModel: NgModel, validClass: string, errorClass: string) {
     return {
       [validClass]: ngModel.touched && ngModel.valid,
       [errorClass]: ngModel.touched && ngModel.invalid,
     };
   }
-
-
-
 
   // login() {
   //   const user = {email: this.email, password: this.password};
@@ -59,6 +69,4 @@ export class LoginComponent implements OnInit {
   //     console.log(data);
   //   });
   // }
-
 }
-
