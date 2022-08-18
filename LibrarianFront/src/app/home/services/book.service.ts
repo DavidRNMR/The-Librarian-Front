@@ -45,29 +45,22 @@ private URLaddBook = environment.urlAddBook;
 
   }
 
-  addBook(book: VolumeInfoBD): Observable<VolumeInfoBD> {
-
-    return this.http.get<VolumeInfoBD>(`${this.URLaddBook}, ${book} `);
-  }
-
-  searchBookByTitle(title: string): Observable<Books>{
+  searchBookByTitle(title: string): Observable<Books> {
 
     return this.http.get<Books>(`${this.API_URL}/searchByTitle/${ title }`);
 
   }
 
-  buscarLibroPorAuthor(author: string): Observable<Books>{
+buscarLibroPorAuthor(author: string): Observable<Books>{
 
     // Ernest Hemingway
-    return this.http.get<Books>(`${this.API_URL}/author/${ author }`);
+    return this.http.get<Books>(`${this.API_URL}/author/${author}`);
+  }
+
+  addBookBD(book: VolumeInfoBD): any {
+
+    return this.http.post('`${this.URLaddBookDB}', book);
 
   }
 
-
-
 }
-
-
-
-
-

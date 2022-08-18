@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VolumeInfoBD } from '../interfaces/addbookbd';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-view-book',
@@ -31,21 +32,11 @@ export class ViewBookComponent implements OnInit {
       .subscribe(book => {
         this.bookVer = book;
       });
+
+     
   }
 
-  addBookBD(book: Item) {
 
-    this.bookVer.volumeInfo.description = this.bookAdd.description;
-    this.bookVer.volumeInfo.imageLinks.smallThumbnail = this.bookAdd.imageLinks;
-    this.bookVer.volumeInfo.isbn = this.bookAdd.isbn;
-    this.bookVer.volumeInfo.language.en = this.bookAdd.language;
-    this.bookVer.volumeInfo.pageCount = this.bookAdd.pageCount;
-    this.bookVer.volumeInfo.publishedDate = this.bookAdd.publishedDate;
-    this.bookVer.volumeInfo.title = this.bookAdd.title;
-
-    this.BookService.addBook(this.bookAdd);
-
-  }
 
       setTimeout(()=>{
         this.load=true;
