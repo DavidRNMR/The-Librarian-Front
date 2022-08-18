@@ -1,3 +1,8 @@
+
+<div class="row itemsBlock">
+
+
+
 <ng-container  *ngIf="!bookVer; else elseTemplate"
                 class="alert alert-info">
     Espere por favor....
@@ -5,7 +10,7 @@
 
 <ng-template #elseTemplate>
     <div class="row animate__bounceIn">
-        <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+        <div class="caja col-md-4 col-sm-6 col-xs-12 mt-5">
             <div class="card card-book">
                 <div class="card-body">
                     <div class="text-center">
@@ -29,39 +34,46 @@
                         <p class="text-card-text">
                             <span class="text-card-title">Número de páginas: {{ bookVer.volumeInfo.pageCount }} </span>
                         </p>
+                    <div class="col-12">
+                        <div class="d-grid gap-2 col-12">
+                        <a
+                        href=""
+                        class="btn btn-success btn-lg card-button-text"
+                        target="_blank"> Añadir </a>
+                        <a
+                        class="btn btn-primary btn-lg card-button-text"
+                        routerLink="/"> Volver </a>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-12 col-md-12 col-lg-8 mt-5">
+        <div class="col-12 col-md-12 col-lg-6 mt-5">
             <div class="card card-book">
                 <div class="card-body">
-                    <div class="text-left mb-5">
-                        <p class="h5"> Descripción: </p>
+                    <div class="text-left">
+                        <p class="h3"> Descripción: </p>
                     </div>
                     <div class="text-left">
-                        <p class="text-card-text ">{{ bookVer.volumeInfo.description | striphtml }} </p>
+                        <p class="text-card-text ">{{ bookVer.volumeInfo.description | striphtml  | slice:0:300}} </p>
 
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 text-right mt-4">
+                <!-- <div class="col-12 text-right mt-4">
                     <a
                         href="{{bookVer.volumeInfo.previewLink}} "
                         class="btn btn-primary mx-3 card-button-text"
                         target="_blank"> Lectura </a>
-                    <a
-                        href=""
-                        class="btn btn-primary card-button-text"
-                        target="_blank"> Añadir </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
 
 </ng-template>
 
-
+</div>
 
