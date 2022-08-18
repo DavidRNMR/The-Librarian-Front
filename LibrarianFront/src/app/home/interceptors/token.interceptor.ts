@@ -14,7 +14,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if (!request.url.includes("login") && !request.url.includes("registro") && !request.url.includes("")) {
+    if (!request.url.includes("login") && !request.url.includes("registro") && !request.url.includes("get")) {
 
       let token = localStorage.getItem("token");
 
