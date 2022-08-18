@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ErrorHandler, OnInit } from '@angular/core';
 import { FormGroup, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from '../services/users.service';
@@ -26,35 +26,32 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
+
     this.userService
       .postLogin({
         correo: this.loginValidator.email,
         password: this.loginValidator.password,
       })
-      .subscribe((datos: any) => {
-        localStorage.setItem('token', datos.accessToken);
-        this.router.navigate(['/']);
+      .subscribe({
+        next: (datos: any) => {
+
+          localStorage.setItem('token', datos.accessToken),
+          this.router.navigate(['/']);
+
+
+        },
+        error:(error) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Email o contraseña no validos',
+            footer: '<a href="">Why do I have this issue?</a>',
+          });
+        }
       });
   }
 
-  error() {
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Email o contraseña no validos',
-      footer: '<a href="">Why do I have this issue?</a>',
-    });
-  }
 
-  loginOrError() {
-    try {
-
-      this.login();
-
-    } catch (HttpErrorResponse ) {
-      throw this.error();
-    }
-  }
 
   validClasses(ngModel: NgModel, validClass: string, errorClass: string) {
     return {
