@@ -12,12 +12,6 @@ export class BookService {
 
   private API_URL = environment.urlBooksRandom;
 
-  private apiURLById = environment.urlById;
-
-  private apiURLByIsbn = environment.usrlByIsbn;
-
-  private apiURLByTitle = environment.urlByTitle;
-
 
   constructor(private http: HttpClient) {
 
@@ -25,30 +19,30 @@ export class BookService {
 
   getRandomBooks():Observable<Books> {
 
-    return this.http.get<Books>(`${this.API_URL}`);
+    return this.http.get<Books>(`${this.API_URL}/random`);
   }
 
 
   buscarLibroPorId(id: string): Observable<Item>{
 
-    return this.http.get<Item>(`${this.apiURLById}/${ id }`);
+    return this.http.get<Item>(`${this.API_URL}/getById/${ id }`);
 
   }
 
 
   buscarLibroPorIsbn(isbn: string): Observable<Books>{
 
-    return this.http.get<Books>(`${this.apiURLByIsbn}/${ isbn }`);
+    return this.http.get<Books>(`${this.API_URL}/searchByIsbn/${ isbn }`);
 
   }
 
   searchBookByTitle(title: string): Observable<Books>{
 
-    return this.http.get<Books>(`${this.apiURLByTitle}/${ title }`);
+    return this.http.get<Books>(`${this.API_URL}/searchByTitle/${ title }`);
 
   }
 
-buscarLibroPorAuthor(author: string): Observable<Books>{
+  buscarLibroPorAuthor(author: string): Observable<Books>{
 
     // Ernest Hemingway
     return this.http.get<Books>(`${this.API_URL}/author/${ author }`);
