@@ -16,6 +16,7 @@ export class ViewBookComponent implements OnInit {
   public load: boolean;
 
   bookVer!: Item;
+  bookAdd!: VolumeInfoBD;
 
   constructor(private activatedRoute: ActivatedRoute,
                private BookService: BookService) {
@@ -23,26 +24,32 @@ export class ViewBookComponent implements OnInit {
                 }
 
   ngOnInit(): void {
-      this.activatedRoute.params
-        .pipe(
-          switchMap( ({ id }) => this.BookService.buscarLibroPorId(id))
-        )
-        .subscribe(book => {
-            this.bookVer = book;
-        });
+    this.activatedRoute.params
+      .pipe(
+        switchMap(({ id }) => this.BookService.buscarLibroPorId(id))
+      )
+      .subscribe(book => {
+        this.bookVer = book;
+      });
+  }
 
-        setTimeout(()=>{
+  addBookBD(book: Item) {
+
+    this.bookVer.volumeInfo.description = this.bookAdd.description;
+    this.bookVer.volumeInfo.imageLinks.smallThumbnail = this.bookAdd.imageLinks;
+    this.bookVer.volumeInfo.isbn = this.bookAdd.isbn;
+    this.bookVer.volumeInfo.language.en = this.bookAdd.language;
+    this.bookVer.volumeInfo.pageCount = this.bookAdd.pageCount;
+    this.bookVer.volumeInfo.publishedDate = this.bookAdd.publishedDate;
+    this.bookVer.volumeInfo.title = this.bookAdd.title;
+
+    this.BookService.addBook(this.bookAdd);
+
+  }
+
+      setTimeout(()=>{
         this.load=true;
       }, 6000);
     }
 
-  addBookBD(book: Item) {
-
-    this.bookVer = book;
-    this.BookService.addBook(book);
-
-  }
-
-
-
-
+}

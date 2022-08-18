@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Books, Item } from '../interfaces/books';
-import { Books, Item, VolumeInfo } from '../interfaces/books';
+import { VolumeInfoBD } from '../interfaces/addbookbd';
+
 
 @Injectable({
   providedIn: 'root'
@@ -44,9 +45,9 @@ private URLaddBook = environment.urlAddBook;
 
   }
 
-  addBook(book: Item): Observable<Item> {
+  addBook(book: VolumeInfoBD): Observable<VolumeInfoBD> {
 
-    return this.http.get<Item>(`${this.URLaddBook}, ${book} `);
+    return this.http.get<VolumeInfoBD>(`${this.URLaddBook}, ${book} `);
   }
 
   searchBookByTitle(title: string): Observable<Books>{
@@ -62,14 +63,11 @@ private URLaddBook = environment.urlAddBook;
 
   }
 
-addBook(book: Item): Observable<Item> {
-
-    return this.http.get<Item>(`${this.URLaddBook}, ${book} `);
-  }
-
-}
-
-
 
 
 }
+
+
+
+
+

@@ -2,12 +2,12 @@
 
 export interface VolumeInfoBD {
 
-  title:               string;
-  publishedDate:       string;
-  isbn:                string;
   description:         string;
   imageLinks:          string;
-  pageCount:           number;
+  isbn:                string;
   language:            string;
+  pageCount:           number;
+  publishedDate:       string;
+  title:               string;
 
 }
