@@ -12,6 +12,13 @@
 
     color: white;
     background-color: blue;
+    border: blue;
+
+}
+
+.btn-success{
+
+    border: blue;
 
 }
 

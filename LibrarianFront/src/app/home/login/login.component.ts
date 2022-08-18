@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from "../services/users.service";
+import { Login } from '../interfaces/registro';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +11,20 @@ import { UsersService } from "../services/users.service";
 })
 export class LoginComponent implements OnInit {
 
-  email!: string;
-  password!: string;
+
+ /* email!: string;
+  password!: string;*/
   formGrp!: FormGroup;
 
-  constructor(public userService: UsersService, private router: Router, formBuilder: FormBuilder) {
-    this.formGrp = formBuilder.group({
-      emailctrl: ['', [Validators.required, Validators.email]]
-    })
+  loginValidator: Login ={
+    email: '',
+    password: ''
+  }
+
+
+
+  constructor(public userService: UsersService, private router: Router) {
+
   }
 
   ngOnInit(): void {
@@ -27,8 +34,8 @@ export class LoginComponent implements OnInit {
   login(){
     this.userService
       .postLogin({
-        "correo": this.email,
-        "password": this.password
+        "correo": this.loginValidator.email,
+        "password": this.loginValidator.password
       })
       .subscribe((datos: any) => {
         localStorage.setItem('token', datos.accessToken);
@@ -36,13 +43,13 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  get emailid(){
-    return this.formGrp.controls;
+ validClasses(ngModel: NgModel, validClass: string, errorClass: string) {
+    return {
+      [validClass]: ngModel.touched && ngModel.valid,
+      [errorClass]: ngModel.touched && ngModel.invalid,
+    };
   }
 
-  doSubmit() {
-    console.log(this.formGrp.value);
-  }
 
 
 
