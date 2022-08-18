@@ -9,6 +9,27 @@
    background-color: rgb(2, 49, 2);
 }
 
+.overlay{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 100%, .6);
+    cursor: default;
+}
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+
+
+
 /* .text-card-title {
   font-size: 0.9rem;
   font-family: "Comfoorta-Bold";

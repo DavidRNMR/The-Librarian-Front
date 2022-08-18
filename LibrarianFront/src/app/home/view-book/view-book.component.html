@@ -2,9 +2,8 @@
 <div class="row itemsBlock">
 
 
-
-<ng-container  *ngIf="!bookVer; else elseTemplate"
-                class="alert alert-info">
+<ng-container  *ngIf="!bookVer && !load; else elseTemplate;"
+                class="alert alert-info spinner overlay">
     Espere por favor....
 </ng-container>
 
