@@ -1,8 +1,12 @@
 .card{
     background-color: rgba(255, 255, 255, 0.5)
 }
+
 .btn{
-    justify-content: center;
+    margin-bottom: 5px;
+}
+.btn:hover{
+   background-color: rgb(2, 49, 2);
 }
 
 /* .text-card-title {
