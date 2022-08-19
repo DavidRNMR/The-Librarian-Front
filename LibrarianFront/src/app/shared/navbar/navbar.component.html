@@ -120,8 +120,14 @@
           <button class="btn btn-outline-dark" (click)="showHiddenOptions = false" type="submit">Search</button> -->
             </div>
             <div id="langSelect">
-                <select #selLang (change)="translateLanguageTo(selLang.value)">
-                    <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language | uppercase }}</option>
+
+                <i *ngIf="selLang.value == 'es'" class="flag flag-spain"></i>
+                <i *ngIf="selLang.value == 'en'" class="flag flag-united-states"></i>
+                <i *ngIf="selLang.value == 'fr'" class="flag flag-france"></i>
+                <i *ngIf="selLang.value == 'de'" class="flag flag-germany"></i>
+
+                <select #selLang (change)="translateLanguageTo(selLang.value)" style="background-color: rgb(192, 229, 243);">
+                    <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
                 </select>
             </div>
         </div>

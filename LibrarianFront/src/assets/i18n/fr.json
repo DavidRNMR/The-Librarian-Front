@@ -19,5 +19,7 @@
     "BOOK_VIEW_PAGES":"Número de pages:",
     "BOOK_VIEW_ADD_BUTTON":"Ajouter",
     "BOOK_VIEW_BACK_BUTTON":"Retour",
-    "BOOK_VIEW_DESCRIPTION":"Description:"
+    "BOOK_VIEW_DESCRIPTION":"Description:",
+    "BOOK_CARD_AUTHOR":"Auteur:",
+    "BOOK_CARD_SEE_MORE":"Voir plus..."
 }

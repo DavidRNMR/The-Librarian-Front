@@ -16,6 +16,8 @@ import { MyBooksComponent } from './my-books/my-books.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { SearchAuthorComponent } from './components/search-author/search-author.component';
+import { MainCardComponent } from './components/main-card/main-card.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

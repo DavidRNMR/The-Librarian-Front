@@ -31,9 +31,9 @@ export class NavbarComponent implements OnInit {
     public translate: TranslateService
   ) {
     // Register translation languages
-    translate.addLangs(['es', 'en', 'fr']);
+    translate.addLangs(['es', 'en', 'fr', 'de']);
     // Set default language
-    translate.setDefaultLang('es');
+    translate.setDefaultLang(navigator.language);
   }
 
   //Switch language

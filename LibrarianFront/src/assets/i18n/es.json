@@ -18,6 +18,8 @@
     "BOOK_VIEW_GENRE":"Género:",
     "BOOK_VIEW_PAGES":"Número de páginas:",
     "BOOK_VIEW_ADD_BUTTON":"Añadir",
-    "BOOK_VIEW_BACK_BUTTON":"Retour",
-    "BOOK_VIEW_DESCRIPTION":"Descripción:"
+    "BOOK_VIEW_BACK_BUTTON":"Volver",
+    "BOOK_VIEW_DESCRIPTION":"Descripción:",
+    "BOOK_CARD_AUTHOR":"Autor:",
+    "BOOK_CARD_SEE_MORE":"Ver mas..."
 }
