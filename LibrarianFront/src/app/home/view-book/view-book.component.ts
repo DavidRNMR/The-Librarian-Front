@@ -33,7 +33,7 @@ export class ViewBookComponent implements OnInit {
 
         setTimeout(()=>{
         this.load=true;
-      }, 3500);
+      }, 6000);
     }
 
   }
