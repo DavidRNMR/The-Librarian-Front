@@ -51,7 +51,7 @@ export class BookService {
     return this.http.get<Books>(`${this.API_URL}/author/${author}`);
   }
 
-  addBookBD(book: VolumeInfoBD): Observable<any> {
+  addBookBD(book: VolumeInfoBD):Observable<any> {
 
     return this.http.post(`${this.URLaddBook}`, book);
 

@@ -18,14 +18,13 @@ export class ViewBookComponent implements OnInit {
   bookVer!: Item;
   bookAdd: VolumeInfoBD = {
 
-    id_book: 0,
-    title: '',
-    publishedDate: '',
-    isbn: '',
-    description: '',
-    imageLinks: '',
+    title: 'asd',
+    publishedDate: "1950-02-15",
+    isbn: 'asd',
+    description: 'asd',
+    imageLinks: 'asd',
     pageCount: 0,
-    language: '',
+    language: 'asd',
   };
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -42,12 +41,18 @@ export class ViewBookComponent implements OnInit {
         this.bookVer = book;
       });
 
+    this.addBookDB();
+
 
   }
 
   addBookDB() {
 
-    this.BookService.addBookBD(this.bookAdd);
+    this.BookService.addBookBD(this.bookAdd).subscribe((bookDB: any) => {
+
+      console.log(bookDB);
+    })
+
   }
 
 
