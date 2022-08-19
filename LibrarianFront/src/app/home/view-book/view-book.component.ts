@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VolumeInfoBD } from '../interfaces/addbookbd';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-view-book',
@@ -18,19 +19,20 @@ export class ViewBookComponent implements OnInit {
   bookVer!: Item;
   bookAdd: VolumeInfoBD = {
 
-    title: 'asd',
-    publishedDate: "1950-02-15",
-    isbn: 'asd',
-    description: 'asd',
-    imageLinks: 'asd',
+    title: '',
+    publishedDate: '',
+    isbn: '',
+    description: '',
+    imageLinks: '',
     pageCount: 0,
-    language: 'asd',
+    language: '',
   };
 
+
   constructor(private activatedRoute: ActivatedRoute,
-               private BookService: BookService) {
-                 this.load=false;
-                }
+    private BookService: BookService) {
+    this.load = false;
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params
@@ -39,27 +41,40 @@ export class ViewBookComponent implements OnInit {
       )
       .subscribe(book => {
         this.bookVer = book;
+
+        this.bookVer.volumeInfo
+
+        console.log(book.volumeInfo);
+
+
       });
 
-    this.addBookDB();
+
+    setTimeout(() => {
+      this.load = true;
+    }, 6000);
+
 
 
   }
+
+
 
   addBookDB() {
 
+
     this.BookService.addBookBD(this.bookAdd).subscribe((bookDB: any) => {
 
-      console.log(bookDB);
-    })
+
+      console.log(this.bookAdd);
+    });
+
+
+
+
+
+
 
   }
-
-
-
-      setTimeout(()=>{
-        this.load=true;
-      }, 6000);
-    }
 
 }

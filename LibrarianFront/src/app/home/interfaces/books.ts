@@ -1,3 +1,4 @@
+import { VolumeInfoBD } from './addbookbd';
 export interface Books {
   items: Item[];
 }
@@ -20,6 +21,7 @@ export interface VolumeInfo {
   language:            Language;
   industryIdentifiers: IndustryIdentifier[];
   previewLink:         string;
+
 }
 
 
