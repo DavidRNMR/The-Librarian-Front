@@ -33,7 +33,7 @@ export class ViewBookComponent implements OnInit {
     private BookService: BookService) {
     this.load = false;
   }
-  
+
 
   ngOnInit(): void {
     this.activatedRoute.params
@@ -43,14 +43,20 @@ export class ViewBookComponent implements OnInit {
       .subscribe(book => {
         this.bookVer = book;
 
+        this.bookAdd.title = this.bookVer.volumeInfo.title;
+        this.bookAdd.publishedDate = this.bookVer.volumeInfo.publishedDate;
+        this.bookAdd.isbn = this.bookVer.volumeInfo.isbn;
+        this.bookAdd.description = this.bookVer.volumeInfo.description.slice(0,249);
+        this.bookAdd.imageLinks = this.bookVer.volumeInfo.imageLinks.smallThumbnail.slice(0,249);
+        this.bookAdd.pageCount = this.bookVer.volumeInfo.pageCount;
+        this.bookAdd.language = this.bookVer.volumeInfo.language.es;
+
       });
 
 
     setTimeout(() => {
       this.load = true;
     }, 6000);
-
-
 
   }
 
@@ -62,7 +68,6 @@ export class ViewBookComponent implements OnInit {
 
       console.log(this.bookAdd);
     });
-
 
   }
 

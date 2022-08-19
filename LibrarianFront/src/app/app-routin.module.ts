@@ -17,7 +17,7 @@ const APP_ROUTES: Routes = [
   {path: 'vista/:id', component: ViewBookComponent},
   {path: 'isbn/:isbn', component: SearchIsbnComponent},
   {path: 'title/:title', component: SearchTitleComponent},
-  {path: 'mybooks/:id', component: MyBooksComponent}
+  {path: 'mybooks/:id', component: MyBooksComponent},
   {path: 'author/:author', component: SearchAuthorComponent},
   {path: '**', redirectTo: ''}
 
