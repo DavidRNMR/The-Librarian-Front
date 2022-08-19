@@ -1,48 +1,90 @@
 <div class="row itemsBlock">
     <article
         *ngFor="let book of books"
-        class="col-md-3 col-sm-6 col-xs-12 card d-flex justify-content-between align-items-center">
+        class="col-md-3 col-sm-6 col-xs-12 card d-flex justify-content-between align-items-center"
+    >
         <div class="animate__bounceIn text-center">
-
-            <a class="postcard__img_link" routerLink="#">
-                <img
-                *ngIf="
-                book.volumeInfo.imageLinks.smallThumbnail ==
-                'No image available.';
-                        else elseTemplate
-                        "
-                        class="postcard__img"
-                        src="./assets/noDisponible.png"
-                        alt="no se mostro"
-                        />
-                        <ng-template #elseTemplate>
-                <img
-                class="postcard__img"
-                src="{{ book.volumeInfo.imageLinks.smallThumbnail }}"
-                alt="Image Title"
-                />
-            </ng-template>
-        </a>
-
-        <h4 class="postcard__title bue">
-            <p>{{ book.volumeInfo.title }}</p>
-            <p>{{ book.id }}</p>
-        </h4>
-        <h4>
-            <p>Autor: {{ book.volumeInfo.authors[0] }}</p>
-        </h4>
-        <div class="postcard__subtitle small"></div>
-        <div class="postcard__bar"></div>
-        <div class="postcard__preview-txt"></div>
-        <span>
             <a
-            class="btn btn-success ms-2"
-            [routerLink]="['/vista', book.id]"
-            routerLinkActive="router-link-active"
+                class="postcard__img_link"
+                routerLink="#"
+                (click)="open(mymodal)"
             >
-            Ver más...
-        </a></span>
-    </div>
+                <img
+                    *ngIf="
+                        book.volumeInfo.imageLinks.smallThumbnail ==
+                            'No image available.';
+                        else elseTemplate
+                    "
+                    class="postcard__img"
+                    src="./assets/noDisponible.png"
+                    alt="no se mostro"
+                />
+                <ng-template #elseTemplate>
+                    <img
+                        class="postcard__img"
+                        src="{{ book.volumeInfo.imageLinks.smallThumbnail }}"
+                        alt="Image Title"
+                    />
+                </ng-template>
+            </a>
+
+            <h4 class="postcard__title bue">
+                <p>{{ book.volumeInfo.title }}</p>
+                <p>{{ book.id }}</p>
+            </h4>
+            <h4>
+                <p>Autor: {{ book.volumeInfo.authors[0] }}</p>
+            </h4>
+            <div class="postcard__subtitle small"></div>
+            <div class="postcard__bar"></div>
+            <div class="postcard__preview-txt"></div>
+            <span>
+                <a
+                    class="btn btn-success ms-2"
+                    [routerLink]="['/vista', book.id]"
+                    routerLinkActive="router-link-active"
+                >
+                    Ver más...
+                </a></span
+            >
+        </div>
+
+        <!-- Modal-->
+        <ng-template #mymodal let-modal>
+            <diV class="modalFoor">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">
+                        {{ book.volumeInfo.title }}
+                    </h4>
+
+                    <!--<button
+                        type="button"
+                        class="close"
+                        aria-label="Close"
+                        (click)="modal.dismiss('Cross click')"
+                    >
+                        <span aria-hidden="true">×</span>
+                    </button>-->
+                </div>
+
+                <div class="modal-body">
+                    <img
+                        class="postcard__img2"
+                        src="{{ book.volumeInfo.imageLinks.smallThumbnail }}"
+
+                    />
+                </div>
+
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-success ms-2"
+                        (click)="modal.close('Save click')"
+                    >
+                        Ok
+                    </button>
+                </div>
+            </diV>
+        </ng-template>
     </article>
 </div>
-
