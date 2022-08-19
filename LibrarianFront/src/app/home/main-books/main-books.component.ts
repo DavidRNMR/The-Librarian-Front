@@ -23,15 +23,9 @@ export class MainBooksComponent implements OnInit {
 
 
   getBooks() {
-
     this.bookService.getRandomBooks().subscribe((data) => {
-
-
       this.books = data.items;
-
-
     });
-
   }
 
 
