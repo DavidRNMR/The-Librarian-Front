@@ -78,14 +78,16 @@
                     </button>
                 </form>
                 &nbsp;
-                <form role="search" class="d-flex">
+                <form role="search" class="d-flex" (ngSubmit)="newAuthorMessage()">
                     <input
                         class="form-control mx-1"
                         type="search"
                         placeholder="Buscar por autor"
                         aria-label="Search"
+                        name="author"
+                        [(ngModel)]="author"
                     />
-                    <button class="btn btn-outline-success" type="submit">
+                    <button class="btn btn-outline-success" type="submit" [routerLink]="['author', author]">
                         <i class="bi bi-search"></i>
                     </button>
                 </form>

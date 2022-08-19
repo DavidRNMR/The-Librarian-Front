@@ -11,8 +11,6 @@ export class SharedDataService {
   currentMessage = this.messageSource.asObservable();
 
 
-  private modals: string[] = [];
-
   constructor() {}
 
   changeMessage(message: string) {

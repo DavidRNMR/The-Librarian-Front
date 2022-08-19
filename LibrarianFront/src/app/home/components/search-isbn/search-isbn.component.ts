@@ -38,25 +38,7 @@ export class SearchIsbnComponent implements OnInit {
     });
 
 
-
 }
-
- /* getBooksByIsbn() {
-
-    this.bookService.buscarLibroPorIsbn(this.isbn).subscribe((data) => {
-
-
-      this.books = data.items;
-
-
-    });
-
-  }*/
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
 
 
 

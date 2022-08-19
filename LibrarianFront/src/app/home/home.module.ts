@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
 import { StripHtmlPipe } from './components/pipeclean.component';
 import { SearchIsbnComponent } from './components/search-isbn/search-isbn.component';
 import { SearchTitleComponent } from './components/search-title/search-title.component';
+import { SearchAuthorComponent } from './components/search-author/search-author.component';
+import { MainCardComponent } from './components/main-card/main-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SearchTitleComponent } from './components/search-title/search-title.com
     StripHtmlPipe,
     ViewBookComponent,
     SearchIsbnComponent,
-    SearchTitleComponent
+    SearchTitleComponent,
+    SearchAuthorComponent,
+    MainCardComponent
   ],
   exports: [
     LoginComponent,
@@ -29,7 +33,9 @@ import { SearchTitleComponent } from './components/search-title/search-title.com
     AnimatedMainComponent,
     ViewBookComponent,
     SearchIsbnComponent,
-    SearchTitleComponent
+    SearchTitleComponent,
+    SearchAuthorComponent,
+    MainCardComponent
   ],
   imports: [
     CommonModule,

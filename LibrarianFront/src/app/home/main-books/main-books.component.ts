@@ -10,12 +10,17 @@ import { Books, VolumeInfo, Item } from '../interfaces/books';
 export class MainBooksComponent implements OnInit {
 
   books: Item[]=[];
-  public load:boolean;
 
-  constructor(private bookService: BookService) {
 
-    this.load=false;
-   }
+  constructor(private bookService: BookService) { }
+
+  ngOnInit(): void {
+
+    this.getBooks();
+    
+  }
+
+
 
   getBooks() {
 
@@ -30,10 +35,4 @@ export class MainBooksComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-    this.getBooks();
-    setTimeout(()=>{
-      this.load=true;
-    }, 1000);
-  }
 }

@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   showHiddenOptions: boolean = false;
 
   books: Item[] = [];
-
+  author!: string;
   isbn!:string;
   title!:string;
   message!: string;
@@ -25,8 +25,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private usuarios: UsersService,
     private router: Router,
-    private sharedIsbn: SharedDataService,
-    private sharedTitle: SharedDataService
+    private sharedIsbn: SharedDataService
   ) {}
 
   ngOnInit(): void {
@@ -34,15 +33,8 @@ export class NavbarComponent implements OnInit {
       (message) => (this.message = message)
     );
 
-    this.subscription = this.sharedTitle.currentMessage.subscribe(
-      (message) => (this.message = message)
-    );
-    console.log(this.message);
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
 
   newMessage() {
 
@@ -50,8 +42,12 @@ export class NavbarComponent implements OnInit {
   }
 
   newTitleMessage() {
-    console.log(this.message);
     this.sharedIsbn.changeMessage(this.title);
+  }
+
+  newAuthorMessage() {
+    this.sharedIsbn.changeMessage(this.author);
+    this.author = '';
   }
 
   logout() {
