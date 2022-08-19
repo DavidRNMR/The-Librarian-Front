@@ -1,3 +1,4 @@
+import { VolumeInfoBD } from './addbookbd';
 export interface Books {
   items: Item[];
 }
@@ -12,6 +13,7 @@ export interface VolumeInfo {
   title:               string;
   authors:             string[];
   publishedDate:       string;
+  isbn:                string;
   description:         string;
   imageLinks:          ImageLinks;
   pageCount:           number;
@@ -19,6 +21,13 @@ export interface VolumeInfo {
   language:            Language;
   industryIdentifiers: IndustryIdentifier[];
   previewLink:         string;
+
+}
+
+
+export interface Language {
+  en: string;
+  es: string;
 }
 
 export interface ImageLinks {
@@ -30,7 +39,7 @@ export interface IndustryIdentifier {
   identifier: string;
 }
 
-export enum Language {
+export enum Idioma {
   En = "en",
   Es = "es",
 }

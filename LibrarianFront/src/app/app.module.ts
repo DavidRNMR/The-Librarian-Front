@@ -30,4 +30,4 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {  }

@@ -12,6 +12,7 @@ import { SearchIsbnComponent } from './components/search-isbn/search-isbn.compon
 import { SearchTitleComponent } from './components/search-title/search-title.component';
 import { SearchAuthorComponent } from './components/search-author/search-author.component';
 import { MainCardComponent } from './components/main-card/main-card.component';
+import { MyBooksComponent } from './my-books/my-books.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MainCardComponent } from './components/main-card/main-card.component';
     SearchIsbnComponent,
     SearchTitleComponent,
     SearchAuthorComponent,
-    MainCardComponent
+    MainCardComponent,
+    MyBooksComponent
   ],
   exports: [
     LoginComponent,
@@ -35,7 +37,8 @@ import { MainCardComponent } from './components/main-card/main-card.component';
     SearchIsbnComponent,
     SearchTitleComponent,
     SearchAuthorComponent,
-    MainCardComponent
+    MainCardComponent,
+    MyBooksComponent
   ],
   imports: [
     CommonModule,

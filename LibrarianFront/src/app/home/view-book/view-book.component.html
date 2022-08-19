@@ -1,85 +1,119 @@
-
 <div class="row itemsBlock">
+    <ng-container
+        *ngIf="!bookVer && !load; else elseTemplate"
+        class="alert alert-info"
+    >
+        <div
+            class="spinner-border text-success"
+            style="width: 4rem; height: 4rem"
+            role="status"
+        >
+            <span class="visually-hidden"></span>
+        </div>
+    </ng-container>
 
+    <ng-template #elseTemplate>
+        <div class="row animate__bounceIn">
+            <div class="caja col-md-4 col-sm-6 col-xs-12 mt-5">
+                <div class="card card-book">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <img
+                                [src]="
+                                    bookVer.volumeInfo.imageLinks.smallThumbnail
+                                "
+                                alt="img"
+                            />
+                        </div>
 
-<ng-container  *ngIf="!bookVer && !load; else elseTemplate;"
-                class="alert alert-info">
-                <div class="spinner-border text-success" style="width: 4rem; height: 4rem;" role="status">
-					<span class="visually-hidden"></span>
-				</div>
-</ng-container>
+                        <div class="text-left mt-5">
+                            <p class="text-card-text">
+                                <span class="text-card-title"
+                                    >Título: {{ bookVer.volumeInfo.title }}
+                                </span>
+                            </p>
+                            <p class="text-card-text">
+                                <span class="text-card-title"
+                                    >Autor: {{ bookVer.volumeInfo.authors }}
+                                </span>
+                            </p>
+                            <p class="text-card-text">
+                                <span class="text-card-title"
+                                    >Género:
+                                    {{ bookVer.volumeInfo.categories }}</span
+                                >
+                            </p>
 
-<ng-template #elseTemplate>
-    <div class="row animate__bounceIn">
-        <div class="caja col-md-4 col-sm-6 col-xs-12 mt-5">
-            <div class="card card-book">
-                <div class="card-body">
-                    <div class="text-center">
-                        <img [src]=bookVer.volumeInfo.imageLinks.smallThumbnail alt="img">
+                            <p class="text-card-text">
+                                <span class="text-card-title"
+                                    >ISBN:
+                                    {{
+                                        bookVer.volumeInfo
+                                            .industryIdentifiers[0].identifier
+                                    }}
+                                </span>
+                            </p>
 
-                    </div>
+                            <p class="text-card-text">
+                                <span class="text-card-title"
+                                    >Número de páginas:
+                                    {{ bookVer.volumeInfo.pageCount }}
+                                </span>
+                            </p>
+                            <div class="col-12">
+                                <div class="d-grid gap-2 col-12">
+                                    <!-- *ngFor="let add of bookAdd" -->
 
-                    <div class="text-left mt-5">
-                        <p class="text-card-text">
-                            <span class="text-card-title">Título: {{ bookVer.volumeInfo.title }}
-                            </span>
-                        </p>
-                        <p class="text-card-text">
-                            <span class="text-card-title">Autor: {{ bookVer.volumeInfo.authors }}
-                            </span>
-                        </p>
-                        <p class="text-card-text">
-                            <span class="text-card-title">Género: {{ bookVer.volumeInfo.categories }}</span>
-                        </p>
+                                    <button (click)="addBookDB()"
 
-                        <p class="text-card-text">
-                            <span class="text-card-title">ISBN: {{ bookVer.volumeInfo.industryIdentifiers[0].identifier }} </span>
-                        </p>
-
-                        <p class="text-card-text">
-                            <span class="text-card-title">Número de páginas: {{ bookVer.volumeInfo.pageCount }} </span>
-                        </p>
-                    <div class="col-12">
-                        <div class="d-grid gap-2 col-12">
-                        <a
-                        href=""
-                        class="btn btn-success btn-lg card-button-text"
-                        target="_blank"> Añadir </a>
-                        <a
-                        class="btn btn-primary btn-lg card-button-text"
-
-                        routerLink="/"> Volver </a>
+                                        class="btn btn-success btn-lg card-button-text"
+                                    >
+                                        Añadir
+                                    </button>
+                                    <a
+                                        class="btn btn-primary btn-lg card-button-text"
+                                        routerLink="/"
+                                    >
+                                        Volver
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-12 col-md-12 col-lg-6 mt-5">
-            <div class="card card-book">
-                <div class="card-body">
-                    <div class="text-left">
-                        <p class="h3"> Descripción: </p>
-                    </div>
-                    <div class="text-left">
-                        <p class="text-card-text ">{{ bookVer.volumeInfo.description | striphtml  | slice:0:300}} </p>
-
+            <div class="col-12 col-md-12 col-lg-6 mt-5">
+                <div class="card card-book">
+                    <div class="card-body">
+                        <div class="text-left">
+                            <p class="h3">Descripción:</p>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-card-text">
+                                {{
+                                    bookVer.volumeInfo.description
+                                        | striphtml
+                                        | slice: 0:300
+                                }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <!-- <div class="col-12 text-right mt-4">
+                <div class="row">
+                    <!-- <div class="col-12 text-right mt-4">
                     <a
                         href="{{bookVer.volumeInfo.previewLink}} "
                         class="btn btn-primary mx-3 card-button-text"
                         target="_blank"> Lectura </a>
+
+                    <a (click)="addBookBD(bookVer)"
+                        href="#"
+                        class="btn btn-primary card-button-text"
+                        target="_blank"> Añadir </a>
                 </div> -->
+                </div>
             </div>
         </div>
-    </div>
-
-</ng-template>
-
+    </ng-template>
 </div>
-
