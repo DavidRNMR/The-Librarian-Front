@@ -13,6 +13,15 @@ import { SearchTitleComponent } from './components/search-title/search-title.com
 import { SearchAuthorComponent } from './components/search-author/search-author.component';
 import { MainCardComponent } from './components/main-card/main-card.component';
 import { MyBooksComponent } from './my-books/my-books.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
+export function httpTranslateLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
+
 
 @NgModule({
   declarations: [
@@ -44,10 +53,16 @@ import { MyBooksComponent } from './my-books/my-books.component';
     CommonModule,
     FormsModule,
     RouterModule,
-    ReactiveFormsModule
-
-
-
+    ReactiveFormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ]
 })
 export class HomeModule { }
+

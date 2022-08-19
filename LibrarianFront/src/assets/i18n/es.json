@@ -1,0 +1,23 @@
+{
+    "HOME": "Inicio",
+    "MY_BOOKS":"Mis libros",
+    "REGISTER":"Registro",
+    "ISBN_SEARCH":"Buscar por ISBN",
+    "TITLE_SEARCH":"Buscar por titulo",
+    "AUTHOR_SEARCH":"Buscar por autor",
+    "SOCIAL_NETWORKS":"Redes sociales",
+    "RESERVED_BOOKS_FOOTER":"Reservas libros",
+    "RESERVED_BOOKS_FOOTER_TEXT":"Sistema de Reservas de Libros",
+    "FEATURED_BOOKS":"Libros destacados",
+    "FEATURED_BOOKS_LINK":"libro",
+    "STAND_OUT_FOOTER":"Nos destacamos por:",
+    "STAND_OUT_FOOTER_TEXT":"Calidad de servicio.",
+    "CONTACT_FOOTER":"Contactos",
+    "BOOK_VIEW_TITLE":"Título:",
+    "BOOK_VIEW_AUTHOR":"Autor:",
+    "BOOK_VIEW_GENRE":"Género:",
+    "BOOK_VIEW_PAGES":"Número de páginas:",
+    "BOOK_VIEW_ADD_BUTTON":"Añadir",
+    "BOOK_VIEW_BACK_BUTTON":"Retour",
+    "BOOK_VIEW_DESCRIPTION":"Descripción:"
+}

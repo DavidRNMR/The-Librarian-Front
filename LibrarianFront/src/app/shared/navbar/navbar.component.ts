@@ -6,6 +6,7 @@ import { BookService } from '../../home/services/book.service';
 import { Item } from 'src/app/home/interfaces/books';
 import { SharedDataService } from '../../home/services/shared-data.service';
 import { Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -25,8 +26,20 @@ export class NavbarComponent implements OnInit {
   constructor(
     private usuarios: UsersService,
     private router: Router,
-    private sharedIsbn: SharedDataService
-  ) {}
+    private sharedIsbn: SharedDataService,
+    private sharedTitle: SharedDataService,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['es', 'en', 'fr']);
+    // Set default language
+    translate.setDefaultLang('es');
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 
   ngOnInit(): void {
     this.subscription = this.sharedIsbn.currentMessage.subscribe(

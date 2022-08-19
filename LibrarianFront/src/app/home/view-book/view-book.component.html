@@ -25,23 +25,18 @@
                             />
                         </div>
 
-                        <div class="text-left mt-5">
-                            <p class="text-card-text">
-                                <span class="text-card-title"
-                                    >Título: {{ bookVer.volumeInfo.title }}
-                                </span>
-                            </p>
-                            <p class="text-card-text">
-                                <span class="text-card-title"
-                                    >Autor: {{ bookVer.volumeInfo.authors }}
-                                </span>
-                            </p>
-                            <p class="text-card-text">
-                                <span class="text-card-title"
-                                    >Género:
-                                    {{ bookVer.volumeInfo.categories }}</span
-                                >
-                            </p>
+                    <div class="text-left mt-5">
+                        <p class="text-card-text">
+                            <span class="text-card-title">{{'BOOK_VIEW_TITLE' | translate}} {{ bookVer.volumeInfo.title }}
+                            </span>
+                        </p>
+                        <p class="text-card-text">
+                            <span class="text-card-title">{{'BOOK_VIEW_AUTHOR' | translate}} {{ bookVer.volumeInfo.authors }}
+                            </span>
+                        </p>
+                        <p class="text-card-text">
+                            <span class="text-card-title">{{'BOOK_VIEW_GENRE' | translate}} {{ bookVer.volumeInfo.categories }}</span>
+                        </p>
 
                             <p class="text-card-text">
                                 <span class="text-card-title"
@@ -53,53 +48,52 @@
                                 </span>
                             </p>
 
-                            <p class="text-card-text">
-                                <span class="text-card-title"
-                                    >Número de páginas:
-                                    {{ bookVer.volumeInfo.pageCount }}
-                                </span>
-                            </p>
-                            <div class="col-12">
-                                <div class="d-grid gap-2 col-12">
-                                    <!-- *ngFor="let add of bookAdd" -->
-
-                                    <button
-                                        (click)="addBookDB()"
-                                        class="btn btn-success btn-lg card-button-text"
-                                    >
-                                        Añadir
-                                    </button>
-                                    <a
-                                        class="volver btn btn-primary btn-lg card-button-text"
-                                        routerLink="/"
-                                    >
-                                        Volver
-                                    </a>
-                                </div>
-                            </div>
+                        <p class="text-card-text">
+                            <span class="text-card-title">{{'BOOK_VIEW_PAGES' | translate}} {{ bookVer.volumeInfo.pageCount }} </span>
+                        </p>
+                    <div class="col-12">
+                        <div class="d-grid gap-2 col-12">
+                        <a
+                        href=""
+                        class="btn btn-success btn-lg card-button-text"
+                        target="_blank"> {{'BOOK_VIEW_ADD_BUTTON' | translate}} </a>
+                        <a
+                        class="btn btn-primary btn-lg card-button-text"
+                        routerLink="/"> {{'BOOK_VIEW_BACK_BUTTON' | translate}} </a>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-12 col-lg-6 mt-5">
-                <div class="card card-book">
-                    <div class="card-body">
-                        <div class="text-left">
-                            <p class="h3">Descripción:</p>
-                        </div>
-                        <div class="text-left">
-                            <p class="text-card-text">
-                                {{
-                                    bookVer.volumeInfo.description
-                                        | striphtml
-                                        | slice: 0:300
-                                }}
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</ng-template>
+
+        <div class="col-12 col-md-12 col-lg-6 mt-5">
+            <div class="card card-book">
+                <div class="card-body">
+                    <div class="text-left">
+                        <p class="h3"> {{'BOOK_VIEW_DESCRIPTION' | translate}} </p>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-card-text ">{{ bookVer.volumeInfo.description | striphtml  | slice:0:300}} </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- <div class="col-12 text-right mt-4">
+                    <a
+                        href="{{bookVer.volumeInfo.previewLink}} "
+                        class="btn btn-primary mx-3 card-button-text"
+                        target="_blank"> Lectura </a>
+
+                    <a (click)="addBookBD(bookVer)"
+                        href="#"
+                        class="btn btn-primary card-button-text"
+                        target="_blank"> Añadir </a>
+                </div> -->
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
+

@@ -1,0 +1,23 @@
+{
+    "HOME": "Home",
+    "MY_BOOKS":"My books",
+    "REGISTER":"Register",
+    "ISBN_SEARCH":"Search by ISBN",
+    "TITLE_SEARCH":"Search by title",
+    "AUTHOR_SEARCH":"Search by author",
+    "SOCIAL_NETWORKS":"Social networks",
+    "RESERVED_BOOKS_FOOTER":"Reserved books",
+    "RESERVED_BOOKS_FOOTER_TEXT":"Book Reservation System",
+    "FEATURED_BOOKS":"Featured books",
+    "FEATURED_BOOKS_LINK":"book",
+    "STAND_OUT_FOOTER":"We stand out for:",
+    "STAND_OUT_FOOTER_TEXT":"Quality in the service.",
+    "CONTACT_FOOTER":"Contacts",
+    "BOOK_VIEW_TITLE":"Title:",
+    "BOOK_VIEW_AUTHOR":"Author:",
+    "BOOK_VIEW_GENRE":"Genre:",
+    "BOOK_VIEW_PAGES":"Number of pages:",
+    "BOOK_VIEW_ADD_BUTTON":"Add",
+    "BOOK_VIEW_BACK_BUTTON":"Back",
+    "BOOK_VIEW_DESCRIPTION":"Description:"
+}

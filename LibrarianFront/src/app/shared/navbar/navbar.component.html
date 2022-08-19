@@ -32,7 +32,7 @@
                         aria-current="page"
                         routerLink="/"
                     >
-                        <i class="bi bi-house-door me-1"></i>Home</a
+                        <i class="bi bi-house-door me-1"></i>{{'HOME' | translate}}</a
                     >
                 </li>
                 <li class="nav-item" *ngIf="isLogged()">
@@ -40,7 +40,7 @@
                         class="nav-link text-dark text-dark btn"
                         routerLink="/"
                         (click)="showHiddenOptions = false"
-                        ><i class="bi bi-book me-1"></i>Mis Libros</a
+                        ><i class="bi bi-book me-1"></i>{{'MY_BOOKS' | translate}}</a
                     >
                 </li>
             </ul>
@@ -50,7 +50,7 @@
                     <input
                         class="form-control mx-1"
                         type="search"
-                        placeholder="Buscar por Isbn"
+                        placeholder="{{'ISBN_SEARCH' | translate}}"
                         aria-label="Search"
                         name="isbn"
                        [(ngModel)]="isbn"
@@ -68,7 +68,7 @@
                     <input
                         class="form-control mx-1"
                         type="search"
-                        placeholder="Buscar por título"
+                        placeholder="{{'TITLE_SEARCH' | translate}}"
                         aria-label="Search"
                         name="title"
                         [(ngModel)]="title"
@@ -82,7 +82,7 @@
                     <input
                         class="form-control mx-1"
                         type="search"
-                        placeholder="Buscar por autor"
+                        placeholder="{{'AUTHOR_SEARCH' | translate}}"
                         aria-label="Search"
                         name="author"
                         [(ngModel)]="author"
@@ -107,7 +107,7 @@
                             class="nav-link btn p-1"
                             routerLink="/registro"
                         >
-                            <i class="bi bi-calendar-plus me-1"></i>Registro</a
+                            <i class="bi bi-calendar-plus me-1"></i>{{'REGISTER' | translate}}</a
                         >
                     </span>
                 </div>
@@ -118,6 +118,11 @@
                 </span>
                 <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-dark" (click)="showHiddenOptions = false" type="submit">Search</button> -->
+            </div>
+            <div id="langSelect">
+                <select #selLang (change)="translateLanguageTo(selLang.value)">
+                    <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language | uppercase }}</option>
+                </select>
             </div>
         </div>
     </div>
