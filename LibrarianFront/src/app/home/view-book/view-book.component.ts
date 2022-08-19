@@ -13,11 +13,14 @@ import { switchMap } from 'rxjs';
 })
 export class ViewBookComponent implements OnInit {
 
+  public load:boolean;
 
   bookVer!: Item;
 
   constructor(private activatedRoute: ActivatedRoute,
-               private BookService: BookService) { }
+               private BookService: BookService) {
+                 this.load=false;
+                }
 
   ngOnInit(): void {
       this.activatedRoute.params
@@ -28,10 +31,13 @@ export class ViewBookComponent implements OnInit {
             this.bookVer = book;
         });
 
-
+        setTimeout(()=>{
+        this.load=true;
+      }, 6000);
+    }
 
   }
 
-  
 
-}
+
+

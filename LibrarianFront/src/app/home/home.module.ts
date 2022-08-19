@@ -11,9 +11,6 @@ import { StripHtmlPipe } from './components/pipeclean.component';
 import { SearchIsbnComponent } from './components/search-isbn/search-isbn.component';
 import { SearchTitleComponent } from './components/search-title/search-title.component';
 
-
-
-
 @NgModule({
   declarations: [
     LoginComponent,
