@@ -33,6 +33,7 @@ export class ViewBookComponent implements OnInit {
     private BookService: BookService) {
     this.load = false;
   }
+  
 
   ngOnInit(): void {
     this.activatedRoute.params
@@ -41,11 +42,6 @@ export class ViewBookComponent implements OnInit {
       )
       .subscribe(book => {
         this.bookVer = book;
-
-        this.bookVer.volumeInfo
-
-        console.log(book.volumeInfo);
-
 
       });
 
@@ -59,20 +55,13 @@ export class ViewBookComponent implements OnInit {
   }
 
 
-
   addBookDB() {
 
 
     this.BookService.addBookBD(this.bookAdd).subscribe((bookDB: any) => {
 
-
       console.log(this.bookAdd);
     });
-
-
-
-
-
 
 
   }
