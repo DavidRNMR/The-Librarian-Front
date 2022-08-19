@@ -19,6 +19,8 @@ const APP_ROUTES: Routes = [
   {path: 'title/:title', component: SearchTitleComponent},
   {path: 'mybooks/:id', component: MyBooksComponent},
   {path: 'author/:author', component: SearchAuthorComponent},
+ {path: 'pdf',component:MyBooksComponent},
+
   {path: '**', redirectTo: ''}
 
 ]
