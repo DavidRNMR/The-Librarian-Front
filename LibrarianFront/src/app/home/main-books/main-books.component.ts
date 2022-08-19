@@ -21,7 +21,6 @@ export class MainBooksComponent implements OnInit {
 
   constructor(private bookService: BookService) { }
 
-
   ngOnInit(): void {
 
     this.getBooks();
@@ -30,6 +29,7 @@ export class MainBooksComponent implements OnInit {
 
 
   getBooks() {
+
     this.bookService.getRandomBooks().subscribe((data) => {
 
 
@@ -37,6 +37,7 @@ export class MainBooksComponent implements OnInit {
 
 
     });
+
   }
 
 
