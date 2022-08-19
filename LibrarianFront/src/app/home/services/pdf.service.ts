@@ -13,7 +13,7 @@ export class PdfService {
 
   getPdf(){
 
-    return this.http.get(`${this.pdfUrl}/reserve/export/pdf`)
+    return this.http.get(`${this.pdfUrl}`)
   }
 
 }

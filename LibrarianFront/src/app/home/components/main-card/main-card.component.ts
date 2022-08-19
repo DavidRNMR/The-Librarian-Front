@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Item } from '../../interfaces/books';
 
 @Component({
@@ -9,37 +8,20 @@ import { Item } from '../../interfaces/books';
 })
 export class MainCardComponent implements OnInit {
 
-  @Input() books: Item[]=[];
-  title = 'appBootstrap';
-  closeResult!: string;
+  public load:boolean;
 
-  constructor(private modalService: NgbModal) { }
+  @Input() books: Item[]=[];
+
+  constructor() {
+
+    this.load=false;
+   }
 
   ngOnInit(): void {
-  }
 
-  open(content:any) {
-    this.modalService
-      .open(content, { ariaLabelledBy: 'modal-basic-title' })
-      .result.then(
-        (result) => {
-          this.closeResult = `Closed with: ${result}`;
-        },
-        (reason) => {
-          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-        }
-      );
-  }
-
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
+    setTimeout(()=>{
+      this.load=true;
+    }, 750);
   }
 
 }

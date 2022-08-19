@@ -14,19 +14,13 @@ export class MainBooksComponent implements OnInit {
 
   books: Item[] = [];
 
-
-
-
-
-
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
 
     this.getBooks();
+    
   }
-
-
 
   getBooks() {
 
@@ -39,6 +33,5 @@ export class MainBooksComponent implements OnInit {
     });
 
   }
-
 
 }

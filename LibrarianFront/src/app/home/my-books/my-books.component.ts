@@ -8,11 +8,18 @@ import { PdfService } from '../services/pdf.service';
 })
 export class MyBooksComponent implements OnInit {
 
-  constructor(public pdf: PdfService) { }
+
+  constructor(public pdfService: PdfService) { }
 
 
 
   ngOnInit(): void {
 
 }
+   getPdf(){
+     this.pdfService.getPdf().subscribe(data=>{
+            console.log(data);
+
+     });
+   }
 }
