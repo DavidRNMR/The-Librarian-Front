@@ -18,17 +18,14 @@ export interface VolumeInfo {
   imageLinks:          ImageLinks;
   pageCount:           number;
   categories:          string[];
-  language:            Language;
+  language:            string;
   industryIdentifiers: IndustryIdentifier[];
   previewLink:         string;
 
 }
 
 
-export interface Language {
-  en: string;
-  es: string;
-}
+
 
 export interface ImageLinks {
   smallThumbnail: string;

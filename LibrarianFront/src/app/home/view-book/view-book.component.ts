@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VolumeInfoBD } from '../interfaces/addbookbd';
 import { ThisReceiver } from '@angular/compiler';
 import { TranslateService } from '@ngx-translate/core';
+import { ReserveService } from '../services/reserve.service';
 
 @Component({
   selector: 'app-view-book',
@@ -66,23 +67,30 @@ export class ViewBookComponent implements OnInit {
 
         this.bookAdd.title = this.bookVer.volumeInfo.title;
         this.bookAdd.publishedDate = this.bookVer.volumeInfo.publishedDate;
-        this.bookAdd.isbn = this.bookVer.volumeInfo.isbn;
+        this.bookAdd.isbn = this.bookVer.volumeInfo.industryIdentifiers[0].identifier;
         this.bookAdd.description = this.bookVer.volumeInfo.description.slice(0,249);
         this.bookAdd.imageLinks = this.bookVer.volumeInfo.imageLinks.smallThumbnail.slice(0,249);
         this.bookAdd.pageCount = this.bookVer.volumeInfo.pageCount;
-        this.bookAdd.language = this.bookVer.volumeInfo.language.es;
+        this.bookAdd.language = this.bookVer.volumeInfo.language;
 
       });
+
+
+    setTimeout(() => {
+      this.load = true;
+    }, 6000);
 
   }
 
 
   addBookDB() {
 
-
     this.BookService.addBookBD(this.bookAdd).subscribe((bookDB: any) => {
 
       console.log(this.bookAdd);
+
+
+
     });
 
   }
