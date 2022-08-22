@@ -31,8 +31,8 @@ export class ViewBookComponent implements OnInit {
   };
   reserveAdd: AddReserveBD = {
 
-    id_book: 1,
-    id_usuario: 1,
+    id_usuario: 0,
+    id_book: 0,
     is_reservado: true,
   }
 
@@ -83,9 +83,7 @@ export class ViewBookComponent implements OnInit {
         this.bookAdd.pageCount = this.bookVer.volumeInfo.pageCount;
         this.bookAdd.language = this.bookVer.volumeInfo.language;
 
-        // this.addReserve();
 
-      });
 
     this.obtenerUsuario();
 
@@ -132,7 +130,5 @@ export class ViewBookComponent implements OnInit {
     });
 
   }
-
-
 
 }
