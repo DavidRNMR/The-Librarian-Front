@@ -1,5 +1,13 @@
+<ng-container *ngIf="books.length > 0; else error">
+    <app-main-card [books]="books" ></app-main-card>
+</ng-container>
 
-<app-main-card [books]="books">
+<ng-template #error>
+
+    <div class="text-center margin">
+        <div class="spinner-border text-danger"></div>
+    </div>
+
+</ng-template>
 
 
-</app-main-card>
