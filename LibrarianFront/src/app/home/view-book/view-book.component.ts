@@ -31,7 +31,7 @@ export class ViewBookComponent implements OnInit {
   reserveAdd: AddReserveBD = {
 
     id_usuario: 1,
-    id_book: 0,
+    id_book: 1,
     is_reservado: true,
   }
 
@@ -42,7 +42,7 @@ export class ViewBookComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private BookService: BookService,
     public translate: TranslateService,
-private bookService: BookService, private reserveService: ReserveService
+    private bookService: BookService, private reserveService: ReserveService,
   ) {
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr']);
