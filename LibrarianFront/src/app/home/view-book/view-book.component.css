@@ -5,10 +5,15 @@
 .btn{
     margin-bottom: 5px;
 }
-.btn:hover{
-   background-color: rgb(2, 49, 2);
+.volver,.btn:hover{
+   background-color: rgb(132, 132, 250);
 }
-
+.volver{
+    background-color: rgb(231, 154, 231);
+}
+p{
+    color:darkslategray
+}
 
 
 

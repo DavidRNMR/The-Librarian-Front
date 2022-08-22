@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   urlBooksRandom:  "http://localhost:8080/get",
-  urlAddBook: "http://localhost:8080/createBook"
+  urlAddBook: "http://localhost:8080/createBook",
+  urlPdf:"http://localhost:8080/reserve/reserve/export/pdf"
 };
 
 

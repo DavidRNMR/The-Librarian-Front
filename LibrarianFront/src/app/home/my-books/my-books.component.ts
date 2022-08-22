@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PdfService } from '../services/pdf.service';
 
 @Component({
   selector: 'app-my-books',
@@ -8,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyBooksComponent implements OnInit {
 
+
+  constructor(public pdfService: PdfService) { }
+
+
+
   ngOnInit(): void {
 
+}
+   getPdf(){
+     this.pdfService.getPdf().subscribe(data=>{
+            console.log(data);
 
-  }
-
+     });
+   }
 }
