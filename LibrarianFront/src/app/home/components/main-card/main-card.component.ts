@@ -27,14 +27,9 @@ export class MainCardComponent implements OnInit {
   //Switch language
   translateLanguageTo(lang: string) {
     this.translate.use(lang);
-this.load=false;
   }
 
   ngOnInit(): void {
-
-    setTimeout(()=>{
-      this.load=true;
-    }, 1500);
   }
 
   open(content:any) {
