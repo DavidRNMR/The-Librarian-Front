@@ -38,7 +38,7 @@ export class ViewBookComponent implements OnInit {
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr']);
     // Set default language
-    translate.setDefaultLang('es');
+    translate.setDefaultLang(translate.getBrowserLang()!);
     this.load = false;
   }
 

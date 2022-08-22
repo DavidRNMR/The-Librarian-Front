@@ -21,7 +21,7 @@ export class MainCardComponent implements OnInit {
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr', 'de']);
     // Set default language
-    translate.setDefaultLang(navigator.language);
+    translate.setDefaultLang(translate.getBrowserLang()!);
   }
 
   //Switch language
@@ -30,6 +30,7 @@ export class MainCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   open(content:any) {

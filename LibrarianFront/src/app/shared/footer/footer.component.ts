@@ -13,7 +13,7 @@ export class FooterComponent  {
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr', 'de']);
     // Set default language
-    translate.setDefaultLang(navigator.language);
+    translate.setDefaultLang(translate.getBrowserLang()!);
   }
 
   //Switch language
