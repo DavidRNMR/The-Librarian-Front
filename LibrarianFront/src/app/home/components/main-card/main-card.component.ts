@@ -26,7 +26,7 @@ export class MainCardComponent implements OnInit {
 
     setTimeout(()=>{
       this.load=true;
-    }, 750);
+    }, 1500);
   }
 
   open(content:any) {
