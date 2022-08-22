@@ -39,13 +39,16 @@
         <div class="postcard__bar"></div>
         <div class="postcard__preview-txt"></div>
         <span>
+            <div class="col 12 position-absolute bottom-0 start-50 translate-middle-x">
             <a
             class="btn btn-success ms-2"
             [routerLink]="['/vista', book.id]"
             routerLinkActive="router-link-active"
             >
             {{'BOOK_CARD_SEE_MORE' | translate}}
-        </a></span>
+        </a>
+    </div>
+    </span>
         </div>
 
             <!-- Modal-->
