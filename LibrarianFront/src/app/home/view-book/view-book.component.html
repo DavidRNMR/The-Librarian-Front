@@ -74,8 +74,22 @@
                         <p class="h3"> {{'BOOK_VIEW_DESCRIPTION' | translate}} </p>
                     </div>
                     <div class="text-left">
-                        <p class="text-card-text ">{{ bookVer.volumeInfo.description | striphtml  | slice:0:300}} </p>
+                        <p class="text-card-text ">{{ bookVer.volumeInfo.description | striphtml  | slice:0:200}}... </p>
 
+                    </div>
+                    <div class="col-12">
+                        <div class="d-grid gap-2 col-12">
+                              <button class="btn btn-primary btn-lg hook in" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                {{'BOOK_CARD_SEE_MORE' | translate}}
+                              </button>
+
+                            <div class="collapse hook" id="collapseExample">
+                              <div class="card card-body">
+                                {{ bookVer.volumeInfo.description | striphtml  | slice: 0:1500}}
+                              </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
