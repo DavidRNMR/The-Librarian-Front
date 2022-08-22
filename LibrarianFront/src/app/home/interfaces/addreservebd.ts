@@ -1,7 +1,7 @@
 
 
 export interface AddReserveBD {
+ id_book:              number;
  id_usuario:           number;
- id_book:              string;
  is_reservado:         boolean;
 }

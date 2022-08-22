@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
-import { Books, Item, VolumeInfo, Language } from '../interfaces/books';
+import { Books, Item, VolumeInfo } from '../interfaces/books';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -30,21 +30,12 @@ export class ViewBookComponent implements OnInit {
   };
   reserveAdd: AddReserveBD = {
 
-    id_usuario: 0,
-    id_book: '',
+    id_usuario: 1,
+    id_book: 0,
     is_reservado: true,
   }
 
-  reserveAdd: VolumeInfoBD = {
 
-    title: '',
-    publishedDate: '',
-    isbn: '',
-    description: '',
-    imageLinks: '',
-    pageCount: 0,
-    language: '',
-  };
 
 
   constructor(
@@ -81,8 +72,10 @@ private bookService: BookService, private reserveService: ReserveService
         this.bookAdd.pageCount = this.bookVer.volumeInfo.pageCount;
         this.bookAdd.language = this.bookVer.volumeInfo.language;
 
-        this.reserveAdd.id_book = this.bookVer.id;
+        console.log('ISBN =====> ' + this.bookAdd.isbn);
 
+        // this.bookService.buscarLibroPorIsbnBD(this.bookAdd.isbn).subscribe((reserve: any) => {
+        // });
 
 
       });
@@ -104,9 +97,13 @@ private bookService: BookService, private reserveService: ReserveService
   }
 
   addReserve() {
-   this.reserveService.addReserve(this.reserveAdd).subscribe((reserveDB:any) => {
-    console.log(this.reserveAdd);
-   });
+    this.reserveService.addReserve(this.reserveAdd).subscribe((reserveDB: any) => {
+      console.log(this.reserveAdd);
+    });
   }
+
+
+
+
 
 }
