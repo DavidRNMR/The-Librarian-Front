@@ -14,6 +14,7 @@ import { SearchAuthorComponent } from './components/search-author/search-author.
 import { MainCardComponent } from './components/main-card/main-card.component';
 import { MyBooksComponent } from './my-books/my-books.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
@@ -35,7 +36,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     SearchTitleComponent,
     SearchAuthorComponent,
     MainCardComponent,
-    MyBooksComponent
+    MyBooksComponent,
+    ResetPasswordComponent
   ],
   exports: [
     LoginComponent,
