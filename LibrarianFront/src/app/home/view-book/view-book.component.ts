@@ -36,6 +36,17 @@ export class ViewBookComponent implements OnInit {
     is_reservado: true,
   }
 
+  reserveAdd: VolumeInfoBD = {
+
+    title: '',
+    publishedDate: '',
+    isbn: '',
+    description: '',
+    imageLinks: '',
+    pageCount: 0,
+    language: '',
+  };
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
