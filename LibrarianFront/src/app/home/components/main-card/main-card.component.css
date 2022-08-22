@@ -17,6 +17,7 @@
 p {
     color:darkslategray
 }
+
 .btn{
 
     position:absolute;
@@ -51,3 +52,7 @@ p {
     max-width: 16rem;
 }
 
+#spin{
+    width: 4rem;
+    height: 4rem;
+}

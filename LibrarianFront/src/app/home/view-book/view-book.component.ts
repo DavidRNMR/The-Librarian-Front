@@ -14,8 +14,6 @@ import { ThisReceiver } from '@angular/compiler';
 })
 export class ViewBookComponent implements OnInit {
 
-  public load: boolean;
-
   bookVer!: Item;
   bookAdd: VolumeInfoBD = {
 
@@ -30,9 +28,7 @@ export class ViewBookComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-    private BookService: BookService) {
-    this.load = false;
-  }
+              private BookService: BookService) {}
 
 
   ngOnInit(): void {
@@ -52,11 +48,6 @@ export class ViewBookComponent implements OnInit {
         this.bookAdd.language = this.bookVer.volumeInfo.language.es;
 
       });
-
-
-    setTimeout(() => {
-      this.load = true;
-    }, 6000);
 
   }
 
