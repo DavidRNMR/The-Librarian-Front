@@ -15,7 +15,15 @@
 
 
 p {
-    color: white;
+    color:darkslategray
+}
+.btn{
+
+    position:absolute;
+    bottom: 0;
+    margin-left: 50px;
+    width: 8rem;
+    background-color:rgb(217, 190, 241)
 }
 
 .modalFoor{

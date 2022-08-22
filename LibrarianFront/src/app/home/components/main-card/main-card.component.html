@@ -7,7 +7,7 @@
 </div>
     <article
         *ngFor="let book of books"
-        class="col-md-3 col-sm-6 col-xs-12 card d-flex justify-content-between align-items-center"
+        class="card"
     >
         <div class="animate__bounceIn text-center">
             <a
@@ -21,13 +21,13 @@
                             'No image available.';
                         else elseTemplate
                     "
-                    class="postcard__img"
+                    class="postcard__img card-img-top"
                     src="./assets/noDisponible.png"
                     alt="no se mostro"
                 />
                 <ng-template #elseTemplate>
                     <img
-                        class="postcard__img"
+                        class="postcard__img card-img-top"
                         src="{{ book.volumeInfo.imageLinks.smallThumbnail }}"
                         alt="Image Title"
                     />
@@ -36,7 +36,6 @@
 
             <h4 class="postcard__title bue">
                 <p>{{ book.volumeInfo.title }}</p>
-                <p>{{ book.id }}</p>
             </h4>
             <h4>
                 <p>Autor: {{ book.volumeInfo.authors[0] }}</p>
@@ -46,9 +45,9 @@
             <div class="postcard__preview-txt"></div>
             <span>
                 <div class="col-12">
-                    <div class="d-grid gap-2 col-12">
+                    <div class="d-grid col-12">
                 <a
-                    class="btn btn-success btn-md card-button-text"
+                    class="btn btn-md card-button-text"
                     [routerLink]="['/vista', book.id]"
                     routerLinkActive="router-link-active"
                 >
