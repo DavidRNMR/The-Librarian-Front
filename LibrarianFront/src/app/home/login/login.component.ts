@@ -5,6 +5,7 @@ import { UsersService } from '../services/users.service';
 import { Login } from '../interfaces/registro';
 import Swal from 'sweetalert2';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,17 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor(public userService: UsersService, private router: Router) {}
+  constructor(public userService: UsersService, private router: Router, public translate: TranslateService) {
+    // Register translation languages
+    translate.addLangs(['es', 'en', 'fr', 'de']);
+    // Set default language
+    translate.setDefaultLang(navigator.language);
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 
   ngOnInit(): void {}
 

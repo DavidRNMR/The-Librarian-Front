@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Item } from '../../interfaces/books';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-card',
@@ -15,10 +16,20 @@ export class MainCardComponent implements OnInit {
 
   @Input() books: Item[]=[];
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal,
+	      public translate: TranslateService) {
+    // Register translation languages
+    translate.addLangs(['es', 'en', 'fr', 'de']);
+    // Set default language
+    translate.setDefaultLang(navigator.language);
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 
   ngOnInit(): void {
-
   }
 
   open(content:any) {

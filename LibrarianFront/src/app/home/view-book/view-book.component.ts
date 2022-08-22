@@ -6,13 +6,16 @@ import { switchMap } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VolumeInfoBD } from '../interfaces/addbookbd';
 import { ThisReceiver } from '@angular/compiler';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-view-book',
   templateUrl: './view-book.component.html',
-  styleUrls: ['./view-book.component.css'],
+  styleUrls: ['./view-book.component.css']
 })
 export class ViewBookComponent implements OnInit {
+
+  public load: boolean;
 
   bookVer!: Item;
   bookAdd: VolumeInfoBD = {
@@ -27,9 +30,24 @@ export class ViewBookComponent implements OnInit {
   };
 
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private BookService: BookService) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private BookService: BookService,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['es', 'en', 'fr']);
+    // Set default language
+    translate.setDefaultLang('es');
+    this.load = false;
+  }
 
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+
+    this.load=false;
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params

@@ -8,7 +8,7 @@
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Registro de Usuario</h1>
+                <h1 class="h4 text-gray-900 mb-4">{{'REGISTER_MAIN_TEXT' | translate}}</h1>
               </div>
               <form class="user text-center" (ngSubmit)="crearRegistro()" #formularioRegistro="ngForm">
                 <div class="form-group row">
@@ -19,13 +19,13 @@
                             id="nombre"
                             name="nombre"
                             [(ngModel)]="nuevoRegistro.nombre"
-                            placeholder="Nombre"
+                            placeholder="{{'REGISTER_NAME_PLACEHOLDER' | translate}}"
                             required
                             #nombre="ngModel"
                             minlength="1" maxlength="100"
                             [ngClass]="validClasses(nombre, 'is-valid', 'is-invalid')">
                     <div *ngIf="nombre.touched && nombre.invalid" class="alert alert-danger">
-                                Nombre requerido (entre 1 y 60 caracteres)
+                        {{'REGISTER_NAME_REQUIRED_TEXT' | translate}}
                     </div>
                   </div>
                 </div>
@@ -35,14 +35,14 @@
                             name="email"
                             id="email"
                             [(ngModel)]="nuevoRegistro.correo"
-                            placeholder="ejemplo@gmail.com"
+                            placeholder="{{'REGISTER_PASSWORD_PLACEHOLDER' | translate}}"
                             pattern=".+@gmail\.com"
                             required
                             minlength="1" maxlength="100"
                             #email="ngModel"
                             [ngClass]="validClasses(email, 'is-valid', 'is-invalid')">
                     <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
-                        Algo ha salido mal con el Correo
+                        {{'REGISTER_EMAIL_PROBLEM' | translate}}
                     </div>
                 </div>
                 <div class="form-group row">
@@ -51,14 +51,14 @@
                             class="form-control form-control-user"
                             id="password"
                             name="password"
-                            placeholder="Introduce contraseña"
+                            placeholder="{{'REGISTER_ENTER_PASSWORD_PLACEHOLDER' | translate}}"
                             required
                             minlength="1" maxlength="100"
                             [(ngModel)]="nuevoRegistro.password"
                             #password="ngModel"
                             [ngClass]="validClasses(password, 'is-valid', 'is-invalid')">
                     <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
-                        Contraseña obligatoria
+                        {{'REGISTER_PASSWORD_REQUIRED_TEXT' | translate}}
                     </div>
                   </div>
                   <div class="col-sm-6">
@@ -66,34 +66,34 @@
                             class="form-control form-control-user"
                             id="password2"
                             name="password2"
-                            placeholder="Repita su Password"
+                            placeholder="{{'REGISTER_REPEAT_PASSWORD_PLACEHOLDER' | translate}}"
                             required
                             minlength="1"
                             [(ngModel)]="confirmPassword"
                             #password2="ngModel"
                             [ngClass]="validClasses(password2, 'is-valid', 'is-invalid')">
                     <div *ngIf="password2.touched && password2.invalid" class="alert alert-danger">
-                        Contraseña distinta
+                        {{'REGISTER_PASSWORD_DIFFERENT_TEXT' | translate}}
                     </div>
                   </div>
                 </div>
                 <button class="btn btn-primary btn-user btn-block" [disabled]="!formularioRegistro.form.valid">
-                  Registrarse
+                    {{'REGISTER_REGISTER_BUTTON_TEXT' | translate}}
                 </button>
                 <hr>
                 <a routerLink="/login" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i>Conectarse con google
+                  <i class="fab fa-google fa-fw"></i>{{'REGISTER_CONNECT_WITH_GOOGLE_BUTTON_TEXT' | translate}}
                 </a>
                 <a routerLink="/login" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i>Conectarse con Facebook
+                  <i class="fab fa-facebook-f fa-fw"></i>{{'REGISTER_CONNECT_WITH_FACEBOOK_BUTTON_TEXT' | translate}}
                 </a>
               </form>
               <hr>
               <div class="text-center">
-                <a class="small" routerLink="">Contraseña olvidada?</a>
+                <a class="small" routerLink="">{{'REGISTER_FORGOTTEN_PASSWORD' | translate}}</a>
               </div>
               <div class="text-center">
-                <a class="small" routerLink="/login" >Tienes un usuario? Inicia sesión!</a>
+                <a class="small" routerLink="/login" >{{'REGISTER_ALREADY_REGISTERED' | translate}}</a>
               </div>
             </div>
           </div>
