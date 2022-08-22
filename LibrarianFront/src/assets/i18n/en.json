@@ -23,6 +23,7 @@
     "BOOK_CARD_AUTHOR":"Author:",
     "BOOK_CARD_SEE_MORE":"See more...",
     "LOGIN_USE_YOUR_ACCOUNT_TEXT":"Use your account",
+    "LOGIN_EMAIL_REQUIRED":"Something went wrong with the email",
     "LOGIN_PASSWORD_PLACEHOLDER":"Password",
     "LOGIN_PASSWORD_REQUIRED":"Password requiered",
     "LOGIN_FORGOTTEN_PASSWORD":"Forgot your password?",
@@ -43,5 +44,12 @@
     "REGISTER_CONNECT_WITH_GOOGLE_BUTTON_TEXT":"Connect with Google",
     "REGISTER_CONNECT_WITH_FACEBOOK_BUTTON_TEXT":"Connect with Facebook",
     "REGISTER_FORGOTTEN_PASSWORD":"Forgotten password?",
-    "REGISTER_ALREADY_REGISTERED":"Already registered? Log in!"
+    "REGISTER_ALREADY_REGISTERED":"Already registered? Log in!",
+    "LOGIN_WRONG_EMAIL_OR_PASSWORD":"Invalid email or password",
+    "REGISTER_SUCCES_ALERT_TITLE":"User created",
+    "REGISTER_SUCCES_ALERT_TEXT":"Added successfully!",
+    "LOGOUT_CONFIRMATION_ALERT_TEXT":"Are you sure that you want to log out?",
+    "LOGOUT_CONFIRMATION_ALERT_YES_BUTTON":"YES",
+    "LOGOUT_CONFIRMATION_ALERT_NO_BUTTON":"NO",
+    "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Session closed"
 }

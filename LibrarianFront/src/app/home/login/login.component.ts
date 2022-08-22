@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr', 'de']);
     // Set default language
-    translate.setDefaultLang(navigator.language);
+    translate.setDefaultLang(translate.getBrowserLang()!);
   }
 
   //Switch language
@@ -55,8 +55,7 @@ export class LoginComponent implements OnInit {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Email o contraseña no validos',
-            footer: '<a href="">Why do I have this issue?</a>',
+            text: this.translate.instant('LOGIN_WRONG_EMAIL_OR_PASSWORD')
           });
         }
       });

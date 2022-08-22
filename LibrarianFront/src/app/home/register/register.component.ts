@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit{
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr', 'de']);
     // Set default language
-    translate.setDefaultLang(navigator.language);
+    translate.setDefaultLang(translate.getBrowserLang()!);
   }
 
   //Switch language
@@ -42,8 +42,8 @@ export class RegisterComponent implements OnInit{
     this.registroSer.postUsuario(this.nuevoRegistro).subscribe((datos:any)=>{
       Swal.fire({
         icon: 'success',
-        title: 'Usuario Creado',
-        text: 'Añadido correctamente!',
+        title: this.translate.instant('REGISTER_SUCCES_ALERT_TITLE'),
+        text: this.translate.instant('REGISTER_SUCCES_ALERT_TEXT')
       }).then( result => {
         this.router.navigate(["/login"]);
       });
