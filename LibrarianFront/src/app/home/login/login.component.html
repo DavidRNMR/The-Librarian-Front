@@ -3,7 +3,7 @@
 
         <form (ngSubmit)="login()" #formGrp = "ngForm">
             <h1>Login</h1>
-            <span>Usa tu cuenta</span>
+            <h4>{{'LOGIN_USE_YOUR_ACCOUNT_TEXT' | translate}}</h4>
             <input
                 type="email"
                 id="email"
@@ -29,7 +29,7 @@
                 type="password"
                 class="form-control"
                 [(ngModel)]="loginValidator.password"
-                placeholder="Contraseña"
+                placeholder="{{'LOGIN_PASSWORD_PLACEHOLDER' | translate}}"
                 required
                 minlength="1" maxlength="100"
                 name="password"
@@ -39,11 +39,11 @@
                 [ngClass]="validClasses(password, 'is-valid', 'is-invalid')"
             />
             <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
-                Contraseña obligatoria
+                {{'LOGIN_PASSWORD_PLACEHOLDER' | translate}}
             </div>
-            <a href="#">Olvidaste tu contraseña?</a>
+            <a href="#">{{'LOGIN_FORGOTTEN_PASSWORD' | translate}}</a>
             <button class="w-100 btn btn-success btn-lg" type="submit">
-                Acceder
+                {{'LOGIN_ACCESS_BUTTON_TEXT' | translate}}
             </button>
         </form>
 
@@ -52,12 +52,12 @@
     <div class="overlay-container">
         <div class="overlay">
             <div class="overlay-panel overlay-right">
-                <h1>Hola, amigo!</h1>
-                <p>Un mundo de lectura te espera</p>
+                <h1>{{'LOGIN_ACCESS_WELCOME_TEXT' | translate}}</h1>
+                <h4>{{'LOGIN_ACCESS_WELCOME_MESSAGE' | translate}}</h4>
 
                 <a routerLink="/registro"
                     ><button class="btn btn-primary pull-right">
-                        Registrate
+                        {{'LOGIN_REGISTER_BUTTON_TEXT' | translate}}
                     </button></a
                 >
             </div>

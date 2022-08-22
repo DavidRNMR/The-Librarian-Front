@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Registro } from '../interfaces/registro';
 import { RegistroService } from '../services/registro.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,17 @@ export class RegisterComponent implements OnInit{
 
   confirmPassword!: string;
 
-  constructor(public registroSer: RegistroService, private router: Router) { }
+  constructor(public registroSer: RegistroService, private router: Router, public translate: TranslateService) {
+    // Register translation languages
+    translate.addLangs(['es', 'en', 'fr', 'de']);
+    // Set default language
+    translate.setDefaultLang(navigator.language);
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 
   ngOnInit(): void {
 
