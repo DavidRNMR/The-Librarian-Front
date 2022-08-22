@@ -9,24 +9,16 @@ import { Item } from '../../interfaces/books';
 })
 export class MainCardComponent implements OnInit {
 
-  public load:boolean;
   title = 'appBootstrap';
 
   closeResult!: string;
 
   @Input() books: Item[]=[];
 
-  constructor(private modalService: NgbModal) {
-
-
-    this.load=false;
-   }
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {
 
-    setTimeout(()=>{
-      this.load=true;
-    }, 1500);
   }
 
   open(content:any) {
