@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
   message!: string;
   subscription!: Subscription;
 
+
   constructor(
     private usuarios: UsersService,
     private router: Router,
@@ -33,12 +34,7 @@ export class NavbarComponent implements OnInit {
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr', 'de']);
     // Set default language
-    translate.setDefaultLang(navigator.language);
-  }
-
-  //Switch language
-  translateLanguageTo(lang: string) {
-    this.translate.use(lang);
+    translate.setDefaultLang(translate.getBrowserLang()!);
   }
 
   ngOnInit(): void {
@@ -47,6 +43,12 @@ export class NavbarComponent implements OnInit {
     );
 
   }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
+
 
 
   newMessage() {
