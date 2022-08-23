@@ -99,7 +99,7 @@ button.ghost {
 }
 
 form {
-	background-color: #FFFFFF;
+	background-image: url('../../../assets/open_book_left.jpg');
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -193,13 +193,11 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, black,white,black);
+	background-image: url('../../../assets/open_book_right.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
-	color: #FFFFFF;
+	color: #474646;
 	position: relative;
 	left: -100%;
 	height: 100%;
