@@ -10,15 +10,15 @@
 }
 .btn-success:hover{
 
-    color: white;
-    background-color: blue;
-    border: blue;
+    color: black;
+    background-color: white;
+    border: white;
 
 }
 
 .btn-success{
 
-    border: blue;
+    border: black;
 
 }
 
@@ -62,10 +62,19 @@ a {
 	margin: 15px 0;
 }
 
+.btn-secondary:hover{
+
+    background-color: white;
+    border: black;
+    color: black;
+
+
+}
+
 button {
 	border-radius: 20px;
-	border: 1px solid #00d1f9;
-	background-color: #00d1f9;
+	border: 1px solid black;
+	background-color: black;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -186,7 +195,7 @@ input {
 .overlay {
 	background: #FF416C;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #00d1f9, #00d1f9);
+	background: linear-gradient(to right, black,white,black);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

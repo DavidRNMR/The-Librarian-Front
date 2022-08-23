@@ -35,21 +35,17 @@ export class ResetPasswordComponent implements OnInit {
      this.changePassword.putChangePassword(this.changePasswordDTO).subscribe({
       next: (datos: any) => {
 
-        Swal.fire({
-          title: 'Custom animation with Animate.css',
-          showClass: {
-            popup: 'animate__animated animate__fadeInDown'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
-          }
-        })
+        Swal.fire(
+          'Buen trabajo',
+          'Cambiaste tu contraseña',
+          'success'
+        )
       },
       error:(error) => {
 
         Swal.fire({
           icon: 'error',
-          title: 'Oops...algo salio mal',
+          title: 'Correo o contraseña no validos',
         });
       }
     })
