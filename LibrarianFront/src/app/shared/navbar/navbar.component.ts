@@ -37,18 +37,17 @@ export class NavbarComponent implements OnInit {
     translate.setDefaultLang(translate.getBrowserLang()!);
   }
 
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
+
   ngOnInit(): void {
     this.subscription = this.sharedIsbn.currentMessage.subscribe(
       (message) => (this.message = message)
     );
 
   }
-
-  //Switch language
-  translateLanguageTo(lang: string) {
-    this.translate.use(lang);
-  }
-
 
 
   newMessage() {
@@ -67,16 +66,16 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     Swal.fire({
-      title: 'Estas seguro de cerrar sesión?',
+      title: this.translate.instant('LOGOUT_CONFIRMATION_ALERT_TEXT'),
       icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'SI!',
-      cancelButtonText: 'NO',
+      confirmButtonText: this.translate.instant('LOGOUT_CONFIRMATION_ALERT_YES_BUTTON'),
+      cancelButtonText: this.translate.instant('LOGOUT_CONFIRMATION_ALERT_NO_BUTTON')
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Sesión Cerrada', 'Cerrada', 'success');
+        Swal.fire(this.translate.instant('LOGOUT_SUCCESSFULL_ALERT_TEXT'), '', 'success');
         this.usuarios.logOut();
         this.showHiddenOptions = false;
         this.router.navigate(['']);

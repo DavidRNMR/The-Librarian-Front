@@ -19,7 +19,7 @@
             />
 
             <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
-                Algo ha salido mal con el Correo
+                {{'LOGIN_EMAIL_REQUIRED' | translate}}
             </div>
 
 
@@ -39,7 +39,7 @@
                 [ngClass]="validClasses(password, 'is-valid', 'is-invalid')"
             />
             <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
-                {{'LOGIN_PASSWORD_PLACEHOLDER' | translate}}
+                {{'LOGIN_PASSWORD_REQUIRED' | translate}}
             </div>
             <a href="#">{{'LOGIN_FORGOTTEN_PASSWORD' | translate}}</a>
             <button class="w-100 btn btn-success btn-lg" type="submit">

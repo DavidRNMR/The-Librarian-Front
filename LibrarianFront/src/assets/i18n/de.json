@@ -23,6 +23,7 @@
     "BOOK_CARD_AUTHOR":"Autorin:",
     "BOOK_CARD_SEE_MORE":"Mehr sehen...",
     "LOGIN_USE_YOUR_ACCOUNT_TEXT":"Verwenden sie ihr konto",
+    "LOGIN_EMAIL_REQUIRED":"Etwas ist mit der E-Mail schief gelaufen",
     "LOGIN_PASSWORD_PLACEHOLDER":"Passwort",
     "LOGIN_PASSWORD_REQUIRED":"Passwort erforderlich",
     "LOGIN_FORGOTTEN_PASSWORD":"Haben Sie Ihr Passwort vergessen?",
@@ -43,5 +44,12 @@
     "REGISTER_CONNECT_WITH_GOOGLE_BUTTON_TEXT":"Verbinde dich mit Google",
     "REGISTER_CONNECT_WITH_FACEBOOK_BUTTON_TEXT":"Verbinde dich mit Facebook",
     "REGISTER_FORGOTTEN_PASSWORD":"Passwort vergessen?",
-    "REGISTER_ALREADY_REGISTERED":"Sind sie schon registriert? Einloggen!"
+    "REGISTER_ALREADY_REGISTERED":"Sind sie schon registriert? Einloggen!",
+    "LOGIN_WRONG_EMAIL_OR_PASSWORD":"Ungültige E-Mail oder passwort",
+    "REGISTER_SUCCES_ALERT_TITLE":"Benutzer erstellt",
+    "REGISTER_SUCCES_ALERT_TEXT":"Erfolgreich hinzugefügt!",
+    "LOGOUT_CONFIRMATION_ALERT_TEXT":"Sind sie sicher, dass Sie sich abmelden möchten?",
+    "LOGOUT_CONFIRMATION_ALERT_YES_BUTTON":"JA",
+    "LOGOUT_CONFIRMATION_ALERT_NO_BUTTON":"NEIN",
+    "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Geschlossene session"
 }
