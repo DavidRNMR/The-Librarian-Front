@@ -31,8 +31,8 @@ export class ViewBookComponent implements OnInit {
   };
   reserveAdd: AddReserveBD = {
 
-    id_usuario: 0,
     id_book: 0,
+    id_usuario: 0,
     is_reservado: true,
   }
 
@@ -73,7 +73,6 @@ export class ViewBookComponent implements OnInit {
       )
       .subscribe(book => {
         this.bookVer = book;
-        console.log(this.bookVer);
 
         this.bookAdd.title = this.bookVer.volumeInfo.title;
         this.bookAdd.publishedDate = this.bookVer.volumeInfo.publishedDate;
@@ -84,8 +83,7 @@ export class ViewBookComponent implements OnInit {
         this.bookAdd.language = this.bookVer.volumeInfo.language;
 
 
-
-    this.obtenerUsuario();
+      });
 
   }
 
@@ -113,7 +111,9 @@ export class ViewBookComponent implements OnInit {
 
   getQuery(isbn: string) {
 
-    this.bookService.buscarLibroPorIsbnBD(isbn).subscribe(books => {
+  getQuery() {
+
+    this.bookService.buscarLibroPorIsbnBD(this.bookAdd.isbn).subscribe(books => {
 
       this.reserveAdd.id_book = books.id_book;
 
