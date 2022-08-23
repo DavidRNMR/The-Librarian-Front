@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { ChangePassword } from '../interfaces/registro';
 
 const HOST = 'http://localhost:8080/auth';
 
@@ -31,22 +32,12 @@ export class UsersService {
     return this.http.get(`${HOST}/getCurrentUser`);
   }
 
-  putChangePassword(email: string, password: string, newPassword: string): Observable<any> {
+  putChangePassword(changePasswordDTO: ChangePassword): Observable<any> {
 
-   /* let params = new HttpParams();
+    console.log("Segundo console log del servicio "+ changePasswordDTO.email +" " + changePasswordDTO.password+ " " +changePasswordDTO.newPassword);
 
-    console.log("Segundo console log del servicio"+ email+ password+newPassword)
+    return this.http.put(`${this.changePassword}`,changePasswordDTO);
 
-    params.set('email', email);
-    params.append('password', password);
-    params.set('newPassword', newPassword);
-
-    console.log("Parametros" + params.toString())*/
-
-    let params = new HttpParams({fromString: '?email=' + email + '&password=' + password + '&newPassword=' + newPassword});
-
-
-    return this.http.put(`${this.changePassword}`,{params});
 
   }
 }
