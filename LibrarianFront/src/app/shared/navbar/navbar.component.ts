@@ -27,8 +27,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private usuarios: UsersService,
     private router: Router,
-    private sharedIsbn: SharedDataService,
-    private sharedTitle: SharedDataService,
+    private sharedText: SharedDataService,
     public translate: TranslateService
   ) {
     // Register translation languages
@@ -43,24 +42,33 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.subscription = this.sharedIsbn.currentMessage.subscribe(
-      (message) => (this.message = message)
-    );
+    this.susbscription();
 
+  }
+
+  susbscription(){
+    this.subscription = this.sharedText.currentMessage.subscribe(
+      (message) => {
+        (this.message = message)
+      }
+    );
   }
 
 
   newMessage() {
 
-    this.sharedIsbn.changeMessage(this.isbn);
+    this.sharedText.changeMessage(this.isbn);
+    this.isbn = '';
+
   }
 
   newTitleMessage() {
-    this.sharedIsbn.changeMessage(this.title);
+    this.sharedText.changeMessage(this.title);
+    this.title = '';
   }
 
   newAuthorMessage() {
-    this.sharedIsbn.changeMessage(this.author);
+    this.sharedText.changeMessage(this.author);
     this.author = '';
   }
 

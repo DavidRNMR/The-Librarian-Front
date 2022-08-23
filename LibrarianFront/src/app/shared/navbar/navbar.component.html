@@ -25,7 +25,7 @@
             [ngbCollapse]="!showHiddenOptions"
         >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item" *ngIf="isLogged()">
+                <li class="nav-item me-2" *ngIf="isLogged()">
                     <a
                         class="nav-link text-dark btn"
                         (click)="showHiddenOptions = false"
@@ -46,7 +46,7 @@
             </ul>
 
             <div class="d-flex me-5" *ngIf="isLogged()">
-                <form class="d-flex" role="search" (ngSubmit)="newMessage()">
+                <form class="d-flex" role="search" (ngSubmit)="newMessage()" autocomplete="off">
                     <input
                         class="form-control mx-1"
                         type="search"
@@ -55,7 +55,7 @@
                         name="isbn"
                        [(ngModel)]="isbn"
                     />
-                    <button class="btn btn-outline-success"   type="submit" [routerLink]="['isbn', isbn]">
+                    <button class="btn btn-outline-success border border-dark"  type="submit" [routerLink]="['isbn', isbn]">
                         <i class="bi bi-search"></i>
 
                     </button>
@@ -64,7 +64,7 @@
                 </form>
 
                 &nbsp;
-                <form role="search" class="d-flex" (ngSubmit)="newTitleMessage()">
+                <form role="search" class="d-flex" (ngSubmit)="newTitleMessage()" autocomplete="off">
                     <input
                         class="form-control mx-1"
                         type="search"
@@ -73,12 +73,12 @@
                         name="title"
                         [(ngModel)]="title"
                     />
-                    <button class="btn btn-outline-success" type="submit" [routerLink]="['title', title]">
+                    <button class="btn btn-outline-success border border-dark" type="submit" [routerLink]="['title', title]">
                         <i class="bi bi-search"></i>
                     </button>
                 </form>
                 &nbsp;
-                <form role="search" class="d-flex" (ngSubmit)="newAuthorMessage()">
+                <form role="search" class="d-flex" (ngSubmit)="newAuthorMessage()" autocomplete="off">
                     <input
                         class="form-control mx-1"
                         type="search"
@@ -87,7 +87,7 @@
                         name="author"
                         [(ngModel)]="author"
                     />
-                    <button class="btn btn-outline-success" type="submit" [routerLink]="['author', author]">
+                    <button class="btn btn-outline-success border border-dark" type="submit" [routerLink]="['author', author]">
                         <i class="bi bi-search"></i>
                     </button>
                 </form>
@@ -112,22 +112,24 @@
                     </span>
                 </div>
                 <span class="nav-item" *ngIf="isLogged()">
-                    <a class="nav-link btn" (click)="logout()"
+                    <a class="nav-link btn p-2" (click)="logout()"
                         ><i class="bi bi-calendar-plus me-1"></i>Log out</a
                     >
                 </span>
                 <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-dark" (click)="showHiddenOptions = false" type="submit">Search</button> -->
             </div>
-            <div id="langSelect">
+            <div class="d-flex" id="langSelect">
+                <div >
+                    <i *ngIf="selLang.value == 'es'" class="flag flag-spain"></i>
+                    <i *ngIf="selLang.value == 'en'" class="flag flag-united-states"></i>
+                    <i *ngIf="selLang.value == 'fr'" class="flag flag-france"></i>
+                    <i *ngIf="selLang.value == 'de'" class="flag flag-germany"></i>
+                </div>
 
-                <i *ngIf="selLang.value == 'es'" class="flag flag-spain"></i>
-                <i *ngIf="selLang.value == 'en'" class="flag flag-united-states"></i>
-                <i *ngIf="selLang.value == 'fr'" class="flag flag-france"></i>
-                <i *ngIf="selLang.value == 'de'" class="flag flag-germany"></i>
-
-                <select #selLang (change)="translateLanguageTo(selLang.value)" style="background-color: rgb(192, 229, 243);">
-                    <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+                <select #selLang (change)="translateLanguageTo(selLang.value)"
+                        class="form-select border border-2">
+                    <option *ngFor="let language of translate.getLangs()" [value]="language"> {{ language }}</option>
                 </select>
             </div>
         </div>

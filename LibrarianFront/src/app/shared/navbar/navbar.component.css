@@ -9,15 +9,13 @@
 .btn-outline-success{
 
     background-color: white;
-    border: 2px solid blue;
 
 }
 
 
 .btn-outline-success:hover, .bi-search:hover{
 
-    background-color: blue;
-    color: white;
+    background-color: rgb(75, 136, 173);
 }
 
 
@@ -28,5 +26,11 @@
 
 #langSelect{
     margin-left: 1%;
+}
+
+
+select{
+    background-color: rgba(255, 255, 255, 0.184);
+    cursor: pointer;
 }
 
