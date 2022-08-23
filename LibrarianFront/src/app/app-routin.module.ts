@@ -8,11 +8,13 @@ import { SearchIsbnComponent } from './home/components/search-isbn/search-isbn.c
 import { SearchTitleComponent } from './home/components/search-title/search-title.component';
 import { SearchAuthorComponent } from './home/components/search-author/search-author.component';
 import { MyBooksComponent } from './home/my-books/my-books.component';
+import { ResetPasswordComponent } from './home/reset-password/reset-password.component';
 
 const APP_ROUTES: Routes = [
 
   {path: '', component: MainBooksComponent, pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
+  {path: 'forgot-password', component: ResetPasswordComponent},
   {path: 'registro', component: RegisterComponent},
   {path: 'vista/:id', component: ViewBookComponent},
   {path: 'isbn/:isbn', component: SearchIsbnComponent},

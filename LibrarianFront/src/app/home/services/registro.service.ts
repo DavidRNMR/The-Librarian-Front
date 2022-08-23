@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Registro } from '../interfaces/registro';
 
 const HOST = "http://localhost:8080/auth/registro"
+
 @Injectable({
   providedIn: 'root'
 })
