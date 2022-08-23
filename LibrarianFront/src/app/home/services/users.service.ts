@@ -33,16 +33,20 @@ export class UsersService {
 
   putChangePassword(email: string, password: string, newPassword: string): Observable<any> {
 
-    let params = new HttpParams();
+   /* let params = new HttpParams();
+
     console.log("Segundo console log del servicio"+ email+ password+newPassword)
 
     params.set('email', email);
-    params.set('password', password);
+    params.append('password', password);
     params.set('newPassword', newPassword);
 
-    console.log("Parametros" + params.getAll)
+    console.log("Parametros" + params.toString())*/
 
-    return this.http.put(`${this.changePassword}?`,{params});
+    let params = new HttpParams({fromString: '?email=' + email + '&password=' + password + '&newPassword=' + newPassword});
+
+
+    return this.http.put(`${this.changePassword}`,{params});
 
   }
 }
