@@ -30,8 +30,8 @@ export class ViewBookComponent implements OnInit {
   };
   reserveAdd: AddReserveBD = {
 
-    id_book: 6,
-    id_usuario: 6,
+    id_book: 0,
+    id_usuario: 1,
     is_reservado: true,
   }
 
@@ -71,23 +71,12 @@ export class ViewBookComponent implements OnInit {
         this.bookAdd.language = this.bookVer.volumeInfo.language;
 
 
-
-        this.reserveService.addReserve(this.reserveAdd).subscribe((reserveDB: any) => {
-
-          console.log(this.reserveAdd);
-
-
-        });
-
         // this.addReserve();
 
 
       });
 
 
-    setTimeout(() => {
-      this.load = true;
-    }, 6000);
 
   }
 
@@ -97,29 +86,29 @@ export class ViewBookComponent implements OnInit {
       console.log('BOOK_ADD-> ', this.bookAdd);
     });
 
-    this.addReserve();
 
-    // this.getQuery();
+
+    this.getQuery();
 
   }
 
 
-  // getQuery() {
+  getQuery() {
 
-  //   this.bookService.buscarLibroPorIsbnBD(this.bookAdd.isbn).subscribe(books => {
+    this.bookService.buscarLibroPorIsbnBD(this.bookAdd.isbn).subscribe(books => {
 
-  //     this.reserveAdd.id_book = books.id_book;
+      this.reserveAdd.id_book = books.id_book;
 
-  //     console.log('ID_BOOK ====>', books.id_book);
-  //     console.log('ID_BOOK_BD ====>', this.reserveAdd);
-
-
-  //   });
-
-  //   this.addReserve();
+      console.log('ID_BOOK ====>', books.id_book);
+      console.log('ID_BOOK_BD ====>', this.reserveAdd);
 
 
-  // }
+    });
+
+    this.addReserve();
+
+
+  }
 
   addReserve() {
     this.reserveService.addReserve(this.reserveAdd).subscribe((reserveDB: any) => {
