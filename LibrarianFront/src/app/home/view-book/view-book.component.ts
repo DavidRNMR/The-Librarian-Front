@@ -15,8 +15,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ViewBookComponent implements OnInit {
 
-  public load: boolean;
-
   bookVer!: Item;
   bookAdd: VolumeInfoBD = {
 
@@ -39,14 +37,11 @@ export class ViewBookComponent implements OnInit {
     translate.addLangs(['es', 'en', 'fr']);
     // Set default language
     translate.setDefaultLang(translate.getBrowserLang()!);
-    this.load = false;
   }
 
   //Switch language
   translateLanguageTo(lang: string) {
     this.translate.use(lang);
-
-    this.load=false;
   }
 
   ngOnInit(): void {
@@ -56,6 +51,7 @@ export class ViewBookComponent implements OnInit {
       )
       .subscribe(book => {
         this.bookVer = book;
+        console.log( this.bookVer );
 
         this.bookAdd.title = this.bookVer.volumeInfo.title;
         this.bookAdd.publishedDate = this.bookVer.volumeInfo.publishedDate;

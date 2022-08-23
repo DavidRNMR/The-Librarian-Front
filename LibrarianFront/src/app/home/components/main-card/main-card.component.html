@@ -1,19 +1,19 @@
 <ng-container *ngIf="books.length > 0; else error">
 
-    <div class="row">
+    <div class="row animate__animated animate__fadeIn">
         <div class="col-sm-12 col-md-3 col-lg-3 align-items-stretch" *ngFor="let book of books">
             <div class="card mb-3">
-                <a  class="text-center"
+                <a  class="text-center mt-2"
                     routerLink="#"
                     (click)="open(mymodal)">
                 <img
                     *ngIf="book.volumeInfo.imageLinks.smallThumbnail ==
-                            'No image available.'; else imagenNoDisponible"
+                            'No image available.'; else imagenDisponible"
                     class="card-img-top imga img-fluid"
                     src="./assets/noDisponible.png"
                     alt="no se mostro"
                 />
-                <ng-template #imagenNoDisponible>
+                <ng-template #imagenDisponible>
                     <img
                         class="card-img-top imga img-fluid"
                         src="{{book.volumeInfo.imageLinks.smallThumbnail}}"
@@ -24,9 +24,11 @@
 
                 <div class="card-body">
                   <h5 class="card-title">{{ book.volumeInfo.title | slice:0:35}}</h5>
-                    <p *ngIf="book.volumeInfo.authors[0].length < 18 ; else muyLargo"  class="card-text">{{'BOOK_CARD_AUTHOR' | translate}} {{ book.volumeInfo.authors[0] }}</p>
+                    <p *ngIf="book.volumeInfo.authors[0].length < 18 ; else muyLargo"  class="card-text">
+                        <strong> {{'BOOK_CARD_AUTHOR' | translate}} </strong> {{ book.volumeInfo.authors[0] }}
+                    </p>
                   <ng-template #muyLargo>
-                    <p class="card-text">{{'BOOK_CARD_AUTHOR' | translate}} {{ book.volumeInfo.authors[0] | slice:0:15}}...</p>
+                    <p class="card-text"> <strong> {{'BOOK_CARD_AUTHOR' | translate}} </strong> {{ book.volumeInfo.authors[0] | slice:0:15}}...</p>
                   </ng-template>
 
                 </div>
