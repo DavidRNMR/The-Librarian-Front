@@ -1,16 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { BookService } from '../services/book.service';
-import { Books, Item, VolumeInfo } from '../interfaces/books';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { VolumeInfoBD } from '../interfaces/addbookbd';
-import { ThisReceiver } from '@angular/compiler';
 import { TranslateService } from '@ngx-translate/core';
-import { ReserveService } from '../services/reserve.service';
-import { AddReserveBD } from '../interfaces/addreservebd';
-import { UsersService } from '../services/users.service';
+import { switchMap } from 'rxjs';
 import Swal from 'sweetalert2';
+import { VolumeInfoBD } from '../interfaces/addbookbd';
+import { Item } from '../interfaces/books';
+import { BookService } from '../services/book.service';
+import { ReserveService } from '../services/reserve.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-view-book',

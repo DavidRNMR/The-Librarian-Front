@@ -14,8 +14,8 @@ export class MyBooksComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-}
+    // TODO document why this method 'ngOnInit' is empty
+  }
    getPdf(){
      this.pdfService.getPdf().subscribe(data=>{
             console.log(data);

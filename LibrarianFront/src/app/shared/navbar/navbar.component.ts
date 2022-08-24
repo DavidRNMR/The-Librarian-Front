@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
-import { UsersService } from '../../home/services/users.service';
-import { BookService } from '../../home/services/book.service';
-import { Item } from 'src/app/home/interfaces/books';
-import { SharedDataService } from '../../home/services/shared-data.service';
-import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { Item } from 'src/app/home/interfaces/books';
+import Swal from 'sweetalert2';
+import { SharedDataService } from '../../home/services/shared-data.service';
+import { UsersService } from '../../home/services/users.service';
 
 @Component({
   selector: 'app-navbar',

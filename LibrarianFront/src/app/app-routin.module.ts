@@ -1,14 +1,14 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './home/login/login.component';
-import { RegisterComponent } from './home/register/register.component';
-import { MainBooksComponent } from './home/main-books/main-books.component';
-import { ViewBookComponent } from './home/view-book/view-book.component';
+import { SearchAuthorComponent } from './home/components/search-author/search-author.component';
 import { SearchIsbnComponent } from './home/components/search-isbn/search-isbn.component';
 import { SearchTitleComponent } from './home/components/search-title/search-title.component';
-import { SearchAuthorComponent } from './home/components/search-author/search-author.component';
+import { LoginComponent } from './home/login/login.component';
+import { MainBooksComponent } from './home/main-books/main-books.component';
 import { MyBooksComponent } from './home/my-books/my-books.component';
+import { RegisterComponent } from './home/register/register.component';
 import { ResetPasswordComponent } from './home/reset-password/reset-password.component';
+import { ViewBookComponent } from './home/view-book/view-book.component';
 
 const APP_ROUTES: Routes = [
 

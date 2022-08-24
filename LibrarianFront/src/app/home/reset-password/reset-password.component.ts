@@ -24,6 +24,7 @@ export class ResetPasswordComponent implements OnInit {
   constructor(public changePassword: UsersService) { }
 
   ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty
   }
 
 
@@ -33,7 +34,7 @@ export class ResetPasswordComponent implements OnInit {
     console.log("Console Log" + this.changePasswordDTO.email+this.changePasswordDTO.password+this.changePasswordDTO.newPassword);
 
      this.changePassword.putChangePassword(this.changePasswordDTO).subscribe({
-      next: (datos: any) => {
+      next: (_datos: any) => {
 
         Swal.fire(
           'Buen trabajo',
@@ -41,7 +42,7 @@ export class ResetPasswordComponent implements OnInit {
           'success'
         )
       },
-      error:(error) => {
+      error:(_error) => {
 
         Swal.fire({
           icon: 'error',
