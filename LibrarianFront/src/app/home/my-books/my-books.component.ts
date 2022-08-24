@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../interfaces/books';
+import { Item, ImageLinks, Books } from '../interfaces/books';
 import { BookService } from '../services/book.service';
 import { ReserveService } from '../services/reserve.service';
 import { UsersService } from '../services/users.service';
@@ -15,6 +15,7 @@ export class MyBooksComponent implements OnInit {
 userById={
   id_user:0
 }
+ book: any[]= [];
 
 
   constructor(private bookService: BookService,
@@ -25,13 +26,16 @@ userById={
 
     this.obtenerIdUsuario();
 
+
+
+
   }
 
     obtenerIdUsuario() {
     this.usersService.getCurrentUser().subscribe({
 
       next: datos => {
-        this.userById.id_user =+ datos.toString();
+        this.userById.id_user = <number> datos;
 
          this.getReserve(this.userById.id_user);
       }
@@ -40,22 +44,37 @@ userById={
   }
    getReserve(id:number) {
      this.reserveService.reservedByUser(id).subscribe((data) => {
-       console.log(data);
+
+      // for (let i = 0; i < data.length; i++) {
+
+      //   this.book = data[i].book;
+
+      //    }
+
+      this.book=data.book;
+
+      console.log("Data" + data);
+
+      console.log(this.book);
+
 
      });
+
    }
 
 
-   
 
 
 
-  //  getBooksByUserId(id:number){
-  //   this.bookService.(id).subscribe((data) => {
-  //     console.table(data);
 
-  //   });
-  // }
+
+
+
+
+
+
+
+
 
 
 

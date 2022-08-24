@@ -1,5 +1,10 @@
 <p>my-books works!</p>
 
+
+<div *ngFor="let books of book; let i = index">
+    <p>{{books[i].book.language}}</p>
+</div>
+
 <!-- <span>
     <a href="http://localhost:8080/reserve/reserve/export/pdf" class="btn btn-success btn-lg">Descargar PDF</a>
 </span> -->
