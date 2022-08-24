@@ -22,7 +22,11 @@ userById={
 
   ngOnInit(): void {
 
-    this.obtenerIdUsuario();
+    if (this.usersService.isLogged()) {
+      this.obtenerIdUsuario();
+    } else {
+      return;
+    }
 
   }
 
@@ -36,7 +40,8 @@ userById={
       }
     });
 
-  }
+    }
+
    getReserve(id:number) {
      this.reserveService.reservedByUser(id).subscribe((data) => {
 
