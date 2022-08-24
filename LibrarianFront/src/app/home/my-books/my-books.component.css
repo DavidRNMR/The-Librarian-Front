@@ -1,0 +1,24 @@
+.card {
+
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.19);
+    backdrop-filter: blur(5px);
+}
+
+
+
+
+.modal-title {
+    font-family: "Mouse Memoirs", sans-serif;
+    font-size: 25px;
+}
+
+#spin {
+    width: 4rem;
+    height: 4rem;
+}
+
+.imga {
+    width: 25vh;
+    height: 35vh;
+}

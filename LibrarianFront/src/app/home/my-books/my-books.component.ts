@@ -16,6 +16,7 @@ userById={
   id_user:0
 }
  book: any[]= [];
+ books2: any[] = [];
 
 
   constructor(private bookService: BookService,
@@ -47,16 +48,16 @@ userById={
 
       // for (let i = 0; i < data.length; i++) {
 
-      //   this.book = data[i].book;
+      //    this.book.push(data[i].book);
 
       //    }
+         this.books2 = data;
 
-      this.book=data.book;
+         this.books2.forEach(element => {
 
-      console.log("Data" + data);
-
-      console.log(this.book);
-
+          this.book.push(element.book);
+          console.log(element.book);
+         });
 
      });
 
