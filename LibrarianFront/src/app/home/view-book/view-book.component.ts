@@ -34,7 +34,7 @@ export class ViewBookComponent implements OnInit {
     id_book: 0,
     id_usuario: 0,
     is_reservado: true,
-  }
+  };
 
   reserveAdd: VolumeInfoBD = {
 
@@ -82,8 +82,10 @@ export class ViewBookComponent implements OnInit {
         this.bookAdd.pageCount = this.bookVer.volumeInfo.pageCount;
         this.bookAdd.language = this.bookVer.volumeInfo.language;
 
-
       });
+
+      this.obtenerUsuario();
+
 
   }
 
@@ -111,11 +113,9 @@ export class ViewBookComponent implements OnInit {
 
   getQuery(isbn: string) {
 
-  getQuery() {
+    this.bookService.buscarLibroPorIsbnBD(isbn).subscribe(books => {
 
-    this.bookService.buscarLibroPorIsbnBD(this.bookAdd.isbn).subscribe(books => {
-
-      this.reserveAdd.id_book = books.id_book;
+          this.reserveAdd.id_book = books.id_book;
 
       this.addReserve(this.reserveAdd);
 
@@ -130,5 +130,10 @@ export class ViewBookComponent implements OnInit {
     });
 
   }
+
+
+
+
+
 
 }
