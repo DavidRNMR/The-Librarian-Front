@@ -9,6 +9,8 @@ export const environment = {
   urlAddReserve: "http://localhost:8080/reserve",
   urlPdf:"http://localhost:8080/reserve/reserve/export/pdf",
   urlBasic: "http://localhost:8080",
+  urlChangePassword: "http://localhost:8080/users/changePassword"
+
 };
 
 
