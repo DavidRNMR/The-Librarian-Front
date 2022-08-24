@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Item, ImageLinks, Books } from '../interfaces/books';
 import { BookService } from '../services/book.service';
 import { ReserveService } from '../services/reserve.service';
 import { UsersService } from '../services/users.service';
-import { VolumeInfoBD } from '../interfaces/addbookbd';
 
 @Component({
   selector: 'app-my-books',
@@ -19,16 +17,12 @@ userById={
  books2: any[] = [];
 
 
-  constructor(private bookService: BookService,
-              private reserveService: ReserveService,
+  constructor(private reserveService: ReserveService,
               private usersService: UsersService) { }
 
   ngOnInit(): void {
 
     this.obtenerIdUsuario();
-
-
-
 
   }
 
@@ -46,11 +40,6 @@ userById={
    getReserve(id:number) {
      this.reserveService.reservedByUser(id).subscribe((data) => {
 
-      // for (let i = 0; i < data.length; i++) {
-
-      //    this.book.push(data[i].book);
-
-      //    }
          this.books2 = data;
 
          this.books2.forEach(element => {
