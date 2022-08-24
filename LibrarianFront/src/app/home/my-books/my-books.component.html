@@ -1,5 +1,40 @@
-<p>my-books works!</p>
+<div class="row animate__animated animate__fadeIn">
+    <div class="col-sm-12 col-md-3 col-lg-3 align-items-stretch" *ngFor="let books of book; let i = index">
+        <div class="card mb-3">
+            <a  class="text-center mt-2"
+                >
+            <img
 
-<span>
-    <a href="http://localhost:8080/reserve/reserve/export/pdf" class="btn btn-success btn-lg">Descargar PDF</a>
-</span>
+                class="card-img-top imga img-fluid"
+                [src]="books.imageLinks" alt=""/>
+
+            <ng-template #imagenDisponible>
+                <img
+                    class="card-img-top imga img-fluid"
+                    src=""
+                    alt="Image Title"
+                />
+            </ng-template>
+            </a>
+
+            <div class="card-body">
+              <h5 class="card-title">{{books.title}}</h5>
+
+        <span>
+            <a href="{{books.previewLink}}" class="btn btn-success btn-lg">Leer</a>
+                </span>
+            </div>
+
+
+        </div>
+    </div>
+    <span>
+        <a href="http://localhost:8080/reserve/reserve/export/pdf" class="btn btn-primary btn-lg">Descargar PDF</a>
+            </span>
+</div>
+
+
+
+
+
+

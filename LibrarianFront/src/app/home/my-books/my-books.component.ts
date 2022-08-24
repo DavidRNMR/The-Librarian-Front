@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PdfService } from '../services/pdf.service';
+import { BookService } from '../services/book.service';
+import { ReserveService } from '../services/reserve.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-my-books',
@@ -8,18 +10,67 @@ import { PdfService } from '../services/pdf.service';
 })
 export class MyBooksComponent implements OnInit {
 
+userById={
+  id_user:0
+}
+ book: any[]= [];
+ books2: any[] = [];
 
-  constructor(public pdfService: PdfService) { }
 
-
+  constructor(private reserveService: ReserveService,
+              private usersService: UsersService) { }
 
   ngOnInit(): void {
-    // TODO document why this method 'ngOnInit' is empty
+
+    this.obtenerIdUsuario();
+
   }
-   getPdf(){
-     this.pdfService.getPdf().subscribe(data=>{
-            console.log(data);
+
+    obtenerIdUsuario() {
+    this.usersService.getCurrentUser().subscribe({
+
+      next: datos => {
+        this.userById.id_user = <number> datos;
+
+         this.getReserve(this.userById.id_user);
+      }
+    });
+
+  }
+   getReserve(id:number) {
+     this.reserveService.reservedByUser(id).subscribe((data) => {
+
+         this.books2 = data;
+
+         this.books2.forEach(element => {
+
+          this.book.push(element.book);
+          console.log(element.book);
+         });
 
      });
+
    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -17,6 +17,8 @@ export class BookService {
 
   private URLFindByIsbnDB = environment.urlBasic;
 
+  private URLFindBookByIdDB = environment.urlAllBooksByIdBD;
+
 
 
   constructor(private http: HttpClient) {
@@ -32,6 +34,12 @@ export class BookService {
   buscarLibroPorId(id: string): Observable<Item> {
 
     return this.http.get<Item>(`${this.API_URL}/getById/${id}`);
+
+  }
+
+  buscarLibroPorIdBD(id: number): Observable<Item> {
+
+    return this.http.get<Item>(`${this.URLFindBookByIdDB}/${id}`);
 
   }
 
@@ -65,6 +73,8 @@ export class BookService {
     return this.http.get(`${this.URLFindByIsbnDB}/getByIsbn/${isbn}`);
 
   }
+
+
 
 
 

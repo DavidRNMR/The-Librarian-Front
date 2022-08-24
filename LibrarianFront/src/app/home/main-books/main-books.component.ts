@@ -22,7 +22,7 @@ export class MainBooksComponent implements OnInit {
   ngOnInit(): void {
 
     this.getBooks();
-    
+
   }
 
   getBooks() {
@@ -32,3 +32,11 @@ export class MainBooksComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
