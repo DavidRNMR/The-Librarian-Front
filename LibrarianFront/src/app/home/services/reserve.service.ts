@@ -9,6 +9,8 @@ import { environment } from '../../../environments/environment';
 export class ReserveService {
 
   private URLaddReserve = environment.urlAddReserve;
+  private urlReserved = environment.urlReservedByUser;
+  private urlAllReserves = environment.urlAllReservesByUser;
 
   constructor(private http: HttpClient) { }
 
@@ -18,4 +20,18 @@ export class ReserveService {
     return this.http.post(`${this.URLaddReserve}`, reserve);
 
   }
+
+  reservedByUser(id:number):Observable<any>{
+
+    return this.http.get(`${this.urlReserved}/${id}`);
+
+  }
+  allReservesByUser(id:number):Observable<any>{
+
+    return this.http.get(`${this.urlAllReserves}/${id}`);
+
+  }
+
+
+
 }
