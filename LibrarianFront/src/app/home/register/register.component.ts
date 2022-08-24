@@ -35,16 +35,16 @@ export class RegisterComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
+    // TODO document why this method 'ngOnInit' is empty
   }
 
   crearRegistro(){
-    this.registroSer.postUsuario(this.nuevoRegistro).subscribe((datos:any)=>{
+    this.registroSer.postUsuario(this.nuevoRegistro).subscribe((_datos:any)=>{
       Swal.fire({
         icon: 'success',
         title: this.translate.instant('REGISTER_SUCCES_ALERT_TITLE'),
         text: this.translate.instant('REGISTER_SUCCES_ALERT_TEXT')
-      }).then( result => {
+      }).then( _result => {
         this.router.navigate(["/login"]);
       });
     });

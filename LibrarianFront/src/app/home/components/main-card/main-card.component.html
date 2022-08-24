@@ -3,8 +3,7 @@
     <div class="row animate__animated animate__fadeIn">
         <div class="col-sm-12 col-md-3 col-lg-3 align-items-stretch" *ngFor="let book of books">
             <div class="card mb-3">
-                <a  class="text-center mt-4"
-                    routerLink="#"
+                <a  class="text-center mt-2"
                     (click)="open(mymodal)">
                 <img
                     *ngIf="book.volumeInfo.imageLinks.smallThumbnail ==
@@ -56,6 +55,7 @@
                             src="{{
                                 book.volumeInfo.imageLinks.smallThumbnail
                             }}"
+                            alt="img"
                         />
                     </div>
 

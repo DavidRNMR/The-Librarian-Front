@@ -1,11 +1,10 @@
-import { Component, ErrorHandler, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsersService } from '../services/users.service';
-import { Login } from '../interfaces/registro';
-import Swal from 'sweetalert2';
-import { HttpErrorResponse } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
+import Swal from 'sweetalert2';
+import { Login } from '../interfaces/registro';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-login',
@@ -34,7 +33,9 @@ export class LoginComponent implements OnInit {
     this.translate.use(lang);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.scrollTo(8,8);
+  }
 
   login() {
 
@@ -46,15 +47,11 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (datos: any) => {
 
-          localStorage.setItem('token', datos.accessToken),
+          localStorage.setItem('token', datos.accessToken);
           this.router.navigate(['/']);
 
-          console.log(datos);
-
-
-
         },
-        error:(error) => {
+        error:(_error) => {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',

@@ -32,7 +32,7 @@
                         aria-current="page"
                         routerLink="/"
                     >
-                        <i class="bi bi-house-door me-1"></i>{{'HOME' | translate}}</a
+                        <em class="bi bi-house-door me-1"></em>{{'HOME' | translate}}</a
                     >
                 </li>
                 <li class="nav-item" *ngIf="isLogged()">
@@ -40,7 +40,7 @@
                         class="nav-link text-dark text-dark btn"
                         routerLink="/"
                         (click)="showHiddenOptions = false"
-                        ><i class="bi bi-book me-1"></i>{{'MY_BOOKS' | translate}}</a
+                        ><em class="bi bi-book me-1"></em>{{'MY_BOOKS' | translate}}</a
                     >
                 </li>
             </ul>
@@ -56,7 +56,7 @@
                        [(ngModel)]="isbn"
                     />
                     <button class="btn btn-outline-success border border-dark"  type="submit" [routerLink]="['isbn', isbn]">
-                        <i class="bi bi-search"></i>
+                        <em class="bi bi-search"></em>
 
                     </button>
 
@@ -74,7 +74,7 @@
                         [(ngModel)]="title"
                     />
                     <button class="btn btn-outline-success border border-dark" type="submit" [routerLink]="['title', title]">
-                        <i class="bi bi-search"></i>
+                        <em class="bi bi-search"></em>
                     </button>
                 </form>
                 &nbsp;
@@ -88,7 +88,7 @@
                         [(ngModel)]="author"
                     />
                     <button class="btn btn-outline-success border border-dark" type="submit" [routerLink]="['author', author]">
-                        <i class="bi bi-search"></i>
+                        <em class="bi bi-search"></em>
                     </button>
                 </form>
             </div>
@@ -99,7 +99,7 @@
                             class="nav-link btn p-1"
                             routerLink="/login"
                         >
-                            <i class="bi bi-door-open me-1"></i>Login</a
+                            <em class="bi bi-door-open me-1"></em>Login</a
                         >
                     </span>
                     <span class="nav-item">
@@ -107,24 +107,22 @@
                             class="nav-link btn p-1"
                             routerLink="/registro"
                         >
-                            <i class="bi bi-calendar-plus me-1"></i>{{'REGISTER' | translate}}</a
+                            <em class="bi bi-calendar-plus me-1"></em>{{'REGISTER' | translate}}</a
                         >
                     </span>
                 </div>
                 <span class="nav-item" *ngIf="isLogged()">
                     <a class="nav-link btn p-2" (click)="logout()"
-                        ><i class="bi bi-calendar-plus me-1"></i>Log out</a
+                        ><em class="bi bi-calendar-plus me-1"></em>Log out</a
                     >
                 </span>
-                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-dark" (click)="showHiddenOptions = false" type="submit">Search</button> -->
             </div>
             <div class="d-flex" id="langSelect">
                 <div >
-                    <!-- <i *ngIf="selLang.value == 'es'" class="flag flag-spain"></i> -->
-                    <i *ngIf="selLang.value == 'en'" class="flag flag-united-states"></i>
-                    <i *ngIf="selLang.value == 'fr'" class="flag flag-france"></i>
-                    <i *ngIf="selLang.value == 'de'" class="flag flag-germany"></i>
+                    <em *ngIf="selLang.value == 'es'" class="flag flag-spain"></em>
+                    <em *ngIf="selLang.value == 'en'" class="flag flag-united-states"></em>
+                    <em *ngIf="selLang.value == 'fr'" class="flag flag-france"></em>
+                    <em *ngIf="selLang.value == 'de'" class="flag flag-germany"></em>
                 </div>
 
                 <select #selLang (change)="translateLanguageTo(selLang.value)"
