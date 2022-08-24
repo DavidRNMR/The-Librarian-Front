@@ -94,11 +94,9 @@ export class ViewBookComponent implements OnInit {
           this.route.navigate(['/login']);
         }
       })
-    }else{
-
+    } else{
       Swal.fire({
         title: 'Estas seguro de reservar este libro?',
-        text: "You won't be able to revert this!",
         icon: 'question',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -144,7 +142,14 @@ export class ViewBookComponent implements OnInit {
   }
 
   addReserve(reserva: any) {
-    this.reserveService.addReserve(reserva).subscribe((reserveDB: any) => {
+    this.reserveService.addReserve(reserva).subscribe((_reserveDB: any) => {
+      // TODO document why this arrow function is empty
     });
   }
+
+
+
+
+
 }
+
