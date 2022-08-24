@@ -97,10 +97,7 @@ export class NavbarComponent implements OnInit {
 
   goHomeOrLogin() {
     this.showHiddenOptions = false;
-    if (this.isLogged()) {
-      this.router.navigate(['/']);
-    } else {
-      this.router.navigate(['/']);
-    }
+    this.router.navigate(['/']);
   }
+
 }

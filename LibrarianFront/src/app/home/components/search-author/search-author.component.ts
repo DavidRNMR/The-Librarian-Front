@@ -33,7 +33,6 @@ export class SearchAuthorComponent implements OnInit {
     .subscribe(books => {
 
       this.books = books.items;
-      console.log(this.books);
     });
 
 

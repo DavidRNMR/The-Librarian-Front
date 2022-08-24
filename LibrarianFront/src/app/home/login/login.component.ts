@@ -34,7 +34,9 @@ export class LoginComponent implements OnInit {
     this.translate.use(lang);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.scrollTo(8,8);
+  }
 
   login() {
 
