@@ -15,6 +15,9 @@ export class BookService {
 
   private URLaddBook = environment.urlAddBook;
 
+  private URLFindByIsbnDB = environment.urlBasic;
+
+
 
   constructor(private http: HttpClient) {
 
@@ -56,5 +59,13 @@ export class BookService {
     return this.http.post(`${this.URLaddBook}`, book);
 
   }
+
+  buscarLibroPorIsbnBD(isbn: string): Observable<any> {
+
+    return this.http.get(`${this.URLFindByIsbnDB}/getByIsbn/${isbn}`);
+
+  }
+
+
 
 }

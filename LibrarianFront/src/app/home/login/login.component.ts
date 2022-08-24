@@ -49,6 +49,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', datos.accessToken),
           this.router.navigate(['/']);
 
+          console.log(datos);
+
+
 
         },
         error:(error) => {

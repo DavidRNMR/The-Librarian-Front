@@ -1,7 +1,7 @@
 .card {
 
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.19);
     backdrop-filter: blur(5px);
 }
 
@@ -10,11 +10,11 @@ p {
 }
 
 .btn {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(27, 26, 26, 0.698);
 }
 
 .btn:hover {
-    background-color: rgb(163, 36, 36);
+    background-color: rgb(67, 109, 152);
 }
 
 .modalFoor {
