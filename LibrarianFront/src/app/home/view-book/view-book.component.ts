@@ -95,11 +95,32 @@ export class ViewBookComponent implements OnInit {
         }
       })
     }else{
-      this.bookService.addBookBD(this.bookAdd).subscribe({
-        next: (datos) => {
-          this.getQuery(datos.isbn);
-        },
-      });
+
+      Swal.fire({
+        title: 'Estas seguro de reservar este libro?',
+        text: "You won't be able to revert this!",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, reservalo!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Reservado!',
+            'Tu libro ha sido reservado correctamente.',
+            'success'
+          );
+          this.bookService.addBookBD(this.bookAdd).subscribe({
+            next: (datos) => {
+              this.getQuery(datos.isbn);
+            },
+          });
+        }
+      })
+
+
+
     }
   }
 
@@ -124,7 +145,6 @@ export class ViewBookComponent implements OnInit {
 
   addReserve(reserva: any) {
     this.reserveService.addReserve(reserva).subscribe((reserveDB: any) => {
-      console.log(reserveDB);
     });
   }
 }

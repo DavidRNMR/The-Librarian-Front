@@ -14,8 +14,6 @@ export class ReserveService {
 
 
   addReserve(reserve: any):Observable<any> {
-    console.log("---------servicio----------");
-    console.log(reserve);
 
     return this.http.post(`${this.URLaddReserve}`, reserve);
 
