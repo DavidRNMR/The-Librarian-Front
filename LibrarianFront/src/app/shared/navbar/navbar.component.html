@@ -119,10 +119,10 @@
             </div>
             <div class="d-flex" id="langSelect">
                 <div >
-                    <em *ngIf="selLang.value == 'es'" class="flag flag-spain"></em>
-                    <em *ngIf="selLang.value == 'en'" class="flag flag-united-states"></em>
-                    <em *ngIf="selLang.value == 'fr'" class="flag flag-france"></em>
-                    <em *ngIf="selLang.value == 'de'" class="flag flag-germany"></em>
+                    <i *ngIf="selLang.value == 'en'" class="flag flag-united-states"></i>
+                    <i *ngIf="selLang.value == 'es'" class="flag flag-spain"></i>
+                    <i *ngIf="selLang.value == 'fr'" class="flag flag-france"></i>
+                    <i *ngIf="selLang.value == 'de'" class="flag flag-germany"></i>
                 </div>
 
                 <select #selLang (change)="translateLanguageTo(selLang.value)"
