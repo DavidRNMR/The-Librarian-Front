@@ -62,16 +62,15 @@ export class MyBooksComponent implements OnInit {
 
   updateReserve(reserva: any) {
     Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: 'Estas seguro de devolver el libro?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Si, devolver!',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+        Swal.fire('Enviado!', 'Este libro ha sido devuelto.', 'success');
 
         this.idReserva = reserva.id;
         this.nuevaReserva.id_usuario = reserva.id_usuario;
@@ -86,5 +85,14 @@ export class MyBooksComponent implements OnInit {
 
       }
     });
+  }
+
+
+  noDIsponible(){
+    Swal.fire({
+      icon: 'error',
+      title: 'Lo sentimos',
+      text: 'De momento este libro no esta disponible. Por favor intentalo mas tarde.'
+    })
   }
 }
