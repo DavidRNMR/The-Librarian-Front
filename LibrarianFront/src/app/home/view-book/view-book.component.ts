@@ -15,6 +15,9 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./view-book.component.css'],
 })
 export class ViewBookComponent implements OnInit {
+  idUsuario: number = 0;
+  librosDelUsuario!: number;
+
   bookVer!: Item;
   bookAdd: VolumeInfoBD = {
     title: '',
@@ -94,11 +97,15 @@ export class ViewBookComponent implements OnInit {
           this.route.navigate(['/login']);
         }
       })
+    } else if (this.librosDelUsuario >= 3) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Disculpa pero ya has alcanzado el maximo de reservas!'
+      })
     }else{
-
       Swal.fire({
         title: 'Estas seguro de reservar este libro?',
-        text: "You won't be able to revert this!",
         icon: 'question',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -127,7 +134,11 @@ export class ViewBookComponent implements OnInit {
   obtenerUsuario() {
     this.usersService.getCurrentUser().subscribe({
       next: (datos) => {
-        this.reserveAdd.id_usuario = <number>datos;
+        this.idUsuario = <number>datos;
+
+        this.reserveAdd.id_usuario = this.idUsuario;
+
+        this.getReserve();
       },
       error: (err) => {
         console.log(err);
@@ -144,7 +155,23 @@ export class ViewBookComponent implements OnInit {
   }
 
   addReserve(reserva: any) {
-    this.reserveService.addReserve(reserva).subscribe((reserveDB: any) => {
+    this.reserveService.addReserve(reserva).subscribe((_reserveDB: any) => {
+      // TODO document why this arrow function is empty
     });
   }
+
+
+  getReserve() {
+    this.reserveService.reservedByUser(this.idUsuario).subscribe((data) => {
+        this.librosDelUsuario = data.length;
+
+
+    });
+  }
+
+
+
+
+
 }
+
