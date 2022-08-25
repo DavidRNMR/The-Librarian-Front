@@ -23,9 +23,9 @@
             <div class="card-body">
                 <h5 class="card-title">{{ books.title }}</h5>
 
-                <span (click)="changeValueOfShowPreviewLink()">
+                <span>
                     <a
-
+                        href="{{ books.previewLink }}"
                         class="btn btn-success btn-lg"
                         >Leer</a
                     >
@@ -43,29 +43,4 @@
 </div>
 
 
-<div class="mx-auto" style="width: 80%" *ngIf="showPreviewLink">
-    <span (click)="changeValueOfShowPreviewLink()">
-        <a
 
-            class="btn btn-success btn-lg"
-            >Cerrar</a
-        >
-    </span>
-    <div class="row">
-        <div class="col">
-            <style>
-                iframe {
-                    width: 100%;
-                    height: 30rem;
-                }
-            </style>
-            <iframe
-                title="urlIframe"
-                id="urlIframe"
-                nombre="urlIframe"
-                [src]="getembenurl()"
-            >
-            </iframe>
-        </div>
-    </div>
-</div>

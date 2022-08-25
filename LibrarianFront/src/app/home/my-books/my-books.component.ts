@@ -10,6 +10,7 @@ import { Books } from '../interfaces/books';
   templateUrl: './my-books.component.html',
   styleUrls: ['./my-books.component.css'],
 })
+
 export class MyBooksComponent implements OnInit {
   userById = {
     id_user: 0,
@@ -18,13 +19,10 @@ export class MyBooksComponent implements OnInit {
   book: any[] = [];
   books2: any[] = [];
 
-  public urlIframe!: string;
-  showPreviewLink: boolean = false;
 
   constructor(
     private reserveService: ReserveService,
-    private usersService: UsersService,
-    private sanitizer: DomSanitizer
+    private usersService: UsersService
   ) {}
 
   ngOnInit(): void {
@@ -51,25 +49,10 @@ export class MyBooksComponent implements OnInit {
 
       this.books2.forEach((element) => {
         this.book.push(element.book);
-        console.log(element.book);
+
       });
     });
   }
 
-  getembenurl() {
 
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.urlIframe);
-  }
-
-
-
-  changeValueOfShowPreviewLink(){
-
-    if( this.showPreviewLink == true){
-          this.showPreviewLink = false
-    }else{
-      this.showPreviewLink = true;
-    }
-
-  }
 }
