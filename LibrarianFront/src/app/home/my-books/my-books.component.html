@@ -7,7 +7,7 @@
             <a class="text-center mt-2">
                 <img
                     class="card-img-top imga img-fluid"
-                    [src]="books.imageLinks"
+                    [src]="books.book.imageLinks"
                     alt=""
                 />
 
@@ -21,15 +21,23 @@
             </a>
 
             <div class="card-body">
-                <h5 class="card-title">{{ books.title }}</h5>
+                <h5 class="card-title text-center">{{ books.book.title }}</h5>
 
-                <span>
-                    <a
-                        href="{{ books.previewLink }}"
-                        class="btn btn-success btn-lg"
-                        >Leer</a
-                    >
-                </span>
+                <div class="row">
+                    <div class="col-6">
+                        <a
+                            href="{{ books.book.previewLink }}"
+                            class="btn btn-success btn-lg w-100"
+                            >Leer</a
+                        >
+                    </div>
+                    <div class="col-6">
+                        <a  (click)="updateReserve(books)"
+                            class="btn btn-danger btn-lg w-100"
+                            >Devolver</a
+                        >
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -41,6 +49,3 @@
         >
     </span>
 </div>
-
-
-
