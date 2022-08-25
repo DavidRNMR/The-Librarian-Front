@@ -52,6 +52,17 @@
     "LOGOUT_CONFIRMATION_ALERT_YES_BUTTON":"JA",
     "LOGOUT_CONFIRMATION_ALERT_NO_BUTTON":"NEIN",
     "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Geschlossene session",
+    "MY_BOOKS_READ_BUTTON_TEXT":"Lesen",
+    "MY_BOOKS_DOWNLOAD_BUTTON_TEXT":"Download",
+    "MY_BOOKS_ADD_BUTTON_NOT_LOGGED_TEXT":"Anscheinend bist du noch nicht eingeloggt?",
+    "MY_BOOKS_ADD_BUTTON_NOT_LOGGED_SUBTEXT":"Um fortzufahren, melden sie sich an!",
+    "MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT":"Absagen",
+    "MY_BOOKS_ADD_ALERT_LOGIN_BUTTON_TEXT":"Einloggen!",
+    "MY_BOOKS_ADD_ALERT_REACHED_LIMIT_TEXT":"Es tut uns leid, aber sie haben bereits die maximale reservierungsanzahl erreicht!",
+    "MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_TEXT":"Möchten sie dieses buch wirklich reservieren?",
+    "MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_CONFIRM_TEXT":"Ja, buchen!",
+    "MY_BOOKS_ADD_LOGGED_CONFIRM_TEXT":"Reserviert",
+    "MY_BOOKS_ADD_LOGGED_CONFIRM_SUBTEXT":"Ihr buch wurde erfolgreich reserviert."
     "ALERT_POR_AUTHOR":"Autor nicht gefunden",
     "ALERT_POR_ISBN":"ISBN nicht gefunden",
     "ALERT_POR_TITLE":"Titel nicht gefunden"

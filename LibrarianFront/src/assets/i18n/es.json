@@ -52,7 +52,19 @@
     "LOGOUT_CONFIRMATION_ALERT_YES_BUTTON":"SI",
     "LOGOUT_CONFIRMATION_ALERT_NO_BUTTON":"NO",
     "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Sesión cerrada",
+    "MY_BOOKS_READ_BUTTON_TEXT":"Leer",
+    "MY_BOOKS_DOWNLOAD_BUTTON_TEXT":"Descargar",
+    "MY_BOOKS_ADD_BUTTON_NOT_LOGGED_TEXT":"Parece que aun no estas logueado?",
+    "MY_BOOKS_ADD_BUTTON_NOT_LOGGED_SUBTEXT":"Para continuar inicia sesión!",
+    "MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT":"Cancelar",
+    "MY_BOOKS_ADD_ALERT_LOGIN_BUTTON_TEXT":"Iniciar Sesión!",
+    "MY_BOOKS_ADD_ALERT_REACHED_LIMIT_TEXT":"Disculpa pero ya has alcanzado el maximo de reservas!",
+    "MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_TEXT":"Estas seguro de reservar este libro?",
+    "MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_CONFIRM_TEXT":"Si, reservalo!",
+    "MY_BOOKS_ADD_LOGGED_CONFIRM_TEXT":"Reservado",
+    "MY_BOOKS_ADD_LOGGED_CONFIRM_SUBTEXT":"Tu libro ha sido reservado correctamente."
     "ALERT_POR_AUTHOR":"Autor no encontrado",
     "ALERT_POR_ISBN":"ISBN no encontrado",
     "ALERT_POR_TITLE":"Titulo no encontrado"
+
 }

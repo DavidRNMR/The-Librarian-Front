@@ -4,6 +4,7 @@ import { BookService } from '../services/book.service';
 import { ReserveService } from '../services/reserve.service';
 import { UsersService } from '../services/users.service';
 import { Books } from '../interfaces/books';
+import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -28,8 +29,19 @@ export class MyBooksComponent implements OnInit {
 
   constructor(
     private reserveService: ReserveService,
-    private usersService: UsersService
-  ) {}
+    private usersService: UsersService,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['es', 'en', 'fr', 'de']);
+    // Set default language
+    translate.setDefaultLang(translate.getBrowserLang()!);
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 
   ngOnInit(): void {
     if (this.usersService.isLogged()) {
