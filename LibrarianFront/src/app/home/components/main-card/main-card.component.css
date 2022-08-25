@@ -14,6 +14,7 @@ p {
 
 .btn {
     background-color: rgba(27, 26, 26, 0.698);
+    color: white;
 }
 
 .btn:hover {
@@ -21,11 +22,11 @@ p {
 }
 
 .modalFoor {
-    background-color: rgba(15, 179, 201, 0.39);
-    align-items: center;
+    /* background-color: rgba(15, 179, 201, 0.39); */
+    /* align-items: center; */
     padding: 2%;
     border: 14px solid white;
-    text-align: center;
+    /* text-align: center; */
     border-radius: 2rem;
 }
 
@@ -42,4 +43,8 @@ p {
 .imga {
     width: 25vh;
     height: 35vh;
+}
+
+.modal-img{
+    width: 40vh;
 }

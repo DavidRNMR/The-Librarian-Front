@@ -1,79 +1,111 @@
 <ng-container *ngIf="books.length > 0; else error">
-
     <div class="row animate__animated animate__fadeIn">
-        <div class="col-sm-12 col-md-3 col-lg-3 align-items-stretch" *ngFor="let book of books">
+        <div
+            class="col-sm-12 col-md-3 col-lg-3 align-items-stretch"
+            *ngFor="let book of books"
+        >
             <div class="card mb-3">
-                <a  class="text-center mt-2"
-                    (click)="open(mymodal)">
-                <img
-                    *ngIf="book.volumeInfo.imageLinks.smallThumbnail ==
-                            'No image available.'; else imagenDisponible"
-                    class="card-img-top imga img-fluid"
-                    src="./assets/noDisponible.png"
-                    alt="no se mostro"
-                />
-                <ng-template #imagenDisponible>
+                <a class="text-center mt-2" (click)="open(mymodal)">
                     <img
+                        *ngIf="
+                            book.volumeInfo.imageLinks.smallThumbnail ==
+                                'No image available.';
+                            else imagenDisponible
+                        "
                         class="card-img-top imga img-fluid"
-                        src="{{book.volumeInfo.imageLinks.smallThumbnail}}"
-                        alt="Image Title"
+                        src="./assets/noDisponible.png"
+                        alt="no se mostro"
                     />
-                </ng-template>
+                    <ng-template #imagenDisponible>
+                        <img
+                            class="card-img-top imga img-fluid"
+                            src="{{
+                                book.volumeInfo.imageLinks.smallThumbnail
+                            }}"
+                            alt="Image Title"
+                        />
+                    </ng-template>
                 </a>
 
                 <div class="card-body">
-                  <h5 class="card-title">{{ book.volumeInfo.title | slice:0:35}}</h5>
-                    <p *ngIf="book.volumeInfo.authors[0].length < 18 ; else muyLargo"  class="card-text">
-                        <strong> {{'BOOK_CARD_AUTHOR' | translate}} </strong> {{ book.volumeInfo.authors[0] }}
+                    <h5 class="card-title">
+                        {{ book.volumeInfo.title | slice: 0:35 }}
+                    </h5>
+                    <p
+                        *ngIf="
+                            book.volumeInfo.authors[0].length < 18;
+                            else muyLargo
+                        "
+                        class="card-text"
+                    >
+                        <strong> {{ "BOOK_CARD_AUTHOR" | translate }} </strong>
+                        {{ book.volumeInfo.authors[0] }}
                     </p>
-                  <ng-template #muyLargo>
-                    <p class="card-text"> <strong> {{'BOOK_CARD_AUTHOR' | translate}} </strong> {{ book.volumeInfo.authors[0] | slice:0:15}}...</p>
-                  </ng-template>
-
+                    <ng-template #muyLargo>
+                        <p class="card-text">
+                            <strong>
+                                {{ "BOOK_CARD_AUTHOR" | translate }}
+                            </strong>
+                            {{ book.volumeInfo.authors[0] | slice: 0:15 }}...
+                        </p>
+                    </ng-template>
                 </div>
                 <div class="card-body text-center">
-                    <a class="btn btn-success ms-2 w-100"
-                       [routerLink]="['/vista', book.id]"
-                       routerLinkActive="router-link-active">
-
-                    {{'BOOK_CARD_SEE_MORE' | translate}}
+                    <a
+                        class="btn ms-2 w-100 border border-dark"
+                        [routerLink]="['/vista', book.id]"
+                        routerLinkActive="router-link-active"
+                    >
+                        {{ "BOOK_CARD_SEE_MORE" | translate }}
                     </a>
                 </div>
 
                 <!-- Modal-->
-            <ng-template #mymodal let-modal>
-                <diV class="modalFoor">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="modal-basic-title">
-                            {{ book.volumeInfo.title }}
-                        </h4>
-                    </div>
+                <ng-template #mymodal let-modal>
+                    <div class="modalFoor text-center">
+                        <div class="modal-header">
+                            <h4 class="modal-title mx-auto" id="modal-basic-title">
+                                {{ book.volumeInfo.title }}
+                            </h4>
+                        </div>
 
-                    <div class="modal-body">
-                        <img
-                            class="postcard__img2"
-                            src="{{
-                                book.volumeInfo.imageLinks.smallThumbnail
-                            }}"
-                            alt="img"
-                        />
-                    </div>
+                        <div class="modal-body">
+                            <img
+                                *ngIf="
+                                    book.volumeInfo.imageLinks.smallThumbnail ==
+                                        'No image available.';
+                                    else imagenDis
+                                "
+                                class="postcard__img2 img-fluid modal-img"
+                                src="./assets/noDisponible.png"
+                                alt="img"
+                            />
+                            <ng-template #imagenDis>
+                                <img
+                                    class="postcard__img2 img-fluid modal-img"
+                                    src="{{
+                                        book.volumeInfo.imageLinks
+                                            .smallThumbnail
+                                    }}"
+                                    alt="img"
+                                />
+                            </ng-template>
+                        </div>
 
                         <div class="modal-footer">
                             <button
                                 type="button"
-                                class="btn btn-success ms-2"
+                                class="btn ms-2"
                                 (click)="modal.close('Save click')"
                             >
-                            Ok
+                                Ok
                             </button>
                         </div>
-                    </diV>
+                    </div>
                 </ng-template>
             </div>
         </div>
     </div>
-
 </ng-container>
 
 <ng-template #error>
