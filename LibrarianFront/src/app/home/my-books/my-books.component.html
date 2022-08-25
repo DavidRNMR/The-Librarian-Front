@@ -1,5 +1,5 @@
 <h1 class="text-center">
-    Mis libros
+    {{'MY_BOOKS' | translate}}
 </h1>
 <hr>
 <div class="row animate__animated animate__fadeIn ">
@@ -31,7 +31,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-6 ">
                         <ng-container *ngIf="books.book.previewLink == null ; else noDisponible">
                             <button  class="btn btn-success btn-lg w-100 my-1"
-                                (click)="noDIsponible()">Leer</button>
+                                (click)="noDIsponible()">{{'MY_BOOKS_READ_BUTTON_TEXT' | translate}}</button>
                         </ng-container>
                         <ng-template #noDisponible>
                             <a
@@ -47,7 +47,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <button  (click)="updateReserve(books)"
                             class="btn btn-danger btn-lg w-100 my-1"
-                            >Devolver</button>
+                            >{{'MY_BOOKS_RETURN_BUTTON_TEXT' | translate}}</button>
                     </div>
                 </div>
             </div>

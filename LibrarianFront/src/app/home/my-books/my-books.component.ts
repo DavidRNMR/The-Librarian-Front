@@ -74,15 +74,16 @@ export class MyBooksComponent implements OnInit {
 
   updateReserve(reserva: any) {
     Swal.fire({
-      title: 'Estas seguro de devolver el libro?',
+      title: this.translate.instant('MY_BOOKS_RETURN_BUTTON_ALERT_TEXT'),
       icon: 'warning',
       showCancelButton: true,
+      cancelButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT'),
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, devolver!',
+      confirmButtonText: this.translate.instant('MY_BOOKS_RETURN_ALERT_TEXT'),
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Enviado!', 'Este libro ha sido devuelto.', 'success');
+        Swal.fire(this.translate.instant('MY_BOOKS_RETURNED_ALERT_TEXT'), this.translate.instant('MY_BOOKS_RETURNED_ALERT_SUBTEXT'), 'success');
 
         this.idReserva = reserva.id;
         this.nuevaReserva.id_usuario = reserva.id_usuario;

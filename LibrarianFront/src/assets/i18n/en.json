@@ -62,8 +62,10 @@
     "MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_TEXT":"Are you sure to reserve this book?",
     "MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_CONFIRM_TEXT":"Yes, reserve it!",
     "MY_BOOKS_ADD_LOGGED_CONFIRM_TEXT":"Reserved",
-    "MY_BOOKS_ADD_LOGGED_CONFIRM_SUBTEXT":"Your book has been reserved successfully."
-    "ALERT_POR_AUTHOR":"Author not found",
-    "ALERT_POR_ISBN":"ISBN not found",
-    "ALERT_POR_TITLE":"Title not found"
+    "MY_BOOKS_ADD_LOGGED_CONFIRM_SUBTEXT":"Your book has been reserved successfully.",
+    "MY_BOOKS_RETURN_BUTTON_TEXT":"Return",
+    "MY_BOOKS_RETURN_BUTTON_ALERT_TEXT":"Are you sure you want to return the book?",
+    "MY_BOOKS_RETURN_ALERT_TEXT":"Yes, return!",
+    "MY_BOOKS_RETURNED_ALERT_TEXT":"Send!",
+    "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"This book has been returned."
 }

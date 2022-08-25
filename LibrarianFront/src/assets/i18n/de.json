@@ -62,8 +62,10 @@
     "MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_TEXT":"Möchten sie dieses buch wirklich reservieren?",
     "MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_CONFIRM_TEXT":"Ja, buchen!",
     "MY_BOOKS_ADD_LOGGED_CONFIRM_TEXT":"Reserviert",
-    "MY_BOOKS_ADD_LOGGED_CONFIRM_SUBTEXT":"Ihr buch wurde erfolgreich reserviert."
-    "ALERT_POR_AUTHOR":"Autor nicht gefunden",
-    "ALERT_POR_ISBN":"ISBN nicht gefunden",
-    "ALERT_POR_TITLE":"Titel nicht gefunden"
+    "MY_BOOKS_ADD_LOGGED_CONFIRM_SUBTEXT":"Ihr buch wurde erfolgreich reserviert.",
+    "MY_BOOKS_RETURN_BUTTON_TEXT":"Rückkehr",
+    "MY_BOOKS_RETURN_BUTTON_ALERT_TEXT":"Möchten sie das buch wirklich zurückgeben?",
+    "MY_BOOKS_RETURN_ALERT_TEXT":"Ja, zurück!",
+    "MY_BOOKS_RETURNED_ALERT_TEXT":"Senden!",
+    "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"Dieses buch wurde zurückgegeben."
 }
