@@ -143,8 +143,8 @@ export class ViewBookComponent implements OnInit {
 
         this.getReserve();
       },
-      error: (err) => {
-        console.log(err);
+      error: (_err) => {
+
       },
     });
   }

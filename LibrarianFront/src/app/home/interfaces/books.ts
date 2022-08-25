@@ -1,5 +1,6 @@
 import { VolumeInfoBD } from './addbookbd';
 export interface Books {
+  length: number;
   items: Item[];
 }
 
