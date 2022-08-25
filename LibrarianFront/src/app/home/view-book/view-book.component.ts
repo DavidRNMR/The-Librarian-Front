@@ -97,7 +97,7 @@ export class ViewBookComponent implements OnInit {
           this.route.navigate(['/login']);
         }
       })
-    } else if (this.librosDelUsuario <= 3) {
+    } else if (this.librosDelUsuario >= 3) {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -135,6 +135,7 @@ export class ViewBookComponent implements OnInit {
     this.usersService.getCurrentUser().subscribe({
       next: (datos) => {
         this.idUsuario = <number>datos;
+
         this.reserveAdd.id_usuario = this.idUsuario;
 
         this.getReserve();
@@ -163,6 +164,7 @@ export class ViewBookComponent implements OnInit {
   getReserve() {
     this.reserveService.reservedByUser(this.idUsuario).subscribe((data) => {
         this.librosDelUsuario = data.length;
+
 
     });
   }
