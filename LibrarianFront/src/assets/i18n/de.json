@@ -51,5 +51,8 @@
     "LOGOUT_CONFIRMATION_ALERT_TEXT":"Sind sie sicher, dass Sie sich abmelden möchten?",
     "LOGOUT_CONFIRMATION_ALERT_YES_BUTTON":"JA",
     "LOGOUT_CONFIRMATION_ALERT_NO_BUTTON":"NEIN",
-    "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Geschlossene session"
+    "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Geschlossene session",
+    "ALERT_POR_AUTHOR":"Autor nicht gefunden",
+    "ALERT_POR_ISBN":"ISBN nicht gefunden",
+    "ALERT_POR_TITLE":"Titel nicht gefunden"
 }

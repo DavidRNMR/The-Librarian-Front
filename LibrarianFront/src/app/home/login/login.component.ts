@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor(public userService: UsersService, private router: Router, public translate: TranslateService) {
+  constructor(public userService: UsersService, private router: Router, private translate: TranslateService) {
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr', 'de']);
     // Set default language

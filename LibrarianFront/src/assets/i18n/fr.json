@@ -51,5 +51,8 @@
     "LOGOUT_CONFIRMATION_ALERT_TEXT":"Êtes-vous sûr de vouloir vous déconnecter?",
     "LOGOUT_CONFIRMATION_ALERT_YES_BUTTON":"OUI",
     "LOGOUT_CONFIRMATION_ALERT_NO_BUTTON":"NON",
-    "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Séance à huis clos"
+    "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Séance à huis clos",
+    "ALERT_POR_AUTHOR":"Auteur introuvable",
+    "ALERT_POR_ISBN":"ISBN introuvable",
+    "ALERT_POR_TITLE":"Titre introuvable"
 }

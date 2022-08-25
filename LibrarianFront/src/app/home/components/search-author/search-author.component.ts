@@ -1,40 +1,68 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, switchMap } from 'rxjs';
+import Swal from 'sweetalert2';
 import { Item } from '../../interfaces/books';
 import { BookService } from '../../services/book.service';
 import { SharedDataService } from '../../services/shared-data.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-search-author',
   templateUrl: './search-author.component.html',
-  styleUrls: ['./search-author.component.css']
+  styleUrls: ['./search-author.component.css'],
 })
 export class SearchAuthorComponent implements OnInit {
-
   books: Item[] = [];
 
-
-  author!:string;
+  author!: string;
   subscription!: Subscription;
 
+  constructor(
+    private sharedAuthor: SharedDataService,
+    private bookService: BookService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private translate: TranslateService
+  ) {
 
-  constructor(private sharedAuthor: SharedDataService, private bookService: BookService, private activatedRoute: ActivatedRoute) {}
+    // Register translation languages
+    translate.addLangs(['es', 'en', 'fr', 'de']);
+    // Set default language
+    translate.setDefaultLang(translate.getBrowserLang()!);
+
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 
   ngOnInit(): void {
-
-    this.subscription = this.sharedAuthor.currentMessage.subscribe(message => this.author = message);
-
+    this.subscription = this.sharedAuthor.currentMessage.subscribe(
+      (message) => (this.author = message)
+    );
 
     this.activatedRoute.params
-    .pipe(
-      switchMap( ({ author }) => this.bookService.buscarLibroPorAuthor( author ))
-    )
-    .subscribe(books => {
+      .pipe(
+        switchMap(({ author }) => this.bookService.buscarLibroPorAuthor(author))
+      )
+      .subscribe({
+        next: (books) => {
+          this.books = books.items;
+        },
+        error: (_err) => {
+          Swal.fire({
+            icon: 'error',
+            title: this.translate.instant('ALERT_POR_AUTHOR'),
+            confirmButtonText: 'Ok!'
 
-      this.books = books.items;
-    });
-
-
-}
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.router.navigate(['/']);
+            }
+          });
+        }
+      });
+  }
 }

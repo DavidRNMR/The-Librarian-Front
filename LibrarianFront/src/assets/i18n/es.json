@@ -51,5 +51,8 @@
     "LOGOUT_CONFIRMATION_ALERT_TEXT":"Estas seguro de cerrar sesión?",
     "LOGOUT_CONFIRMATION_ALERT_YES_BUTTON":"SI",
     "LOGOUT_CONFIRMATION_ALERT_NO_BUTTON":"NO",
-    "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Sesión cerrada"
+    "LOGOUT_SUCCESSFULL_ALERT_TEXT":"Sesión cerrada",
+    "ALERT_POR_AUTHOR":"Autor no encontrado",
+    "ALERT_POR_ISBN":"ISBN no encontrado",
+    "ALERT_POR_TITLE":"Titulo no encontrado"
 }
