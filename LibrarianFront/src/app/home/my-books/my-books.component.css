@@ -6,7 +6,9 @@
 }
 
 
-
+a{
+    cursor: pointer;
+}
 
 .modal-title {
     font-family: "Mouse Memoirs", sans-serif;

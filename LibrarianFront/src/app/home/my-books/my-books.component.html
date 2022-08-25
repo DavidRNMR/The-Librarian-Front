@@ -1,13 +1,17 @@
-<div class="row animate__animated animate__fadeIn">
+<h1 class="text-center">
+    Mis libros
+</h1>
+<hr>
+<div class="row animate__animated animate__fadeIn ">
     <div
-        class="col-sm-12 col-md-3 col-lg-3 align-items-stretch"
+        class="col-sm-12 col-md-3 col-lg-4 align-items-stretch"
         *ngFor="let books of book; let i = index"
     >
         <div class="card mb-3">
             <a class="text-center mt-2">
                 <img
                     class="card-img-top imga img-fluid"
-                    [src]="books.imageLinks"
+                    [src]="books.book.imageLinks"
                     alt=""
                 />
 
@@ -21,26 +25,39 @@
             </a>
 
             <div class="card-body">
-                <h5 class="card-title">{{ books.title }}</h5>
+                <h5 class="card-title text-center">{{ books.book.title | slice: 0:46 }}</h5>
 
-                <span>
-                    <a
-                        href="{{ books.previewLink }}"
-                        class="btn btn-success btn-lg"
-                        >Leer</a
-                    >
-                </span>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6 ">
+                        <ng-container *ngIf="books.book.previewLink == null ; else noDisponible">
+                            <button  class="btn btn-success btn-lg w-100 my-1"
+                                (click)="noDIsponible()">Leer</button>
+                        </ng-container>
+                        <ng-template #noDisponible>
+                            <a
+                            href="{{ books.book.previewLink }}"
+                            target="_blank"
+                            class="btn btn-success btn-lg w-100 my-1"
+                            >Leer</a>
+                        </ng-template>
+
+
+
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <button  (click)="updateReserve(books)"
+                            class="btn btn-danger btn-lg w-100 my-1"
+                            >Devolver</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <span>
+    <div class="text-center">
         <a
             href="http://localhost:8080/reserve/reserve/export/pdf"
             class="btn btn-primary btn-lg"
             >Descargar PDF</a
         >
-    </span>
+    </div>
 </div>
-
-
-
