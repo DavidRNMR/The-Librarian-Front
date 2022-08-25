@@ -27,6 +27,7 @@ export class ViewBookComponent implements OnInit {
     imageLinks: '',
     pageCount: 0,
     language: '',
+    previewLink: '',
   };
 
   reserveAdd: any = {
@@ -59,6 +60,7 @@ export class ViewBookComponent implements OnInit {
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.bookService.buscarLibroPorId(id)))
       .subscribe((book) => {
+
         this.bookVer = book;
 
         this.bookAdd.title = this.bookVer.volumeInfo.title;
@@ -73,6 +75,7 @@ export class ViewBookComponent implements OnInit {
           this.bookVer.volumeInfo.imageLinks.smallThumbnail.slice(0, 249);
         this.bookAdd.pageCount = this.bookVer.volumeInfo.pageCount;
         this.bookAdd.language = this.bookVer.volumeInfo.language;
+        this.bookAdd.previewLink = this.bookVer.volumeInfo.previewLink;
       });
 
     if (this.usersService.isLogged()) {

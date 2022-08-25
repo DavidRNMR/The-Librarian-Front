@@ -11,6 +11,7 @@ export interface VolumeInfoBD {
   imageLinks: string;
   pageCount: number;
   language: string;
+  previewLink: string;
 }
 
 // export interface IndustryIdentifierBD{
