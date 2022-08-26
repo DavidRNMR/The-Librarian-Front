@@ -11,18 +11,20 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-
-export class RegisterComponent implements OnInit{
-
-  nuevoRegistro: Registro ={
+export class RegisterComponent implements OnInit {
+  nuevoRegistro: Registro = {
     nombre: '',
     correo: '',
-    password: ''
-  }
+    password: '',
+  };
 
   confirmPassword!: string;
 
-  constructor(public registroSer: RegistroService, private router: Router, public translate: TranslateService) {
+  constructor(
+    public registroSer: RegistroService,
+    private router: Router,
+    public translate: TranslateService
+  ) {
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr', 'de']);
     // Set default language
@@ -38,15 +40,25 @@ export class RegisterComponent implements OnInit{
     // TODO document why this method 'ngOnInit' is empty
   }
 
-  crearRegistro(){
-    this.registroSer.postUsuario(this.nuevoRegistro).subscribe((_datos:any)=>{
-      Swal.fire({
-        icon: 'success',
-        title: this.translate.instant('REGISTER_SUCCES_ALERT_TITLE'),
-        text: this.translate.instant('REGISTER_SUCCES_ALERT_TEXT')
-      }).then( _result => {
-        this.router.navigate(["/login"]);
-      });
+  crearRegistro() {
+    this.registroSer.postUsuario(this.nuevoRegistro).subscribe({
+
+      next: () => {
+        Swal.fire({
+          icon: 'success',
+          title: this.translate.instant('REGISTER_SUCCES_ALERT_TITLE'),
+          text: this.translate.instant('REGISTER_SUCCES_ALERT_TEXT'),
+        }).then((_result) => {
+          this.router.navigate(['/login']);
+        });
+      },
+      error: (_err) => {
+        Swal.fire({
+          icon: 'error',
+          title: this.translate.instant('ALERT_REGISTER'),
+          confirmButtonText: 'Ok!',
+        })
+      },
     });
   }
 

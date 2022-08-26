@@ -70,5 +70,6 @@
     "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"Ce livre a été rendu.",
     "ALERT_POR_AUTHOR":"Auteur introuvable",
     "ALERT_POR_ISBN":"ISBN introuvable",
-    "ALERT_POR_TITLE":"Titre introuvable"
+    "ALERT_POR_TITLE":"Titre introuvable",
+    "ALERT_REGISTER": "E-mail déjà enregistré"
 }
