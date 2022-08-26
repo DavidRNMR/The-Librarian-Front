@@ -88,13 +88,14 @@ export class ViewBookComponent implements OnInit {
   addBookDB() {
     if (!this.usersService.isLogged()) {
       Swal.fire({
-        title: 'Parece que aun no estas logueado?',
-        text: "Para continuar inicia sesión!",
+        title: this.translate.instant('MY_BOOKS_ADD_BUTTON_NOT_LOGGED_TEXT'),
+        text: this.translate.instant('MY_BOOKS_ADD_BUTTON_NOT_LOGGED_SUBTEXT'),
         icon: 'warning',
         showCancelButton: true,
+        cancelButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT'),
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Iniciar Sesión!'
+        confirmButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_LOGIN_BUTTON_TEXT')
       }).then((result) => {
         if (result.isConfirmed) {
           this.route.navigate(['/login']);
@@ -104,21 +105,22 @@ export class ViewBookComponent implements OnInit {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Disculpa pero ya has alcanzado el maximo de reservas!'
+        text: this.translate.instant('MY_BOOKS_ADD_ALERT_REACHED_LIMIT_TEXT')
       })
     }else{
       Swal.fire({
-        title: 'Estas seguro de reservar este libro?',
+        title: this.translate.instant('MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_TEXT'),
         icon: 'question',
         showCancelButton: true,
+        cancelButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT'),
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, reservalo!'
+        confirmButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_CONFIRM_TEXT')
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(
-            'Reservado!',
-            'Tu libro ha sido reservado correctamente.',
+            this.translate.instant('MY_BOOKS_ADD_LOGGED_CONFIRM_TEXT'),
+            this.translate.instant('MY_BOOKS_ADD_LOGGED_CONFIRM_SUBTEXT'),
             'success'
           );
           this.bookService.addBookBD(this.bookAdd).subscribe({

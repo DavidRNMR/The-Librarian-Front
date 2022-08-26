@@ -4,6 +4,7 @@ import { BookService } from '../services/book.service';
 import { ReserveService } from '../services/reserve.service';
 import { UsersService } from '../services/users.service';
 import { Books } from '../interfaces/books';
+import { TranslateService } from '@ngx-translate/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -28,8 +29,19 @@ export class MyBooksComponent implements OnInit {
 
   constructor(
     private reserveService: ReserveService,
-    private usersService: UsersService
-  ) {}
+    private usersService: UsersService,
+    public translate: TranslateService
+  ) {
+    // Register translation languages
+    translate.addLangs(['es', 'en', 'fr', 'de']);
+    // Set default language
+    translate.setDefaultLang(translate.getBrowserLang()!);
+  }
+
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
 
   ngOnInit(): void {
     if (this.usersService.isLogged()) {
@@ -62,15 +74,16 @@ export class MyBooksComponent implements OnInit {
 
   updateReserve(reserva: any) {
     Swal.fire({
-      title: 'Estas seguro de devolver el libro?',
+      title: this.translate.instant('MY_BOOKS_RETURN_BUTTON_ALERT_TEXT'),
       icon: 'warning',
       showCancelButton: true,
+      cancelButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT'),
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, devolver!',
+      confirmButtonText: this.translate.instant('MY_BOOKS_RETURN_ALERT_TEXT'),
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Enviado!', 'Este libro ha sido devuelto.', 'success');
+        Swal.fire(this.translate.instant('MY_BOOKS_RETURNED_ALERT_TEXT'), this.translate.instant('MY_BOOKS_RETURNED_ALERT_SUBTEXT'), 'success');
 
         this.idReserva = reserva.id;
         this.nuevaReserva.id_usuario = reserva.id_usuario;
