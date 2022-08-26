@@ -26,7 +26,7 @@
     "LOGIN_EMAIL_REQUIRED":"Something went wrong with the email",
     "LOGIN_PASSWORD_PLACEHOLDER":"Password",
     "LOGIN_PASSWORD_REQUIRED":"Password requiered",
-    "LOGIN_FORGOTTEN_PASSWORD":"Forgot your password?",
+    "LOGIN_FORGOTTEN_PASSWORD":"Change your password?",
     "LOGIN_ACCESS_BUTTON_TEXT":"Access",
     "LOGIN_ACCESS_WELCOME_TEXT":"Hello, friend!",
     "LOGIN_ACCESS_WELCOME_MESSAGE":"A world of reading awaits you",
