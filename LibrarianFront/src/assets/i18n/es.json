@@ -70,5 +70,6 @@
     "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"Este libro ha sido devuelto.",
     "ALERT_POR_AUTHOR":"Autor no encontrado",
     "ALERT_POR_ISBN":"ISBN no encontrado",
-    "ALERT_POR_TITLE":"Titulo no encontrado"
+    "ALERT_POR_TITLE":"Titulo no encontrado",
+    "ALERT_REGISTER": "Email ya registrado"
 }

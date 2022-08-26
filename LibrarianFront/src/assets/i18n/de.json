@@ -70,5 +70,6 @@
     "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"Dieses buch wurde zurückgegeben.",
     "ALERT_POR_AUTHOR":"Autor nicht gefunden",
     "ALERT_POR_ISBN":"ISBN nicht gefunden",
-    "ALERT_POR_TITLE":"Titel nicht gefunden"
+    "ALERT_POR_TITLE":"Titel nicht gefunden",
+    "ALERT_REGISTER": "Email schon registriert"
 }
