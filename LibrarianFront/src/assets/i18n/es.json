@@ -67,5 +67,8 @@
     "MY_BOOKS_RETURN_BUTTON_ALERT_TEXT":"Estas seguro de devolver el libro?",
     "MY_BOOKS_RETURN_ALERT_TEXT":"Si, devolver!",
     "MY_BOOKS_RETURNED_ALERT_TEXT":"Enviado!",
-    "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"Este libro ha sido devuelto."
+    "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"Este libro ha sido devuelto.",
+    "ALERT_POR_AUTHOR":"Autor no encontrado",
+    "ALERT_POR_ISBN":"ISBN no encontrado",
+    "ALERT_POR_TITLE":"Titulo no encontrado"
 }

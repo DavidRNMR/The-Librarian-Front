@@ -67,5 +67,8 @@
     "MY_BOOKS_RETURN_BUTTON_ALERT_TEXT":"Möchten sie das buch wirklich zurückgeben?",
     "MY_BOOKS_RETURN_ALERT_TEXT":"Ja, zurück!",
     "MY_BOOKS_RETURNED_ALERT_TEXT":"Senden!",
-    "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"Dieses buch wurde zurückgegeben."
+    "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"Dieses buch wurde zurückgegeben.",
+    "ALERT_POR_AUTHOR":"Autor nicht gefunden",
+    "ALERT_POR_ISBN":"ISBN nicht gefunden",
+    "ALERT_POR_TITLE":"Titel nicht gefunden"
 }

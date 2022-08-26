@@ -67,5 +67,8 @@
     "MY_BOOKS_RETURN_BUTTON_ALERT_TEXT":"Are you sure you want to return the book?",
     "MY_BOOKS_RETURN_ALERT_TEXT":"Yes, return!",
     "MY_BOOKS_RETURNED_ALERT_TEXT":"Send!",
-    "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"This book has been returned."
+    "MY_BOOKS_RETURNED_ALERT_SUBTEXT":"This book has been returned.",
+    "ALERT_POR_AUTHOR":"Author not found",
+    "ALERT_POR_ISBN":"ISBN not found",
+    "ALERT_POR_TITLE":"Title not found"
 }
