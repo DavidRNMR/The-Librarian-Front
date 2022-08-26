@@ -66,6 +66,8 @@ export class MyBooksComponent implements OnInit {
 
       if (data.length > 0) {
         this.book = data;
+        console.log(this.book);
+
       } else {
          this.book = [];
       }
