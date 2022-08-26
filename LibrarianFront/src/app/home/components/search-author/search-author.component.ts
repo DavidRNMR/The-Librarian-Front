@@ -49,7 +49,23 @@ export class SearchAuthorComponent implements OnInit {
       )
       .subscribe({
         next: (books) => {
-          this.books = books.items;
+           let resultado:number = books.items.length;
+
+          if (resultado == 0) {
+            Swal.fire({
+              icon: 'error',
+              title: this.translate.instant('ALERT_POR_AUTHOR'),
+              confirmButtonText: 'Ok!'
+
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['/']);
+              }
+            });
+          } else {
+              this.books = books.items;
+          }
+
         },
         error: (_err) => {
           Swal.fire({
@@ -57,8 +73,8 @@ export class SearchAuthorComponent implements OnInit {
             title: this.translate.instant('ALERT_POR_AUTHOR'),
             confirmButtonText: 'Ok!'
 
-          }).then((result) => {
-            if (result.isConfirmed) {
+          }).then((result2) => {
+            if (result2.isConfirmed) {
               this.router.navigate(['/']);
             }
           });

@@ -55,19 +55,24 @@ export class NavbarComponent implements OnInit {
 
 
   newMessage() {
+    const isbnT: string = this.isbn.trim();
 
-    this.sharedText.changeMessage(this.isbn);
+    this.sharedText.changeMessage(isbnT);
     this.isbn = '';
 
   }
 
   newTitleMessage() {
-    this.sharedText.changeMessage(this.title);
+    const titleT: string = this.title.trim();
+
+    this.sharedText.changeMessage(titleT);
     this.title = '';
   }
 
   newAuthorMessage() {
-    this.sharedText.changeMessage(this.author);
+    const authorT: string = this.author.trim();
+
+    this.sharedText.changeMessage(authorT);
     this.author = '';
   }
 
