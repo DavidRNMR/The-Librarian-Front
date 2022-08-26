@@ -26,7 +26,7 @@
     "LOGIN_EMAIL_REQUIRED":"Algo ha salido mal con el email",
     "LOGIN_PASSWORD_PLACEHOLDER":"Contraseña",
     "LOGIN_PASSWORD_REQUIRED":"Contraseña obligatoria",
-    "LOGIN_FORGOTTEN_PASSWORD":"Olvidaste tu contraseña?",
+    "LOGIN_FORGOTTEN_PASSWORD":"Cambiar tu contraseña?",
     "LOGIN_ACCESS_BUTTON_TEXT":"Acceder",
     "LOGIN_ACCESS_WELCOME_TEXT":"Hola, amigo!",
     "LOGIN_ACCESS_WELCOME_MESSAGE":"Un mundo de lectura te espera",
